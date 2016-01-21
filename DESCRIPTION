@@ -1,0 +1,35 @@
+Package: gghorizon
+Title: Horizontal ggplot
+Version: 0.0.0.9000
+Authors@R: person("Lionel", "Henry", email = "lionel.hry@gmail.com", role = c("aut", "cre"))
+Description: Horizontal versions of ggplot2 Geoms and Positions.
+Depends: 
+    R (>= 3.2.2)
+Imports: 
+    ggplot2 (>= 2.0),
+    purrr (>= 0.2),
+    lazyeval
+Suggests: 
+    magrittr,
+    import,
+    svglite
+License: GPL-3
+LazyData: true
+RoxygenNote: 5.0.1
+svgliteNote: 1.0.0
+ggplot2Note: 2.0.0.9001
+Collate: 
+    'flip-aes.R'
+    'flip-ggproto.R'
+    'flip-method.R'
+    'utils.R'
+    'geom-barh.R'
+    'legend-draw.R'
+    'geom-crossbarh.R'
+    'geom-histogramh.R'
+    'geom-linerangeh.R'
+    'geom-pointrangeh.R'
+    'gghorizon.R'
+    'layer.R'
+    'scales.R'
+    'stat-.R'
