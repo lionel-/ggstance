@@ -4,7 +4,6 @@ Layerh <- ggproto("Layerh", Layer,
   # compute_aesthetics() is the main entry point of data in
   # ggplot_build(). Flipping here means most of subsequent methods
   # receive flipped data
-  ## compute_aesthetics = flip_method_outer(Layer$compute_aesthetics),
 
   # Flip mapping. Override plot mapping if no layer mapping found.
   # Roundtrip data so that positions and scales can be trained
