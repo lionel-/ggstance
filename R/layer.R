@@ -39,9 +39,16 @@ layerh <- function(...) {
   flip_ggproto(layer(...))
 }
 
+
 flip_ggproto.LayerInstance <- function(gg) {
   ggclone("LayerInstanceh", gg, Layerh,
     stat = flip_ggproto(gg$stat),
     geom = flip_ggproto(gg$geom)
+  )
+}
+
+flip_ggproto.Stat <- function(gg) {
+  ggflipped(gg,
+    default_aes = flip_aes(gg$default_aes)
   )
 }

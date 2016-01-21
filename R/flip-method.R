@@ -85,14 +85,17 @@ match_args <- function(dots, f) {
   dots
 }
 
+lang_lookup <- map(flip_lookup, as.name)
+lang_lookup <- splice(lang_lookup,
+  GeomCrossbar = quote(GeomCrossbarh)
+)
 
 flip_method_inner <- function(method, roundtrip = NULL) {
   method <- get_method(method)
   body <- body(method)
 
-  lookup <- map(flip_lookup, as.name)
   body <- structure(body, class = "call") # Workaround for S3 dispatch on "{"
-  body <- lazyeval::interp(body, .values = lookup)
+  body <- lazyeval::interp(body, .values = lang_lookup)
   body <- flip_lang(body, calls = c("data.frame", "transform"))
   body(method) <- body
 
