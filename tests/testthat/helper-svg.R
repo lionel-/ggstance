@@ -1,5 +1,5 @@
 
-REGENERATE_FIGS <- TRUE
+REGENERATE_FIGS <- FALSE
 
 if (REGENERATE_FIGS) {
   # Update svglite version in DESCRIPTION

@@ -71,6 +71,20 @@ test_that("geom_barh() flips", {
   check_horizontal(v_facet, h_facet, "geom_barh-facet")
 })
 
+test_that("geom_histogramh() flips", {
+  v <- ggplot(mtcars, aes(drat)) + geom_histogram(bins = 10)
+  h <- ggplot(mtcars, aes(y = drat)) + geom_histogramh(bins = 10)
+  check_horizontal(v, h, "geom_histogramh")
+
+  v_fill_stack <- ggplot(mtcars, aes(drat, fill = factor(cyl))) + geom_histogram(bins = 10, position = position_stack())
+  h_fill_stack <- ggplot(mtcars, aes(y = drat, fill = factor(cyl))) + geom_histogramh(bins = 10, position = position_stack())
+  check_horizontal(v_fill_stack, h_fill_stack, "geom_histogramh-fill-stack")
+
+  v_fill_facet_nudge <- ggplot(mtcars, aes(drat, fill = factor(cyl))) + facet_wrap(~am) + geom_histogram(bins = 10, position = position_nudge())
+  h_fill_facet_nudge <- ggplot(mtcars, aes(y = drat, fill = factor(cyl))) + facet_wrap(~am) + geom_histogramh(bins = 10, position = position_nudge())
+  check_horizontal(v_fill_facet_nudge, h_fill_facet_nudge, "geom_histogramh-fill-facet-nudge")
+})
+
 test_that("geom_violinh() flips", {
   v <- ggplot(mtcars, aes(factor(cyl), mpg, fill = factor(am))) + geom_violin()
   h <- ggplot(mtcars, aes(mpg, factor(cyl), fill = factor(am))) + geom_violinh()
