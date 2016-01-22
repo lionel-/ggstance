@@ -10,10 +10,3 @@ range_df <- data.frame(
   upper = c(1.1, 5.3, 3.3, 4.2),
   lower = c(0.8, 4.6, 2.4, 3.6)
 )
-
-range_p <- ggplot(range_df, aes(resp, trt, color = group))
-
-final_aes <- function(p, col, layer = 1) {
-  p_data <- ggplot_build(p)$data
-  p_data[[layer]][[col]]
-}
