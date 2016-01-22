@@ -5,7 +5,7 @@ get_layer <- function() {
 
 Layer <- get_layer()
 
-Layerh <- ggproto("Layerh", get_layer(),
+Layerh <- ggproto("Layerh", Layer,
   # Roundtrip data so that positions and scales can be trained
   # properly.
   compute_aesthetics = flip_method_outer(Layer$compute_aesthetics,
@@ -56,6 +56,14 @@ flip_ggproto.Geom <- function(gg) {
   ggflipped(gg,
     # handle_na() is called at print time after the data is flipped
     # back to normal, and thus needs temporarily flipped data
-    handle_na = flip_method_outer(gg$handle_na, roundtrip = "data")
+    handle_na = flip_method_outer(gg$handle_na, roundtrip = "data"),
+    default_aes = flip_aes(gg$default_aes)
+  )
+}
+
+#' @export
+flip_ggproto.Stat <- function(gg) {
+  ggflipped(gg,
+    default_aes = flip_aes(gg$default_aes)
   )
 }
