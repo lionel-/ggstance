@@ -1,6 +1,5 @@
-#' @include legend-draw.R
-NULL
 
+#' @rdname geom_linerangeh
 #' @export
 geom_pointrangeh <- function(mapping = NULL, data = NULL,
                              stat = "identity", position = "identity",
@@ -10,7 +9,7 @@ geom_pointrangeh <- function(mapping = NULL, data = NULL,
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomPointrangeh,
+    geom = GeomPointrange,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -18,6 +17,7 @@ geom_pointrangeh <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @export
 flip_ggproto.GeomPointrange <- function(gg) {
   gg <- NextMethod()
 
@@ -27,6 +27,3 @@ flip_ggproto.GeomPointrange <- function(gg) {
     draw_panel = flip_method_inner(gg$draw_panel)
   )
 }
-
-#' @export
-GeomPointrangeh <- flip_ggproto(GeomPointrange)

@@ -9,7 +9,7 @@ geom_violinh <- function(mapping = NULL, data = NULL,
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomViolinh,
+    geom = GeomViolin,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -23,6 +23,7 @@ geom_violinh <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @export
 flip_ggproto.GeomViolin <- function(gg) {
   gg <- NextMethod()
 
@@ -30,6 +31,3 @@ flip_ggproto.GeomViolin <- function(gg) {
     draw_group = flip_method_inner(GeomViolin$draw_group)
   )
 }
-
-#' @export
-GeomViolinh <- flip_ggproto(GeomViolin)

@@ -1,5 +1,3 @@
-#' @include layerh.R
-NULL
 
 #' @export
 geom_boxploth <- function(mapping = NULL, data = NULL,
@@ -13,7 +11,7 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomBoxploth,
+    geom = GeomBoxplot,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -31,14 +29,11 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @export
 flip_ggproto.GeomBoxplot <- function(gg) {
   gg <- NextMethod()
 
   ggmutate(gg,
-    draw_group = flip_method_inner(GeomBoxplot$draw_group),
-    handle_na = flip_method_outer(gg$handle_na, roundtrip = "data")
+    draw_group = flip_method_inner(GeomBoxplot$draw_group)
   )
 }
-
-#' @export
-GeomBoxploth <- flip_ggproto(GeomBoxplot)

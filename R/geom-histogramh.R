@@ -1,5 +1,3 @@
-#' @include utils.R
-NULL
 
 #' @export
 geom_histogramh <- function(mapping = NULL, data = NULL, stat = "bin",

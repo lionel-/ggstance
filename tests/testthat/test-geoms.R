@@ -37,6 +37,12 @@ test_that("geom_pointangeh() flips", {
   h_facet <- ggplot(range_df, aes(resp, trt)) + facet_wrap(~group) +
     geom_pointrangeh(aes(xmin = lower, xmax = upper))
   check_horizontal(v_facet, h_facet, "geom_pointrangeh-facet")
+
+  v_dodge <- range_p_orig + geom_pointrange(aes(ymin = lower, ymax = upper),
+    position = position_dodge(0.3))
+  h_dodge <- range_p + geom_pointrangeh(aes(xmin = lower, xmax = upper),
+    position = position_dodge(0.3))
+  check_horizontal(v_dodge, h_dodge, "geom_pointrangeh-dodge")
 })
 
 test_that("geom_crossbarh() flips", {

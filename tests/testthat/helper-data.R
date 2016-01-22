@@ -1,7 +1,6 @@
 
 import::from("magrittr", `%>%`)
-import::from("ggplot2", ggplot, aes, ggplot_build)
-import::from("ggplot2", geom_linerange)
+library("ggplot2")
 
 range_df <- data.frame(
   trt = factor(c(1, 1, 2, 2)),

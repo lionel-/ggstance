@@ -1,6 +1,10 @@
-#' @include legend-draw.R
-NULL
-
+#' Horizontal intervals: lines, crossbars & errorbars.
+#'
+#' Horizontal versions of \code{\link[ggplot2]{geom_linerange}()},
+#' \code{\link[ggplot2]{geom_pointrange}()},
+#' \code{\link[ggplot2]{geom_errorbar}()} and
+#' \code{\link[ggplot2]{geom_crossbar}()}.
+#' @inheritParams ggplot2::geom_linerange
 #' @export
 geom_linerangeh <- function(mapping = NULL, data = NULL,
                             stat = "identity", position = "identity",
@@ -10,7 +14,7 @@ geom_linerangeh <- function(mapping = NULL, data = NULL,
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomLinerangeh,
+    geom = GeomLinerange,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -18,6 +22,7 @@ geom_linerangeh <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @export
 flip_ggproto.GeomLinerange <- function(gg) {
   gg <- NextMethod()
 
@@ -27,6 +32,3 @@ flip_ggproto.GeomLinerange <- function(gg) {
     draw_panel = flip_method_inner(GeomLinerange$draw_panel)
   )
 }
-
-#' @export
-GeomLinerangeh <- flip_ggproto(GeomLinerange)

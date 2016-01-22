@@ -87,8 +87,8 @@ match_args <- function(dots, f) {
 
 lang_lookup <- map(flip_lookup, as.name)
 lang_lookup <- splice(lang_lookup,
-  GeomCrossbar = quote(GeomCrossbarh),
-  GeomLinerange = quote(GeomLinerangeh)
+  GeomCrossbar = quote(gghorizon::flip_ggproto(GeomCrossbar)),
+  GeomLinerange = quote(gghorizon::flip_ggproto(GeomLinerange))
 )
 
 flip_method_inner <- function(method, roundtrip = NULL) {
@@ -124,10 +124,10 @@ flip_lang <- function(lang, calls) {
 
   if (is.character(lang)) {
     # Flip strings
-    walk2(c("x", "y", "ç"), c("ç", "x", "y"), function(candidate, replacement) {
+    walk2(c("x", "y", "_x_"), c("_x_", "x", "y"), function(candidate, replacement) {
       pattern <- paste0("\\b(", candidate, ")(min|max|end)?\\b")
       replacement <- paste0(replacement, "\\2")
-      lang <<- stringr::str_replace_all(lang, pattern, replacement)
+      lang <<- gsub(pattern, replacement, lang)
     })
     return(lang)
   }

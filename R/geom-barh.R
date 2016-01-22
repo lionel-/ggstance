@@ -1,5 +1,3 @@
-#' @include utils.R
-NULL
 
 #' @export
 geom_barh <- function(mapping = NULL, data = NULL, stat = "count",

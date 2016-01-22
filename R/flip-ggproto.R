@@ -1,3 +1,5 @@
+#' @include utils.R
+NULL
 
 ggflipped <- function(gg, ...) {
   new_class <- paste0(class(gg)[[1]], "h")
@@ -13,8 +15,10 @@ ggclone <- function(.class, .gg, .super, ...) {
   structure(clone, class = c(.class, class(.super)))
 }
 
+#' @export
 flip_ggproto <- function(gg) {
   UseMethod("flip_ggproto")
 }
 
-flip_ggproto.default <- identity
+#' @export
+flip_ggproto.default <- function(gg) gg
