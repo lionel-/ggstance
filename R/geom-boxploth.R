@@ -1,4 +1,8 @@
-
+#' Horizontal box and whiskers plot.
+#'
+#' Horizontal version of \code{\link[ggplot2]{geom_boxplot}()}.
+#' @inheritParams ggplot2::geom_boxplot
+#' @inheritParams ggplot2::geom_point
 #' @export
 geom_boxploth <- function(mapping = NULL, data = NULL,
                           stat = "boxplot", position = "dodge",

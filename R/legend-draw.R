@@ -1,6 +1,13 @@
+#' Horizontal key drawing functions
+#'
+#' @inheritParams ggplot2::draw_key
+#' @return A grid grob.
+#' @name draw_key
+NULL
 
 globalVariables(c("alpha", ".pt"))
 
+#' @rdname draw_key
 #' @export
 draw_key_hpath <- function(data, params, size) {
   segmentsGrob(0.1, 0.5, 0.9, 0.5,
@@ -14,6 +21,7 @@ draw_key_hpath <- function(data, params, size) {
   )
 }
 
+#' @rdname draw_key
 #' @export
 draw_key_pointrangeh <- function(data, params, size) {
   grobTree(
@@ -22,6 +30,7 @@ draw_key_pointrangeh <- function(data, params, size) {
   )
 }
 
+#' @rdname draw_key
 #' @export
 draw_key_crossbarh <- function(data, params, size) {
   grobTree(

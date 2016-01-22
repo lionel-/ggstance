@@ -15,6 +15,10 @@ ggclone <- function(.class, .gg, .super, ...) {
   structure(clone, class = c(.class, class(.super)))
 }
 
+#' Flip a ggproto object
+#'
+#' S3 generic for flipping a ggproto object to horizontal orientation.
+#' @param gg A ggproto object.
 #' @export
 flip_ggproto <- function(gg) {
   UseMethod("flip_ggproto")

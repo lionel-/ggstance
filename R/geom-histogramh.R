@@ -1,4 +1,8 @@
-
+#' Horizontal histograms and frequency polygons.
+#'
+#' Horizontal version of \code{\link[ggplot2]{geom_histogram}()}.
+#' @inheritParams ggplot2::geom_histogram
+#' @inheritParams ggplot2::geom_point
 #' @export
 geom_histogramh <- function(mapping = NULL, data = NULL, stat = "bin",
                             binwidth = NULL, bins = NULL,
