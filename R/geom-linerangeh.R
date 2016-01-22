@@ -19,7 +19,9 @@ geom_linerangeh <- function(mapping = NULL, data = NULL,
 }
 
 flip_ggproto.GeomLinerange <- function(gg) {
-  ggproto("GeomLinerangeh", GeomLinerange,
+  gg <- NextMethod()
+
+  ggmutate(gg,
     draw_key = draw_key_hpath,
 
     draw_panel = flip_method_inner(GeomLinerange$draw_panel)

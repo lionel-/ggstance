@@ -1,3 +1,5 @@
+#' @include layerh.R
+NULL
 
 #' @export
 geom_boxploth <- function(mapping = NULL, data = NULL,
@@ -30,8 +32,11 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
 }
 
 flip_ggproto.GeomBoxplot <- function(gg) {
-  ggproto("GeomBoxploth", GeomBoxplot,
-    draw_group = flip_method_inner(GeomBoxplot$draw_group)
+  gg <- NextMethod()
+
+  ggmutate(gg,
+    draw_group = flip_method_inner(GeomBoxplot$draw_group),
+    handle_na = flip_method_outer(gg$handle_na, roundtrip = "data")
   )
 }
 

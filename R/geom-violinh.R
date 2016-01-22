@@ -24,7 +24,9 @@ geom_violinh <- function(mapping = NULL, data = NULL,
 }
 
 flip_ggproto.GeomViolin <- function(gg) {
-  ggproto("GeomViolinh", GeomViolin,
+  gg <- NextMethod()
+
+  ggmutate(gg,
     draw_group = flip_method_inner(GeomViolin$draw_group)
   )
 }

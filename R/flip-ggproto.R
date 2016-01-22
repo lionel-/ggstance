@@ -1,13 +1,7 @@
 
 ggflipped <- function(gg, ...) {
   new_class <- paste0(class(gg)[[1]], "h")
-  parent_class <- paste0(class(gg$super)[[1]], "h")
-  if (exists(parent_class)) {
-    parent <- get(parent_class)
-  } else {
-    parent <- gg$super
-  }
-  ggclone(new_class, gg, parent, ...)
+  ggclone(new_class, gg, gg, ...)
 }
 
 ggclone <- function(.class, .gg, .super, ...) {

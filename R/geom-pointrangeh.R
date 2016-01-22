@@ -10,7 +10,7 @@ geom_pointrangeh <- function(mapping = NULL, data = NULL,
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomPointrange,
+    geom = GeomPointrangeh,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -19,20 +19,12 @@ geom_pointrangeh <- function(mapping = NULL, data = NULL,
 }
 
 flip_ggproto.GeomPointrange <- function(gg) {
-  ggproto("GeomPointrangeh", GeomPointrange,
+  gg <- NextMethod()
+
+  ggmutate(gg,
     draw_key = draw_key_pointrangeh,
 
-    draw_panel = function(data, panel_scales, coord, fatten = 4) {
-      if (is.null(data$x))
-        return(GeomLinerangeh$draw_panel(data, panel_scales, coord))
-
-      ggname("geom_pointrangeh",
-        gTree(children = gList(
-          GeomLinerangeh$draw_panel(data, panel_scales, coord),
-          GeomPoint$draw_panel(transform(data, size = size * fatten), panel_scales, coord)
-        ))
-      )
-    }
+    draw_panel = flip_method_inner(gg$draw_panel)
   )
 }
 

@@ -19,7 +19,9 @@ geom_crossbarh <- function(mapping = NULL, data = NULL,
 }
 
 flip_ggproto.GeomCrossbar <- function(gg) {
-  ggproto("GeomCrossbarh", GeomCrossbar,
+  gg <- NextMethod()
+
+  ggmutate(gg,
     draw_key = draw_key_crossbarh,
 
     draw_panel = flip_method_inner(GeomCrossbar$draw_panel)

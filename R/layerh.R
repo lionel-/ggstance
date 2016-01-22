@@ -51,3 +51,9 @@ flip_ggproto.Stat <- function(gg) {
     default_aes = flip_aes(gg$default_aes)
   )
 }
+
+flip_ggproto.Geom <- function(gg) {
+  ggflipped(gg,
+    required_aes = flip_aes(gg$required_aes)
+  )
+}
