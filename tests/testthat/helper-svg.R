@@ -24,8 +24,13 @@ save_fig <- function(p, fig_name) {
   } else {
     actual_file <- tempfile(fig_name)
     expected_file <- paste0("../figs/", fig_name)
-    save_svg(p, fig_name, actual_file)
-    check_fig(actual_file, expected_file)
+    if (!file.exists(expected_file)) {
+      save_svg(p, fig_name)
+      cat("\nGenerating ", fig_name, "\n")
+    } else {
+      save_svg(p, fig_name, actual_file)
+      check_fig(actual_file, expected_file)
+    }
   }
 }
 
