@@ -142,25 +142,25 @@
 <rect x='649.23' y='230.25' width='56.78' height='89.82' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
 <text x='653.48' y='242.38' style='font-size: 11.00pt; font-family: Arial;'>factor(cyl)</text>
 <rect x='653.48' y='246.70' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #F2F2F2;' />
-<polyline points='662.12,262.25 662.12,259.66 ' style='stroke-width: 1.07; stroke: #333333;' />
-<polyline points='662.12,251.02 662.12,248.42 ' style='stroke-width: 1.07; stroke: #333333;' />
-<rect x='655.64' y='251.02' width='12.96' height='8.64' style='stroke-width: 1.07; stroke: #333333; fill: #F8766D;' />
-<polyline points='655.64,255.34 668.60,255.34 ' style='stroke-width: 1.07; stroke: #333333;' />
+<polyline points='655.21,255.34 657.80,255.34 ' style='stroke-width: 1.07; stroke: #333333;' />
+<polyline points='666.44,255.34 669.04,255.34 ' style='stroke-width: 1.07; stroke: #333333;' />
+<rect x='657.80' y='248.86' width='8.64' height='12.96' style='stroke-width: 1.07; stroke: #333333; fill: #F8766D;' />
+<polyline points='662.12,261.82 662.12,248.86 ' style='stroke-width: 1.07; stroke: #333333;' />
 <rect x='653.48' y='263.98' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #F2F2F2;' />
-<polyline points='662.12,279.53 662.12,276.94 ' style='stroke-width: 1.07; stroke: #333333;' />
-<polyline points='662.12,268.30 662.12,265.70 ' style='stroke-width: 1.07; stroke: #333333;' />
-<rect x='655.64' y='268.30' width='12.96' height='8.64' style='stroke-width: 1.07; stroke: #333333; fill: #7CAE00;' />
-<polyline points='655.64,272.62 668.60,272.62 ' style='stroke-width: 1.07; stroke: #333333;' />
+<polyline points='655.21,272.62 657.80,272.62 ' style='stroke-width: 1.07; stroke: #333333;' />
+<polyline points='666.44,272.62 669.04,272.62 ' style='stroke-width: 1.07; stroke: #333333;' />
+<rect x='657.80' y='266.14' width='8.64' height='12.96' style='stroke-width: 1.07; stroke: #333333; fill: #7CAE00;' />
+<polyline points='662.12,279.10 662.12,266.14 ' style='stroke-width: 1.07; stroke: #333333;' />
 <rect x='653.48' y='281.26' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #F2F2F2;' />
-<polyline points='662.12,296.81 662.12,294.22 ' style='stroke-width: 1.07; stroke: #333333;' />
-<polyline points='662.12,285.58 662.12,282.98 ' style='stroke-width: 1.07; stroke: #333333;' />
-<rect x='655.64' y='285.58' width='12.96' height='8.64' style='stroke-width: 1.07; stroke: #333333; fill: #00BFC4;' />
-<polyline points='655.64,289.90 668.60,289.90 ' style='stroke-width: 1.07; stroke: #333333;' />
+<polyline points='655.21,289.90 657.80,289.90 ' style='stroke-width: 1.07; stroke: #333333;' />
+<polyline points='666.44,289.90 669.04,289.90 ' style='stroke-width: 1.07; stroke: #333333;' />
+<rect x='657.80' y='283.42' width='8.64' height='12.96' style='stroke-width: 1.07; stroke: #333333; fill: #00BFC4;' />
+<polyline points='662.12,296.38 662.12,283.42 ' style='stroke-width: 1.07; stroke: #333333;' />
 <rect x='653.48' y='298.54' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #F2F2F2;' />
-<polyline points='662.12,314.09 662.12,311.50 ' style='stroke-width: 1.07; stroke: #333333;' />
-<polyline points='662.12,302.86 662.12,300.26 ' style='stroke-width: 1.07; stroke: #333333;' />
-<rect x='655.64' y='302.86' width='12.96' height='8.64' style='stroke-width: 1.07; stroke: #333333; fill: #C77CFF;' />
-<polyline points='655.64,307.18 668.60,307.18 ' style='stroke-width: 1.07; stroke: #333333;' />
+<polyline points='655.21,307.18 657.80,307.18 ' style='stroke-width: 1.07; stroke: #333333;' />
+<polyline points='666.44,307.18 669.04,307.18 ' style='stroke-width: 1.07; stroke: #333333;' />
+<rect x='657.80' y='300.70' width='8.64' height='12.96' style='stroke-width: 1.07; stroke: #333333; fill: #C77CFF;' />
+<polyline points='662.12,313.66 662.12,300.70 ' style='stroke-width: 1.07; stroke: #333333;' />
 <text x='672.92' y='258.49' style='font-size: 8.80pt; font-family: Arial;'>4</text>
 <text x='672.92' y='275.77' style='font-size: 8.80pt; font-family: Arial;'>5</text>
 <text x='672.92' y='293.05' style='font-size: 8.80pt; font-family: Arial;'>6</text>
