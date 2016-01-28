@@ -1,5 +1,5 @@
 .libPaths()
 library("testthat")
-library("gghorizon")
+library("ggstance")
 
-test_check("gghorizon")
+test_check("ggstance")

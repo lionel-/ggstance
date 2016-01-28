@@ -87,8 +87,8 @@ match_args <- function(dots, f) {
 
 lang_lookup <- map(flip_lookup, as.name)
 lang_lookup <- splice(lang_lookup,
-  GeomCrossbar = quote(gghorizon::flip_ggproto(GeomCrossbar)),
-  GeomLinerange = quote(gghorizon::flip_ggproto(GeomLinerange))
+  GeomCrossbar = quote(ggstance::flip_ggproto(GeomCrossbar)),
+  GeomLinerange = quote(ggstance::flip_ggproto(GeomLinerange))
 )
 
 flip_method_inner <- function(method, roundtrip = NULL) {

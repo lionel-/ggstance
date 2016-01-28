@@ -1,8 +1,8 @@
-Package: gghorizon
+Package: ggstance
 Title: Horizontal ggplot
 Version: 0.0.0.9000
 Authors@R: person("Lionel", "Henry", email = "lionel.hry@gmail.com", role = c("aut", "cre"))
-Description: Horizontal versions of ggplot2 Geoms and Positions.
+Description: Horizontal layers for ggplot2.
 Depends:
     R (>= 3.2.2)
 Imports:
@@ -32,7 +32,7 @@ Collate:
     'geom-linerangeh.R'
     'geom-pointrangeh.R'
     'geom-violinh.R'
-    'gghorizon.R'
+    'ggstance.R'
     'layerh.R'
     'legend-draw.R'
     'scales.R'
