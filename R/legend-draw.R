@@ -44,3 +44,20 @@ draw_key_crossbarh <- function(data, params, size) {
     )
   )
 }
+
+#' @rdname draw_key
+#' @export
+draw_key_boxploth <- function(data, params, size) {
+  grobTree(
+    linesGrob(c(0.1, 0.25), 0.5),
+    linesGrob(c(0.75, 0.9), 0.5),
+    rectGrob(height = 0.75, width = 0.5),
+    linesGrob(0.5, c(0.125, 0.875)),
+    gp = gpar(
+      col = data$colour,
+      fill = alpha(data$fill, data$alpha),
+      lwd = data$size * .pt,
+      lty = data$linetype
+    )
+  )
+}

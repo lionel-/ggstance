@@ -38,6 +38,7 @@ flip_ggproto.GeomBoxplot <- function(gg) {
   gg <- NextMethod()
 
   ggmutate(gg,
+    draw_key = draw_key_boxploth,
     draw_group = flip_method_inner(GeomBoxplot$draw_group)
   )
 }

@@ -2,6 +2,7 @@
 % Please edit documentation in R/legend-draw.R
 \name{draw_key}
 \alias{draw_key}
+\alias{draw_key_boxploth}
 \alias{draw_key_crossbarh}
 \alias{draw_key_hpath}
 \alias{draw_key_pointrangeh}
@@ -12,6 +13,8 @@ draw_key_hpath(data, params, size)
 draw_key_pointrangeh(data, params, size)
 
 draw_key_crossbarh(data, params, size)
+
+draw_key_boxploth(data, params, size)
 }
 \arguments{
 \item{data}{A single row data frame containing the scaled aesthetics to
