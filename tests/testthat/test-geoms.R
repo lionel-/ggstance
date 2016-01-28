@@ -108,3 +108,10 @@ test_that("geom_boxploth() flips", {
   h_facet_fill <- ggplot(mpg, aes(hwy, class, fill = factor(cyl))) + facet_wrap(~model) + geom_boxploth()
   check_horizontal(v_facet_fill, h_facet_fill, "geom_boxploth-facet-fill")
 })
+
+test_that("facet_grid() with free scales flips", {
+  v <- ggplot(mtcars, aes(factor(cyl), disp)) + geom_boxplot() + facet_grid(am ~ ., scales = "free")
+  h <- ggplot(mtcars, aes(disp, factor(cyl))) + geom_boxploth() + facet_grid(. ~ am, scales = "free")
+
+  check_horizontal(v, h, "facet_grid-free-scales")
+})
