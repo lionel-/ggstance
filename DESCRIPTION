@@ -3,13 +3,13 @@ Title: Horizontal ggplot
 Version: 0.0.0.9000
 Authors@R: person("Lionel", "Henry", email = "lionel.hry@gmail.com", role = c("aut", "cre"))
 Description: Horizontal versions of ggplot2 Geoms and Positions.
-Depends: 
+Depends:
     R (>= 3.2.2)
-Imports: 
+Imports:
     ggplot2 (>= 2.0),
     purrr (>= 0.2),
     lazyeval
-Suggests: 
+Suggests:
     magrittr,
     import,
     svglite,
@@ -19,7 +19,7 @@ LazyData: true
 RoxygenNote: 5.0.1
 svgliteNote: 1.0.0
 ggplot2Note: 2.0.0
-Collate: 
+Collate:
     'flip-aes.R'
     'utils.R'
     'flip-ggproto.R'
@@ -27,6 +27,7 @@ Collate:
     'geom-barh.R'
     'geom-boxploth.R'
     'geom-crossbarh.R'
+    'geom-errorbarh.R'
     'geom-histogramh.R'
     'geom-linerangeh.R'
     'geom-pointrangeh.R'

@@ -4,5 +4,5 @@
 #'   linesGrob
 #' @importFrom ggplot2 layer position_dodge draw_key_point Stat Geom
 #'   StatBin GeomBar GeomLinerange GeomPointrange GeomErrorbar
-#'   GeomErrorbarh GeomCrossbar GeomBoxplot GeomViolin ggproto
+#'   GeomCrossbar GeomBoxplot GeomViolin ggproto
 NULL

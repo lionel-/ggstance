@@ -30,6 +30,7 @@ The supported Geoms are:
 - `geom_histogramh()`
 - `geom_linerangeh()`
 - `geom_pointrangeh()`
+- `geom_errorbarh()`
 - `geom_crossbarh()`
 - `geom_boxploth()`
 - `geom_violinh()`
