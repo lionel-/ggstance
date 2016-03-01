@@ -9,8 +9,10 @@
 #' @export
 geom_linerangeh <- function(mapping = NULL, data = NULL,
                             stat = "identity", position = "identity",
-                            na.rm = FALSE, show.legend = NA,
-                            inherit.aes = TRUE, ...) {
+                            ...,
+                            na.rm = FALSE,
+                            show.legend = NA,
+                            inherit.aes = TRUE) {
   layerh(
     data = data,
     mapping = mapping,
@@ -19,7 +21,10 @@ geom_linerangeh <- function(mapping = NULL, data = NULL,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
-    params = list(na.rm = na.rm, ...)
+    params = list(
+      na.rm = na.rm,
+      ...
+    )
   )
 }
 

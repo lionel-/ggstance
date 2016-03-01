@@ -5,59 +5,8 @@
 \title{Horizontal histograms and frequency polygons.}
 \usage{
 geom_histogramh(mapping = NULL, data = NULL, stat = "bin",
-  binwidth = NULL, bins = NULL, origin = NULL, right = FALSE,
-  position = "stack", na.rm = FALSE, show.legend = NA,
-  inherit.aes = TRUE, ...)
-}
-\arguments{
-\item{mapping}{Set of aesthetic mappings created by \code{\link{aes}} or
-\code{\link{aes_}}. If specified and \code{inherit.aes = TRUE} (the
-default), is combined with the default mapping at the top level of the
-plot. You only need to supply \code{mapping} if there isn't a mapping
-defined for the plot.}
-
-\item{data}{A data frame. If specified, overrides the default data frame
-defined at the top level of the plot.}
-
-\item{stat}{Use to override the default connection between
-\code{geom_histogram}/\code{geom_freqpoly} and \code{stat_bin}.}
-
-\item{binwidth}{Bin width to use. Defaults to 1/\code{bins} of the range of
-the data}
-
-\item{bins}{Number of bins. Overridden by \code{binwidth} or \code{breaks}.
-Defaults to 30}
-
-\item{origin}{Origin of first bin}
-
-\item{right}{If \code{TRUE}, right-closed, left-open, if \code{FALSE},
-the default, right-open, left-closed.}
-
-\item{position}{Position adjustment, either as a string, or the result of
-a call to a position adjustment function.}
-
-\item{na.rm}{If \code{FALSE} (the default), removes missing values with
-a warning.  If \code{TRUE} silently removes missing values.}
-
-\item{show.legend}{logical. Should this layer be included in the legends?
-\code{NA}, the default, includes if any aesthetics are mapped.
-\code{FALSE} never includes, and \code{TRUE} always includes.}
-
-\item{inherit.aes}{If \code{FALSE}, overrides the default aesthetics,
-rather than combining with them. This is most useful for helper functions
-that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. \code{\link{borders}}.}
-
-\item{...}{other arguments passed on to \code{\link{layer}}. There are
-  three types of arguments you can use here:
-
-  \itemize{
-  \item Aesthetics: to set an aesthetic to a fixed value, like
-     \code{color = "red"} or \code{size = 3}.
-  \item Other arguments to the layer, for example you override the
-    default \code{stat} associated with the layer.
-  \item Other arguments passed on to the stat.
-  }}
+  position = "stack", ..., binwidth = NULL, bins = NULL, na.rm = FALSE,
+  show.legend = NA, inherit.aes = TRUE)
 }
 \description{
 Horizontal version of \code{\link[ggplot2]{geom_histogram}()}.

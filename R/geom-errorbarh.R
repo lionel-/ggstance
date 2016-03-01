@@ -3,8 +3,10 @@
 #' @export
 geom_errorbarh <- function(mapping = NULL, data = NULL,
                            stat = "identity", position = "identity",
-                           na.rm = FALSE, show.legend = NA,
-                           inherit.aes = TRUE, ...) {
+                           ...,
+                           na.rm = FALSE,
+                           show.legend = NA,
+                           inherit.aes = TRUE) {
   layerh(
     data = data,
     mapping = mapping,

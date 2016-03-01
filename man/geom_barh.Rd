@@ -5,53 +5,8 @@
 \title{Bars, rectangles with bases on y-axis}
 \usage{
 geom_barh(mapping = NULL, data = NULL, stat = "count",
-  position = "stack", width = NULL, binwidth = NULL, ..., na.rm = FALSE,
+  position = "stack", ..., width = NULL, binwidth = NULL, na.rm = FALSE,
   show.legend = NA, inherit.aes = TRUE)
-}
-\arguments{
-\item{mapping}{Set of aesthetic mappings created by \code{\link{aes}} or
-\code{\link{aes_}}. If specified and \code{inherit.aes = TRUE} (the
-default), is combined with the default mapping at the top level of the
-plot. You only need to supply \code{mapping} if there isn't a mapping
-defined for the plot.}
-
-\item{data}{A data frame. If specified, overrides the default data frame
-defined at the top level of the plot.}
-
-\item{stat}{Override the default connection between \code{geom_bar} and
-\code{stat_count}.}
-
-\item{position}{Position adjustment, either as a string, or the result of
-a call to a position adjustment function.}
-
-\item{width}{Bar width. By default, set to 90\% of the resolution of the data.}
-
-\item{binwidth}{\code{geom_bar} no longer has a binwidth argument - if
-you use it you'll get an warning telling to you use
-\code{\link{geom_histogram}} instead.}
-
-\item{...}{other arguments passed on to \code{\link{layer}}. There are
-  three types of arguments you can use here:
-
-  \itemize{
-  \item Aesthetics: to set an aesthetic to a fixed value, like
-     \code{color = "red"} or \code{size = 3}.
-  \item Other arguments to the layer, for example you override the
-    default \code{stat} associated with the layer.
-  \item Other arguments passed on to the stat.
-  }}
-
-\item{na.rm}{If \code{FALSE} (the default), removes missing values with
-a warning.  If \code{TRUE} silently removes missing values.}
-
-\item{show.legend}{logical. Should this layer be included in the legends?
-\code{NA}, the default, includes if any aesthetics are mapped.
-\code{FALSE} never includes, and \code{TRUE} always includes.}
-
-\item{inherit.aes}{If \code{FALSE}, overrides the default aesthetics,
-rather than combining with them. This is most useful for helper functions
-that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. \code{\link{borders}}.}
 }
 \description{
 Horizontal version of \code{\link[ggplot2]{geom_bar}()}.

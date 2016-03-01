@@ -4,10 +4,14 @@
 #' @inheritParams ggplot2::geom_bar
 #' @inheritParams ggplot2::geom_point
 #' @export
-geom_barh <- function(mapping = NULL, data = NULL, stat = "count",
-                      position = "stack", width = NULL,
-                      binwidth = NULL, ..., na.rm = FALSE,
-                      show.legend = NA, inherit.aes = TRUE) {
+geom_barh <- function(mapping = NULL, data = NULL,
+                      stat = "count", position = "stack",
+                      ...,
+                      width = NULL,
+                      binwidth = NULL,
+                      na.rm = FALSE,
+                      show.legend = NA,
+                      inherit.aes = TRUE) {
   layerh(
     data = data,
     mapping = mapping,

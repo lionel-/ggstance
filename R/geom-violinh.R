@@ -5,10 +5,14 @@
 #' @inheritParams ggplot2::geom_point
 #' @export
 geom_violinh <- function(mapping = NULL, data = NULL,
-                         stat = "ydensity", draw_quantiles = NULL,
-                         position = "dodge", trim = TRUE,
-                         scale = "area", na.rm = FALSE,
-                         show.legend = NA, inherit.aes = TRUE, ...) {
+                         stat = "ydensity", position = "dodge",
+                         ...,
+                         draw_quantiles = NULL,
+                         trim = TRUE,
+                         scale = "area",
+                         na.rm = FALSE,
+                         show.legend = NA,
+                         inherit.aes = TRUE) {
   layerh(
     data = data,
     mapping = mapping,

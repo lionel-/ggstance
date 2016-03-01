@@ -4,11 +4,14 @@
 #' @inheritParams ggplot2::geom_histogram
 #' @inheritParams ggplot2::geom_point
 #' @export
-geom_histogramh <- function(mapping = NULL, data = NULL, stat = "bin",
-                            binwidth = NULL, bins = NULL,
-                            origin = NULL, right = FALSE,
-                            position = "stack", na.rm = FALSE,
-                            show.legend = NA, inherit.aes = TRUE, ...) {
+geom_histogramh <- function(mapping = NULL, data = NULL,
+                            stat = "bin", position = "stack",
+                            ...,
+                            binwidth = NULL,
+                            bins = NULL,
+                            na.rm = FALSE,
+                            show.legend = NA,
+                            inherit.aes = TRUE) {
   layerh(
     data = data,
     mapping = mapping,
@@ -20,9 +23,8 @@ geom_histogramh <- function(mapping = NULL, data = NULL, stat = "bin",
     params = list(
       binwidth = binwidth,
       bins = bins,
-      origin = origin,
-      right = right,
       na.rm = na.rm,
+      pad = FALSE,
       ...
     )
   )

@@ -3,8 +3,11 @@
 #' @export
 geom_pointrangeh <- function(mapping = NULL, data = NULL,
                              stat = "identity", position = "identity",
-                             na.rm = FALSE, show.legend = NA,
-                             inherit.aes = TRUE, ...) {
+                             ...,
+                             fatten = 4,
+                             na.rm = FALSE,
+                             show.legend = NA,
+                             inherit.aes = TRUE) {
   layerh(
     data = data,
     mapping = mapping,
@@ -13,7 +16,11 @@ geom_pointrangeh <- function(mapping = NULL, data = NULL,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
-    params = list(na.rm = na.rm, ...)
+    params = list(
+      fatten = fatten,
+      na.rm = na.rm,
+      ...
+    )
   )
 }
 

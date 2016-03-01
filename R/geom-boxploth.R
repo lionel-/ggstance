@@ -6,11 +6,18 @@
 #' @export
 geom_boxploth <- function(mapping = NULL, data = NULL,
                           stat = "boxplot", position = "dodge",
-                          outlier.colour = NULL, outlier.shape = 19,
-                          outlier.size = 1.5, outlier.stroke = 0.5,
-                          notch = FALSE, notchwidth = 0.5,
-                          varwidth = FALSE, na.rm = FALSE,
-                          show.legend = NA, inherit.aes = TRUE, ...) {
+                          ...,
+                          outlier.colour = NULL,
+                          outlier.color = NULL,
+                          outlier.shape = 19,
+                          outlier.size = 1.5,
+                          outlier.stroke = 0.5,
+                          notch = FALSE,
+                          notchwidth = 0.5,
+                          varwidth = FALSE,
+                          na.rm = FALSE,
+                          show.legend = NA,
+                          inherit.aes = TRUE) {
   layerh(
     data = data,
     mapping = mapping,
