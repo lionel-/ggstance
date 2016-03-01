@@ -6,25 +6,21 @@ get_layer <- function() {
 Layer <- get_layer()
 
 Layerh <- ggproto("Layerh", Layer,
-  # Roundtrip data so that positions and scales can be trained
-  # properly.
-  compute_aesthetics = flip_method_outer(Layer$compute_aesthetics,
-    what = c("mapping", "plot_scales"),
-    roundtrip = c("data", "mapping", "plot_scales")
-  ),
-
-  # Scales and positions are trained, flip the data back to
-  # horizontal. Panel object containing scales has now been
-  # created, flip it horizontally.
+  # Scales and positions are trained, flip the data as if the layer
+  # was vertical. Panel object containing scales has now been created,
+  # flip it vertically as well.
   compute_statistic = flip_method_outer(Layer$compute_statistic,
     what = c("data", "scales")),
 
+  # Temporary flip data back to vertical since map_statistic() relies
+  # on vertical mapping specifications.
   map_statistic = flip_method_outer(Layer$map_statistic,
-    what = "mapping", roundtrip = "mapping"),
+    what = "data", roundtrip = "data"),
 
-  # Final method, flip everything back
+  # Flip everything back to horizontal stance before retraining /
+  # remapping of positions
   compute_position = flip_method_outer(Layer$compute_position,
-    what = "", roundtrip = "data"
+    what = "", roundtrip = c("data", "scales")
   )
 )
 
@@ -50,6 +46,11 @@ flip_ggproto.LayerInstance <- function(gg) {
     geom = flip_ggproto(gg$geom)
   )
 }
+
+# `default_aes` needs to be flipped because it's used in
+# compute_aesthetics(). At that point, we haven't flipped the data
+# yet. On the other hand, `required_aes` is used in the Stat
+# compute_layer() method, where the data has been flipped.
 
 #' @export
 flip_ggproto.Geom <- function(gg) {

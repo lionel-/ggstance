@@ -115,3 +115,17 @@ test_that("facet_grid() with free scales flips", {
 
   check_horizontal(v, h, "facet_grid-free-scales")
 })
+
+test_that("scale information is preserved", {
+  v <- range_p_orig +
+    geom_pointrange(aes(ymin = lower, ymax = upper))+
+    scale_y_continuous(breaks = c(1, 2, 3, 4, 5),
+      labels = c("1/1", "2/1", "3/1", "4/1", "5/1"))
+
+  h <- range_p +
+    geom_pointrangeh(aes(xmin = lower, xmax = upper)) +
+    scale_x_continuous(breaks = c(1, 2, 3, 4, 5),
+      labels = c("1/1", "2/1", "3/1", "4/1", "5/1"))
+
+  check_horizontal(v, h, "scales-info")
+})
