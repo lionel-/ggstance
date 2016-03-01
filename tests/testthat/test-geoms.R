@@ -17,7 +17,7 @@ check_horizontal <- function(original, horizontal, fig_name) {
   v_data <- lapply(v$data, sort)
   expect_identical(h_data, v_data)
 
-  save_fig(horizontal, paste0(fig_name, ".svg"))
+  check_fig(horizontal, fig_name)
 }
 
 

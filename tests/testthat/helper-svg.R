@@ -1,5 +1,6 @@
 
 REGENERATE_FIGS <- FALSE
+DIFF_ON_FAILURE <- TRUE
 
 if (REGENERATE_FIGS) {
   # Update svglite version in DESCRIPTION
@@ -10,33 +11,40 @@ if (REGENERATE_FIGS) {
   devtools:::write_dcf(desc_path, desc)
 }
 
-save_svg <- function(p, name, file = paste0("../figs/", name)) {
+save_svg <- function(p, file) {
   svglite::svglite(file)
+  on.exit(dev.off())
   print(p)
-  dev.off()
 }
 
-save_fig <- function(p, fig_name) {
-  skip_on_cran()
+check_fig <- function(p, fig_name) {
+  ## skip_on_cran()
+
+  expected_file <- normalizePath(paste0("../figs/", fig_name, ".svg"))
 
   if (REGENERATE_FIGS) {
-    save_svg(p, fig_name)
-  } else {
-    actual_file <- tempfile(fig_name)
-    expected_file <- paste0("../figs/", fig_name)
-    if (!file.exists(expected_file)) {
-      save_svg(p, fig_name)
-      cat("\nGenerating ", fig_name, "\n")
-    } else {
-      save_svg(p, fig_name, actual_file)
-      check_fig(actual_file, expected_file)
-    }
+    save_svg(p, expected_file)
+    return()
+  }
+
+  if (!file.exists(expected_file)) {
+    cat("\nGenerating ", fig_name, "\n")
+    save_svg(p, expected_file)
+    return()
+  }
+
+  testcase_file <- tempfile(fig_name, fileext = ".svg")
+  save_svg(p, testcase_file)
+
+  testcase <- readChar(testcase_file, file.info(testcase_file)$size)
+  expected <- readChar(expected_file, file.info(expected_file)$size)
+  result <- expect_equal(testcase, expected)
+
+  if (should_diff(result)) {
+    print(vdiffr::transition(expected_file, testcase_file))
   }
 }
 
-check_fig <- function(actual_file, expected_file) {
-  actual <- readChar(actual_file, file.info(actual_file)$size)
-  expected <- readChar(expected_file, file.info(expected_file)$size)
-  expect_equal(actual, expected)
+should_diff <- function(result) {
+  DIFF_ON_FAILURE && !result$passed && !result$error && !result$skipped
 }
-
