@@ -10,6 +10,92 @@ geom_boxploth(mapping = NULL, data = NULL, stat = "boxplot",
   notch = FALSE, notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE,
   show.legend = NA, inherit.aes = TRUE)
 }
+\arguments{
+\item{mapping}{Set of aesthetic mappings created by \code{\link{aes}} or
+\code{\link{aes_}}. If specified and \code{inherit.aes = TRUE} (the
+default), it is combined with the default mapping at the top level of the
+plot. You must supply \code{mapping} if there is no plot mapping.}
+
+\item{data}{The data to be displayed in this layer. There are three
+   options:
+
+   If \code{NULL}, the default, the data is inherited from the plot
+   data as specified in the call to \code{\link{ggplot}}.
+
+   A \code{data.frame}, or other object, will override the plot
+   data. All objects will be fortified to produce a data frame. See
+   \code{\link{fortify}} for which variables will be created.
+
+   A \code{function} will be called with a single argument,
+   the plot data. The return value must be a \code{data.frame.}, and
+   will be used as the layer data.}
+
+\item{stat}{Use to override the default connection between
+\code{geom_boxplot} and \code{stat_boxplot}.}
+
+\item{position}{Position adjustment, either as a string, or the result of
+a call to a position adjustment function.}
+
+\item{...}{other arguments passed on to \code{\link{layer}}. These are
+often aesthetics, used to set an aesthetic to a fixed value, like
+\code{color = "red"} or \code{size = 3}. They may also be parameters
+to the paired geom/stat.}
+
+\item{outlier.colour}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
+  aesthetics used for the box.
+
+  In the unlikely event you specify both US and UK spellings of colour, the
+  US spelling will take precedence.}
+
+\item{outlier.color}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
+  aesthetics used for the box.
+
+  In the unlikely event you specify both US and UK spellings of colour, the
+  US spelling will take precedence.}
+
+\item{outlier.shape}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
+  aesthetics used for the box.
+
+  In the unlikely event you specify both US and UK spellings of colour, the
+  US spelling will take precedence.}
+
+\item{outlier.size}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
+  aesthetics used for the box.
+
+  In the unlikely event you specify both US and UK spellings of colour, the
+  US spelling will take precedence.}
+
+\item{outlier.stroke}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
+  aesthetics used for the box.
+
+  In the unlikely event you specify both US and UK spellings of colour, the
+  US spelling will take precedence.}
+
+\item{notch}{if \code{FALSE} (default) make a standard box plot. If
+\code{TRUE}, make a notched box plot. Notches are used to compare groups;
+if the notches of two boxes do not overlap, this suggests that the medians
+are significantly different.}
+
+\item{notchwidth}{for a notched box plot, width of the notch relative to
+the body (default 0.5)}
+
+\item{varwidth}{if \code{FALSE} (default) make a standard box plot. If
+\code{TRUE}, boxes are drawn with widths proportional to the
+square-roots of the number of observations in the groups (possibly
+weighted, using the \code{weight} aesthetic).}
+
+\item{na.rm}{If \code{FALSE} (the default), removes missing values with
+a warning.  If \code{TRUE} silently removes missing values.}
+
+\item{show.legend}{logical. Should this layer be included in the legends?
+\code{NA}, the default, includes if any aesthetics are mapped.
+\code{FALSE} never includes, and \code{TRUE} always includes.}
+
+\item{inherit.aes}{If \code{FALSE}, overrides the default aesthetics,
+rather than combining with them. This is most useful for helper functions
+that define both data and aesthetics and shouldn't inherit behaviour from
+the default plot specification, e.g. \code{\link{borders}}.}
+}
 \description{
 Horizontal version of \code{\link[ggplot2]{geom_boxplot}()}.
 }

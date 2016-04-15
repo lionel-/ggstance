@@ -16,6 +16,14 @@ draw_key_crossbarh(data, params, size)
 
 draw_key_boxploth(data, params, size)
 }
+\arguments{
+\item{data}{A single row data frame containing the scaled aesthetics to
+display in this key}
+
+\item{params}{A list of additional parameters supplied to the geom.}
+
+\item{size}{Width and height of key in mm.}
+}
 \value{
 A grid grob.
 }
