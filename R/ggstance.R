@@ -6,3 +6,10 @@
 #'   StatBin GeomBar GeomLinerange GeomPointrange GeomErrorbar
 #'   GeomCrossbar GeomBoxplot GeomViolin ggproto
 NULL
+
+#' Base ggproto classes for ggstance
+#'
+#' @seealso ggplot2::ggproto
+#' @keywords internal
+#' @name ggstance-ggproto
+NULL

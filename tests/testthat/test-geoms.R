@@ -1,25 +1,6 @@
 
 context("Geoms")
 
-range_p <- ggplot(range_df, aes(resp, trt, color = group))
-range_p_orig <- ggplot(range_df, aes(trt, resp, color = group))
-
-check_horizontal <- function(original, horizontal, fig_name) {
-  sort <- function(x) x[order(names(x))]
-  flipped <- function(fun) {
-    function(x, ...) fun(flip_aes(x), ...)
-  }
-
-  h <- ggplot2::ggplot_build(original)
-  v <- ggplot2::ggplot_build(horizontal)
-
-  h_data <- lapply(h$data, flipped(sort))
-  v_data <- lapply(v$data, sort)
-  expect_identical(h_data, v_data)
-
-  vdiffr::expect_doppelganger(horizontal, fig_name)
-}
-
 
 test_that("geom_linerangeh() flips", {
   v <- range_p_orig + geom_linerange(aes(ymin = lower, ymax = upper))

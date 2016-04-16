@@ -36,4 +36,5 @@ Collate:
     'ggstance.R'
     'layerh.R'
     'legend-draw.R'
+    'positionv.R'
     'scales.R'
