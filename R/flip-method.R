@@ -3,15 +3,26 @@ make_method <- function(method, args_collector, roundtrip = NULL,
                         what = "data") {
 
   flipped_method <- function(...) {
+    on.exit(cleanup_roundtrip(dots, roundtrip))
+
     dots_names <- names(formals(sys.function()))
     dots <- set_names(map(dots_names, as.name), dots_names)
     dots <- do.call(args_collector, dots)
     res <- invoke(method, dots)
 
     if ("data" %in% roundtrip) {
-      res <- flip_aes(res)
+      flip_aes(res)
+    } else {
+      res
     }
+  }
 
+  formals(flipped_method) <- formals(method)
+  flipped_method
+}
+
+# FIXME: still a bit dirty as we temporarily change ggplot2 objects
+cleanup_roundtrip <- function(dots, roundtrip) {
     if ("plot_scales" %in% roundtrip) {
       dots$plot$scales <- dots$plot$scales_orig
       dots$plot$scales_orig <- NULL
@@ -26,11 +37,6 @@ make_method <- function(method, args_collector, roundtrip = NULL,
       dots$plot$mapping <- flip_aes(dots$plot$mapping)
     }
 
-    res
-  }
-
-  formals(flipped_method) <- formals(method)
-  flipped_method
 }
 
 get_method <- function(method) {
@@ -93,8 +99,8 @@ lang_lookup <- splice(lang_lookup,
 
 flip_method_inner <- function(method, roundtrip = NULL) {
   method <- get_method(method)
-  body <- body(method)
 
+  body <- body(method)
   body <- structure(body, class = "call") # Workaround for S3 dispatch on "{"
   body <- lazyeval::interp(body, .values = lang_lookup)
   body <- flip_lang(body, calls = c("data.frame", "transform"))
