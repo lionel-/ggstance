@@ -34,3 +34,8 @@ test_that("Symbols of function bodies are correctly flipped", {
   roundtrip <- flip_method_inner(flip_method_inner(ggplot2::GeomCrossbar$draw_panel))
   identical(get_body(roundtrip), get_body(original))
 })
+
+test_that("flipped geoms have correct `required_aes` failure messages", {
+  p <- ggplot(mtcars) + geom_linerangeh()
+  expect_error(ggplot_build(p), "y, xmin, xmax$")
+})
