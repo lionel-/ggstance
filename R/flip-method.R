@@ -8,7 +8,13 @@ make_method <- function(method, args_collector, roundtrip = NULL,
     dots_names <- names(formals(sys.function()))
     dots <- set_names(map(dots_names, as.name), dots_names)
     dots <- do.call(args_collector, dots)
-    res <- invoke(method, dots)
+
+    if ("required_aes_error" %in% what) {
+      tryCatch(res <- invoke(method, dots),
+        error = flip_required_aes_error)
+    } else {
+      res <- invoke(method, dots)
+    }
 
     if ("data" %in% roundtrip) {
       flip_aes(res)
@@ -19,6 +25,17 @@ make_method <- function(method, args_collector, roundtrip = NULL,
 
   formals(flipped_method) <- formals(method)
   flipped_method
+}
+
+flip_required_aes_error <- function(e) {
+  should_flip <- grepl(" requires the following missing aesthetics: ", e$message)
+  if (should_flip) {
+    msg <- flip_string(e$message)
+  } else {
+    msg <- e$message
+  }
+
+  stop(msg, call. = FALSE)
 }
 
 # FIXME: still a bit dirty as we temporarily change ggplot2 objects
@@ -129,14 +146,18 @@ flip_lang <- function(lang, calls) {
   }
 
   if (is.character(lang)) {
-    # Flip strings
-    walk2(c("x", "y", "_x_"), c("_x_", "x", "y"), function(candidate, replacement) {
-      pattern <- paste0("\\b(", candidate, ")(min|max|end)?\\b")
-      replacement <- paste0(replacement, "\\2")
-      lang <<- gsub(pattern, replacement, lang)
-    })
+    lang <- flip_string(lang)
     return(lang)
   }
 
   lang
+}
+
+flip_string <- function(string) {
+  walk2(c("x", "y", "_x_"), c("_x_", "x", "y"), function(candidate, replacement) {
+    pattern <- paste0("\\b(", candidate, ")(min|max|end)?\\b")
+    replacement <- paste0(replacement, "\\2")
+    string <<- gsub(pattern, replacement, string)
+  })
+  string
 }

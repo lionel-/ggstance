@@ -65,6 +65,8 @@ flip_ggproto.Geom <- function(gg) {
 #' @export
 flip_ggproto.Stat <- function(gg) {
   ggflipped(gg,
-    default_aes = flip_aes(gg$default_aes)
+    default_aes = flip_aes(gg$default_aes),
+    compute_layer = flip_method_outer(gg$compute_layer,
+      what = "required_aes_error")
   )
 }
