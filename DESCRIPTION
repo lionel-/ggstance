@@ -1,6 +1,6 @@
 Package: ggstance
-Title: Horizontal ggplot
-Version: 0.0.0.9000
+Title: Horizontal ggplot components
+Version: 0.2
 Authors@R: person("Lionel", "Henry", email = "lionel.hry@gmail.com", role = c("aut", "cre"))
 Description: Horizontal layers for ggplot2.
 Depends: 

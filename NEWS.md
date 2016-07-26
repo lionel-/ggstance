@@ -1,5 +1,5 @@
 
-# ggstance 0.1.9000
+# ggstance 0.2
 
 ## Major change
 
