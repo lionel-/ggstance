@@ -5,18 +5,18 @@
 #' @inheritParams ggplot2::geom_point
 #' @export
 geom_barh <- function(mapping = NULL, data = NULL,
-                      stat = "count", position = "stack",
+                      stat = "counth", position = "stackv",
                       ...,
                       width = NULL,
                       binwidth = NULL,
                       na.rm = FALSE,
                       show.legend = NA,
                       inherit.aes = TRUE) {
-  layerh(
+  ggplot2::layer(
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomBar,
+    geom = GeomBarh,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -27,3 +27,9 @@ geom_barh <- function(mapping = NULL, data = NULL,
     )
   )
 }
+
+#' @rdname ggstance-ggproto
+#' @format NULL
+#' @usage NULL
+#' @export
+GeomBarh <- flip_ggproto(ggplot2::GeomBar)

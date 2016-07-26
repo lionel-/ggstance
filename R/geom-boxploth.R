@@ -5,7 +5,7 @@
 #' @inheritParams ggplot2::geom_point
 #' @export
 geom_boxploth <- function(mapping = NULL, data = NULL,
-                          stat = "boxplot", position = "dodge",
+                          stat = "boxploth", position = "dodgev",
                           ...,
                           outlier.colour = NULL,
                           outlier.color = NULL,
@@ -18,11 +18,11 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
                           na.rm = FALSE,
                           show.legend = NA,
                           inherit.aes = TRUE) {
-  layerh(
+  ggplot2::layer(
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomBoxplot,
+    geom = GeomBoxploth,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -40,12 +40,12 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @rdname ggstance-ggproto
+#' @format NULL
+#' @usage NULL
+#' @include legend-draw.R
 #' @export
-flip_ggproto.GeomBoxplot <- function(gg) {
-  gg <- NextMethod()
-
-  ggmutate(gg,
-    draw_key = draw_key_boxploth,
-    draw_group = flip_method_inner(GeomBoxplot$draw_group)
-  )
-}
+GeomBoxploth <- flip_ggproto(ggplot2::GeomBoxplot,
+  draw_key = draw_key_boxploth,
+  draw_group = flip_method_inner(ggplot2::GeomBoxplot$draw_group)
+)

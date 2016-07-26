@@ -1,7 +1,8 @@
 
 # ggstance
 
-ggstance implements horizontal versions of common ggplot2 geoms.
+ggstance implements horizontal versions of common ggplot2 Geoms,
+Stats, and Positions.
 
 
 ## Installation
@@ -16,15 +17,13 @@ devtools::install_github("lionel-/ggstance")
 
 ## Horizontal geoms
 
-While `coord_flip()` can only flip a plot as a whole, ggstance lets
-you flip individual layers. It also provides flipped versions of
+While `coord_flip()` can only flip a plot as a whole, ggstance
+provides flipped versions of Geoms, Stats and Positions. This makes it
+easier to build horizontal layer or use vertical positioning
+(e.g. vertical dodging). Also, horizontal Geoms draw horizontal
 legend keys to keep the appearance of your plots consistent.
 
-ggstance tries hard to flip every component of the layer behind the
-scene. You should be able to use any ggplot2 Stats and Positions with
-ggstance's layers.
-
-The supported Geoms are:
+Horizontal Geoms:
 
 - `geom_barh()`
 - `geom_histogramh()`
@@ -34,6 +33,21 @@ The supported Geoms are:
 - `geom_crossbarh()`
 - `geom_boxploth()`
 - `geom_violinh()`
+
+Horizontal Stats:
+
+- `stat_binh()`
+- `stat_boxploth()`
+- `stat_counth()`
+- `stat_xdensity()`
+
+Vertical Positions:
+
+- `position_dodgev`
+- `position_nudgev`
+- `position_fillv`
+- `position_stackv`
+- `position_jitterdodgev`
 
 
 ## Examples
@@ -65,6 +79,8 @@ library("ggstance")
 ggplot(mpg, aes(hwy, class, fill = factor(cyl))) +
   geom_boxploth()
 ```
+
+![Horizontal boxplot](https://raw.githubusercontent.com/lionel-/ggstance/readme/boxplot.png)
 
 
 ### Facetting with Free Scales
@@ -104,3 +120,25 @@ horizontal <- ggplot(df, aes(Result, Subject))+
   facet_grid(Group ~ ., scales = "free_y")
 horizontal
 ```
+
+![Horizontal free-scales facetting](https://raw.githubusercontent.com/lionel-/ggstance/readme/facet-free-scales.png)
+
+
+### Using vertical positions
+
+In this example we use vertical dodging to align measurements
+within subgroups.
+
+```{r}
+data <- expand.grid(
+  Group = c("A", "B"),
+  Subgroup = c("a", "b", "c"),
+  y = 1:10
+)
+data$y <- sample(1:4, replace = TRUE, size = nrow(data))
+
+ggplot(data, aes(y, Group, colour = Subgroup)) +
+  stat_sum(position = position_dodgev(height = 0.5))
+```
+
+![Vertical positions](https://raw.githubusercontent.com/lionel-/ggstance/readme/position.png)

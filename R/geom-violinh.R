@@ -5,7 +5,7 @@
 #' @inheritParams ggplot2::geom_point
 #' @export
 geom_violinh <- function(mapping = NULL, data = NULL,
-                         stat = "ydensity", position = "dodge",
+                         stat = "xdensity", position = "dodgev",
                          ...,
                          draw_quantiles = NULL,
                          trim = TRUE,
@@ -13,11 +13,11 @@ geom_violinh <- function(mapping = NULL, data = NULL,
                          na.rm = FALSE,
                          show.legend = NA,
                          inherit.aes = TRUE) {
-  layerh(
+  ggplot2::layer(
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomViolin,
+    geom = GeomViolinh,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -31,11 +31,11 @@ geom_violinh <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @rdname ggstance-ggproto
+#' @format NULL
+#' @usage NULL
+#' @include legend-draw.R
 #' @export
-flip_ggproto.GeomViolin <- function(gg) {
-  gg <- NextMethod()
-
-  ggmutate(gg,
-    draw_group = flip_method_inner(GeomViolin$draw_group)
-  )
-}
+GeomViolinh <- flip_ggproto(ggplot2::GeomViolin,
+  draw_group = flip_method_inner(ggplot2::GeomViolin$draw_group)
+)

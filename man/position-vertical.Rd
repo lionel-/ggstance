@@ -5,10 +5,13 @@
 \alias{position_dodgev}
 \alias{position_fillv}
 \alias{position_jitterdodgev}
+\alias{position_nudgev}
 \alias{position_stackv}
 \title{Vertical Positions}
 \usage{
 position_dodgev(height = NULL)
+
+position_nudgev(x = 0, y = 0)
 
 position_fillv()
 
@@ -21,6 +24,10 @@ position_jitterdodgev(jitter.height = NULL, jitter.width = 0,
 \item{height}{Dodging height, when different to the height of the individual
 elements. This is useful when you want to align narrow geoms with taller
 geoms.}
+
+\item{x}{Amount of vertical and horizontal distance to move.}
+
+\item{y}{Amount of vertical and horizontal distance to move.}
 
 \item{jitter.height}{degree of jitter in y direction. Defaults to 0.}
 

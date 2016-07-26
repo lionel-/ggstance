@@ -4,9 +4,9 @@
 \alias{geom_barh}
 \title{Bars, rectangles with bases on y-axis}
 \usage{
-geom_barh(mapping = NULL, data = NULL, stat = "count",
-  position = "stack", ..., width = NULL, binwidth = NULL, na.rm = FALSE,
-  show.legend = NA, inherit.aes = TRUE)
+geom_barh(mapping = NULL, data = NULL, stat = "counth",
+  position = "stackv", ..., width = NULL, binwidth = NULL,
+  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
 }
 \arguments{
 \item{mapping}{Set of aesthetic mappings created by \code{\link{aes}} or

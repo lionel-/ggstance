@@ -7,11 +7,11 @@ geom_errorbarh <- function(mapping = NULL, data = NULL,
                            na.rm = FALSE,
                            show.legend = NA,
                            inherit.aes = TRUE) {
-  layerh(
+  ggplot2::layer(
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomErrorbar,
+    geom = GeomErrorbarh,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -22,11 +22,11 @@ geom_errorbarh <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @rdname ggstance-ggproto
+#' @format NULL
+#' @usage NULL
+#' @include legend-draw.R
 #' @export
-flip_ggproto.GeomErrorbar <- function(gg) {
-  gg <- NextMethod()
-
-  ggmutate(gg,
-    draw_panel = flip_method_inner(GeomErrorbar$draw_panel)
-  )
-}
+GeomErrorbarh <- flip_ggproto(ggplot2::GeomErrorbar,
+  draw_panel = flip_method_inner(ggplot2::GeomErrorbar$draw_panel)
+)

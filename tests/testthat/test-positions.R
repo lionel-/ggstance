@@ -15,7 +15,6 @@ test_that("position_jitterdodge() flips", {
 
   v <- ggplot(dsub, aes(cut, carat, color = clarity)) +
     geom_point(position = position_jitterdodge())
-
   h <- ggplot(dsub, aes(carat, cut, color = clarity)) +
     geom_point(position = position_jitterdodgev()) + coord_flip()
 

@@ -11,18 +11,6 @@ ggname <- function(prefix, grob) {
   grob
 }
 
-ggmutate <- function(gg, ...) {
-  dots <- list(...)
-  if (length(dots)) {
-    fields <- names(dots)
-    if (!length(fields) || purrr::some(fields, `==`, "")) {
-      stop("Internal error: Unnamed ggproto fields")
-    }
-    purrr::walk2(names(dots), dots, assign, envir = gg)
-  }
-  gg
-}
-
 names2 <- function(x) {
   names(x) %||% rep("", length(x))
 }

@@ -77,7 +77,7 @@ flip_method_dots <- function(method, ..., what = "data") {
   }
 
   if ("scales" %in% what) {
-    dots$panel <- flip_aes(dots[["panel"]])
+    dots$panels <- flip_aes(dots[["panels"]])
     dots$scales <- flip_aes(dots[["scales"]])
   }
 
@@ -110,8 +110,8 @@ match_args <- function(dots, f) {
 
 lang_lookup <- map(flip_lookup, as.name)
 lang_lookup <- splice(lang_lookup,
-  GeomCrossbar = quote(ggstance::flip_ggproto(GeomCrossbar)),
-  GeomLinerange = quote(ggstance::flip_ggproto(GeomLinerange))
+  GeomCrossbar = quote(ggstance::GeomCrossbarh),
+  GeomLinerange = quote(ggstance::GeomLinerangeh)
 )
 
 flip_method_inner <- function(method, roundtrip = NULL) {

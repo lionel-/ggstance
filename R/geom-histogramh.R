@@ -5,18 +5,18 @@
 #' @inheritParams ggplot2::geom_point
 #' @export
 geom_histogramh <- function(mapping = NULL, data = NULL,
-                            stat = "bin", position = "stack",
+                            stat = "binh", position = "stackv",
                             ...,
                             binwidth = NULL,
                             bins = NULL,
                             na.rm = FALSE,
                             show.legend = NA,
                             inherit.aes = TRUE) {
-  layerh(
+  ggplot2::layer(
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomBar,
+    geom = GeomBarh,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,

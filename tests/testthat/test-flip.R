@@ -1,24 +1,6 @@
 
 context("flip")
 
-test_that("Flipped layers inherit from both Layer and LayerH", {
-  l <- geom_linerangeh()
-
-  c("Layer", "Layerh") %in% class(l) %>%
-    all() %>%
-    expect_true()
-
-  actual_method <- environment(l$compute_position)$f
-  expected_method <- environment(Layerh$compute_position)$f
-  expect_identical(actual_method, expected_method)
-})
-
-test_that("Flipped geoms have correct parent", {
-  GeomLinerangeh <- flip_ggproto(GeomLinerange)
-  expect_identical(GeomLinerangeh$super, ggplot2::GeomLinerange)
-  expect_identical(GeomLinerangeh$super$super, ggplot2::Geom)
-})
-
 test_that("we didn't flip original ggproto by reference", {
   StatBin$default_aes %>% expect_identical(aes(y = ..count..))
 })

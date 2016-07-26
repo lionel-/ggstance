@@ -8,11 +8,11 @@ geom_crossbarh <- function(mapping = NULL, data = NULL,
                            na.rm = FALSE,
                            show.legend = NA,
                            inherit.aes = TRUE) {
-  layerh(
+  ggplot2::layer(
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomCrossbar,
+    geom = GeomCrossbarh,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -24,13 +24,12 @@ geom_crossbarh <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @rdname ggstance-ggproto
+#' @format NULL
+#' @usage NULL
+#' @include legend-draw.R
 #' @export
-flip_ggproto.GeomCrossbar <- function(gg) {
-  gg <- NextMethod()
-
-  ggmutate(gg,
-    draw_key = draw_key_crossbarh,
-
-    draw_panel = flip_method_inner(GeomCrossbar$draw_panel)
-  )
-}
+GeomCrossbarh <- flip_ggproto(ggplot2::GeomCrossbar,
+  draw_key = draw_key_crossbarh,
+  draw_panel = flip_method_inner(ggplot2::GeomCrossbar$draw_panel)
+)

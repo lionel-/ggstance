@@ -4,8 +4,8 @@
 \alias{geom_violinh}
 \title{Horizontal violin plot.}
 \usage{
-geom_violinh(mapping = NULL, data = NULL, stat = "ydensity",
-  position = "dodge", ..., draw_quantiles = NULL, trim = TRUE,
+geom_violinh(mapping = NULL, data = NULL, stat = "xdensity",
+  position = "dodgev", ..., draw_quantiles = NULL, trim = TRUE,
   scale = "area", na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
 }
 \arguments{

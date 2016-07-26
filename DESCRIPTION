@@ -3,13 +3,13 @@ Title: Horizontal ggplot
 Version: 0.0.0.9000
 Authors@R: person("Lionel", "Henry", email = "lionel.hry@gmail.com", role = c("aut", "cre"))
 Description: Horizontal layers for ggplot2.
-Depends:
+Depends: 
     R (>= 3.2.2)
-Imports:
+Imports: 
     ggplot2 (>= 2.0),
     purrr (>= 0.2),
     lazyeval
-Suggests:
+Suggests: 
     magrittr,
     import,
     svglite,
@@ -20,12 +20,12 @@ LazyData: true
 RoxygenNote: 5.0.1
 svgliteNote: 1.1.0
 ggplot2Note: 2.1.0
-Collate:
+Collate: 
     'flip-aes.R'
-    'utils.R'
     'flip-ggproto.R'
     'flip-method.R'
     'geom-barh.R'
+    'legend-draw.R'
     'geom-boxploth.R'
     'geom-crossbarh.R'
     'geom-errorbarh.R'
@@ -34,7 +34,10 @@ Collate:
     'geom-pointrangeh.R'
     'geom-violinh.R'
     'ggstance.R'
-    'layerh.R'
-    'legend-draw.R'
     'positionv.R'
     'scales.R'
+    'stat-binh.R'
+    'stat-boxploth.R'
+    'stat-counth.R'
+    'stat-xdensity.R'
+    'utils.R'

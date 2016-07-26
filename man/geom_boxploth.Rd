@@ -4,8 +4,8 @@
 \alias{geom_boxploth}
 \title{Horizontal box and whiskers plot.}
 \usage{
-geom_boxploth(mapping = NULL, data = NULL, stat = "boxplot",
-  position = "dodge", ..., outlier.colour = NULL, outlier.color = NULL,
+geom_boxploth(mapping = NULL, data = NULL, stat = "boxploth",
+  position = "dodgev", ..., outlier.colour = NULL, outlier.color = NULL,
   outlier.shape = 19, outlier.size = 1.5, outlier.stroke = 0.5,
   notch = FALSE, notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE,
   show.legend = NA, inherit.aes = TRUE)
