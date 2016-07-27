@@ -36,6 +36,6 @@ geom_violinh <- function(mapping = NULL, data = NULL,
 #' @usage NULL
 #' @include legend-draw.R
 #' @export
-GeomViolinh <- flip_ggproto(ggplot2::GeomViolin,
+GeomViolinh <- flip_geom(ggplot2::GeomViolin,
   draw_group = flip_method_inner(ggplot2::GeomViolin$draw_group)
 )

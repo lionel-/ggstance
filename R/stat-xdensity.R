@@ -40,4 +40,4 @@ stat_xdensity <- function(mapping = NULL, data = NULL,
 #' @format NULL
 #' @usage NULL
 #' @export
-StatXdensity <- flip_ggproto(ggplot2::StatYdensity)
+StatXdensity <- flip_stat(ggplot2::StatYdensity)

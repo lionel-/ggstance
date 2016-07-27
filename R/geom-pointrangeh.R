@@ -29,7 +29,7 @@ geom_pointrangeh <- function(mapping = NULL, data = NULL,
 #' @usage NULL
 #' @include legend-draw.R
 #' @export
-GeomPointrangeh <- flip_ggproto(ggplot2::GeomPointrange,
+GeomPointrangeh <- flip_geom(ggplot2::GeomPointrange,
   draw_key = draw_key_pointrangeh,
   draw_panel = flip_method_inner(ggplot2::GeomPointrange$draw_panel)
 )

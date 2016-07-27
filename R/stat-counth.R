@@ -29,4 +29,4 @@ stat_counth <- function(mapping = NULL, data = NULL,
 #' @format NULL
 #' @usage NULL
 #' @export
-StatCounth <- flip_ggproto(ggplot2::StatCount)
+StatCounth <- flip_stat(ggplot2::StatCount)

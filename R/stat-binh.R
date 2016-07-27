@@ -41,4 +41,4 @@ stat_binh <- function(mapping = NULL, data = NULL,
 #' @format NULL
 #' @usage NULL
 #' @export
-StatBinh <- flip_ggproto(ggplot2::StatBin)
+StatBinh <- flip_stat(ggplot2::StatBin)

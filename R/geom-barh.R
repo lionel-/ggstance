@@ -32,4 +32,4 @@ geom_barh <- function(mapping = NULL, data = NULL,
 #' @format NULL
 #' @usage NULL
 #' @export
-GeomBarh <- flip_ggproto(ggplot2::GeomBar)
+GeomBarh <- flip_geom(ggplot2::GeomBar)

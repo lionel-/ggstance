@@ -27,6 +27,6 @@ geom_errorbarh <- function(mapping = NULL, data = NULL,
 #' @usage NULL
 #' @include legend-draw.R
 #' @export
-GeomErrorbarh <- flip_ggproto(ggplot2::GeomErrorbar,
+GeomErrorbarh <- flip_geom(ggplot2::GeomErrorbar,
   draw_panel = flip_method_inner(ggplot2::GeomErrorbar$draw_panel)
 )

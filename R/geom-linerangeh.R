@@ -33,7 +33,7 @@ geom_linerangeh <- function(mapping = NULL, data = NULL,
 #' @usage NULL
 #' @include legend-draw.R
 #' @export
-GeomLinerangeh <- flip_ggproto(ggplot2::GeomLinerange,
+GeomLinerangeh <- flip_geom(ggplot2::GeomLinerange,
   draw_key = draw_key_hpath,
   draw_panel = flip_method_inner(ggplot2::GeomLinerange$draw_panel)
 )

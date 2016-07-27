@@ -15,7 +15,7 @@
 NULL
 
 #' @export
-flip_ggproto.Position <- function(gg, ...) {
+flip_position <- function(gg, ...) {
   ggflipped(gg,
     setup_params = flip_method_outer(gg$setup_params),
 
@@ -32,31 +32,31 @@ flip_ggproto.Position <- function(gg, ...) {
 #' @format NULL
 #' @usage NULL
 #' @export
-PositionDodgev <- flip_ggproto(ggplot2::PositionDodge)
+PositionDodgev <- flip_position(ggplot2::PositionDodge)
 
 #' @rdname ggstance-ggproto
 #' @format NULL
 #' @usage NULL
 #' @export
-PositionNudgev <- flip_ggproto(ggplot2::PositionNudge)
+PositionNudgev <- flip_position(ggplot2::PositionNudge)
 
 #' @rdname ggstance-ggproto
 #' @format NULL
 #' @usage NULL
 #' @export
-PositionFillv <- flip_ggproto(ggplot2::PositionFill)
+PositionFillv <- flip_position(ggplot2::PositionFill)
 
 #' @rdname ggstance-ggproto
 #' @format NULL
 #' @usage NULL
 #' @export
-PositionStackv <- flip_ggproto(ggplot2::PositionStack)
+PositionStackv <- flip_position(ggplot2::PositionStack)
 
 #' @rdname ggstance-ggproto
 #' @format NULL
 #' @usage NULL
 #' @export
-PositionJitterdodgev <- flip_ggproto(ggplot2::PositionJitterdodge)
+PositionJitterdodgev <- flip_position(ggplot2::PositionJitterdodge)
 
 #' @rdname position-vertical
 #' @export

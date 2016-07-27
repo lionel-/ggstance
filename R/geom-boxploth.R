@@ -45,7 +45,7 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
 #' @usage NULL
 #' @include legend-draw.R
 #' @export
-GeomBoxploth <- flip_ggproto(ggplot2::GeomBoxplot,
+GeomBoxploth <- flip_geom(ggplot2::GeomBoxplot,
   draw_key = draw_key_boxploth,
   draw_group = flip_method_inner(ggplot2::GeomBoxplot$draw_group)
 )

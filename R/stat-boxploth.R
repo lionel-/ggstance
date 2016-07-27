@@ -4,12 +4,12 @@
 #' @inheritParams ggplot2::stat_boxplot
 #' @export
 stat_boxploth <- function(mapping = NULL, data = NULL,
-                         geom = "boxploth", position = "dodgev",
-                         ...,
-                         coef = 1.5,
-                         na.rm = FALSE,
-                         show.legend = NA,
-                         inherit.aes = TRUE) {
+                          geom = "boxploth", position = "dodgev",
+                          ...,
+                          coef = 1.5,
+                          na.rm = FALSE,
+                          show.legend = NA,
+                          inherit.aes = TRUE) {
   ggplot2::layer(
     data = data,
     mapping = mapping,
@@ -30,4 +30,4 @@ stat_boxploth <- function(mapping = NULL, data = NULL,
 #' @format NULL
 #' @usage NULL
 #' @export
-StatBoxploth <- flip_ggproto(ggplot2::StatBoxplot)
+StatBoxploth <- flip_stat(ggplot2::StatBoxplot)

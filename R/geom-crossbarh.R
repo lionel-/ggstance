@@ -29,7 +29,7 @@ geom_crossbarh <- function(mapping = NULL, data = NULL,
 #' @usage NULL
 #' @include legend-draw.R
 #' @export
-GeomCrossbarh <- flip_ggproto(ggplot2::GeomCrossbar,
+GeomCrossbarh <- flip_geom(ggplot2::GeomCrossbar,
   draw_key = draw_key_crossbarh,
   draw_panel = flip_method_inner(ggplot2::GeomCrossbar$draw_panel)
 )
