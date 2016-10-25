@@ -16,5 +16,5 @@ check_horizontal <- function(original, horizontal, fig_name) {
   v_data <- lapply(v$data, sort)
   expect_identical(h_data, v_data)
 
-  vdiffr::expect_doppelganger(horizontal, fig_name)
+  vdiffr::expect_doppelganger(fig_name, horizontal, "")
 }
