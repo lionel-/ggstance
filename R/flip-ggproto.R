@@ -48,7 +48,7 @@ ggflipped <- function(.gg, ...) {
 ggclone <- function(.class, .gg, .super, ...) {
   skeleton <- as.list(.gg, inherit = FALSE)
   clone <- list2env(skeleton, parent = emptyenv())
-  clone$super <- .super
+  clone$super <- function() .super
 
   clone <- ggmutate(clone, ...)
   structure(clone, class = c(.class, class(.super)))
