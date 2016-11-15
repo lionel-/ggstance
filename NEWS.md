@@ -2,6 +2,9 @@
 # ggstance 0.3
 
 The package was rewritten to make it more robust to ggplot2 updates.
+In addition, this version features:
+
+* New stat_summaryh() (#7)
 
 
 # ggstance 0.2

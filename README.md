@@ -40,6 +40,7 @@ Horizontal Stats:
 - `stat_boxploth()`
 - `stat_counth()`
 - `stat_xdensity()`
+- `stat_summaryh()`
 
 Vertical Positions:
 

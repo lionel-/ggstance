@@ -43,4 +43,5 @@ Collate:
     'stat-binh.R'
     'stat-boxploth.R'
     'stat-counth.R'
+    'stat-summaryh.R'
     'stat-xdensity.R'

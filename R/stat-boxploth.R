@@ -86,3 +86,4 @@ StatBoxploth <- ggproto("StatBoxploth", Stat,
   }
 )
 
+has_groups <- generate("has_groups")
