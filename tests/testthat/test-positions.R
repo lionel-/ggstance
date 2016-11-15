@@ -18,5 +18,5 @@ test_that("position_jitterdodge() flips", {
   h <- ggplot(dsub, aes(carat, cut, color = clarity)) +
     geom_point(position = position_jitterdodgev())
 
-  check_horizontal(v, h, "position-jitterdodge")
+  check_horizontal(v, h, "position-jitterdodge", TRUE)
 })

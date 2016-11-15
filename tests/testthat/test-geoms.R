@@ -54,11 +54,11 @@ test_that("geom_barh() flips", {
 test_that("geom_histogramh() flips", {
   v <- ggplot(mtcars, aes(drat)) + geom_histogram(bins = 10)
   h <- ggplot(mtcars, aes(y = drat)) + geom_histogramh(bins = 10)
-  check_horizontal(v, h, "geom_histogramh()")
+  check_horizontal(v, h, "geom_histogramh()", TRUE)
 
   v_fill_stack <- ggplot(mtcars, aes(drat, fill = factor(cyl))) + geom_histogram(bins = 10, position = position_stack())
   h_fill_stack <- ggplot(mtcars, aes(y = drat, fill = factor(cyl))) + geom_histogramh(bins = 10, position = position_stackv())
-  check_horizontal(v_fill_stack, h_fill_stack, "geom_histogramh() + position_stack() with fill")
+  check_horizontal(v_fill_stack, h_fill_stack, "geom_histogramh() + position_stack() with fill", TRUE)
 
   v_fill_facet_nudge <- ggplot(mtcars, aes(drat, fill = factor(cyl))) + facet_wrap(~am) + geom_histogram(bins = 10, position = position_nudge())
   h_fill_facet_nudge <- ggplot(mtcars, aes(y = drat, fill = factor(cyl))) + facet_wrap(~am) + geom_histogramh(bins = 10, position = position_nudge())
