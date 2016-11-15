@@ -12,7 +12,7 @@ geom_histogramh <- function(mapping = NULL, data = NULL,
                             na.rm = FALSE,
                             show.legend = NA,
                             inherit.aes = TRUE) {
-  ggplot2::layer(
+  layer(
     data = data,
     mapping = mapping,
     stat = stat,

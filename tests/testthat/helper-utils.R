@@ -1,6 +1,4 @@
 
-import::from("magrittr", `%>%`)
-
 check_horizontal <- function(original, horizontal, fig_name) {
   sort <- function(x) x[order(names(x))]
   flipped <- function(fun) {
@@ -8,9 +6,9 @@ check_horizontal <- function(original, horizontal, fig_name) {
   }
 
   set.seed(10)
-  h <- ggplot2::ggplot_build(original)
+  h <- ggplot_build(original)
   set.seed(10)
-  v <- ggplot2::ggplot_build(horizontal)
+  v <- ggplot_build(horizontal)
 
   h_data <- lapply(h$data, flipped(sort))
   v_data <- lapply(v$data, sort)

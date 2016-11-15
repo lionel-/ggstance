@@ -7,6 +7,5 @@ range_df <- data.frame(
   lower = c(0.8, 4.6, 2.4, 3.6)
 )
 
-library("ggplot2")
-range_p <- ggplot(range_df, aes(resp, trt, color = group))
-range_p_orig <- ggplot(range_df, aes(trt, resp, color = group))
+range_p <- ggplot2::ggplot(range_df, ggplot2::aes(resp, trt, color = group))
+range_p_orig <- ggplot2::ggplot(range_df, ggplot2::aes(trt, resp, color = group))

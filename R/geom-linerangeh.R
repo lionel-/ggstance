@@ -13,7 +13,7 @@ geom_linerangeh <- function(mapping = NULL, data = NULL,
                             na.rm = FALSE,
                             show.legend = NA,
                             inherit.aes = TRUE) {
-  ggplot2::layer(
+  layer(
     data = data,
     mapping = mapping,
     stat = stat,
@@ -33,7 +33,15 @@ geom_linerangeh <- function(mapping = NULL, data = NULL,
 #' @usage NULL
 #' @include legend-draw.R
 #' @export
-GeomLinerangeh <- flip_geom(ggplot2::GeomLinerange,
+GeomLinerangeh <- ggproto("GeomLinerangeh", Geom,
+  default_aes = aes(colour = "black", size = 0.5, linetype = 1, alpha = NA),
+
   draw_key = draw_key_hpath,
-  draw_panel = flip_method_inner(ggplot2::GeomLinerange$draw_panel)
+
+  required_aes = c("y", "xmin", "xmax"),
+
+  draw_panel = function(data, panel_scales, coord) {
+    data <- transform(data, yend = y, x = xmin, xend = xmax)
+    ggname("geom_linerangeh", GeomSegment$draw_panel(data, panel_scales, coord))
+  }
 )

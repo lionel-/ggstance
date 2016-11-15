@@ -30,8 +30,8 @@ plot. You must supply \code{mapping} if there is no plot mapping.}
    the plot data. The return value must be a \code{data.frame.}, and
    will be used as the layer data.}
 
-\item{stat}{Use to override the default connection between
-\code{geom_boxplot} and \code{stat_boxplot}.}
+\item{stat}{The statistical transformation to use on the data for this
+layer, as a string.}
 
 \item{position}{Position adjustment, either as a string, or the result of
 a call to a position adjustment function.}
@@ -41,31 +41,7 @@ often aesthetics, used to set an aesthetic to a fixed value, like
 \code{color = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
 
-\item{outlier.colour}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
-  aesthetics used for the box.
-
-  In the unlikely event you specify both US and UK spellings of colour, the
-  US spelling will take precedence.}
-
-\item{outlier.color}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
-  aesthetics used for the box.
-
-  In the unlikely event you specify both US and UK spellings of colour, the
-  US spelling will take precedence.}
-
-\item{outlier.shape}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
-  aesthetics used for the box.
-
-  In the unlikely event you specify both US and UK spellings of colour, the
-  US spelling will take precedence.}
-
-\item{outlier.size}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
-  aesthetics used for the box.
-
-  In the unlikely event you specify both US and UK spellings of colour, the
-  US spelling will take precedence.}
-
-\item{outlier.stroke}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
+\item{outlier.colour, outlier.color, outlier.shape, outlier.size, outlier.stroke}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
   aesthetics used for the box.
 
   In the unlikely event you specify both US and UK spellings of colour, the
@@ -84,8 +60,8 @@ the body (default 0.5)}
 square-roots of the number of observations in the groups (possibly
 weighted, using the \code{weight} aesthetic).}
 
-\item{na.rm}{If \code{FALSE} (the default), removes missing values with
-a warning.  If \code{TRUE} silently removes missing values.}
+\item{na.rm}{If \code{FALSE}, the default, missing values are removed with
+a warning. If \code{TRUE}, missing values are silently removed.}
 
 \item{show.legend}{logical. Should this layer be included in the legends?
 \code{NA}, the default, includes if any aesthetics are mapped.

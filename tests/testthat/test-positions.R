@@ -1,5 +1,5 @@
-
 context("Positions")
+library("ggplot2")
 
 test_that("position_dodge() flips", {
   v <- ggplot(mtcars, aes(cyl, disp, group = am)) +
@@ -16,7 +16,7 @@ test_that("position_jitterdodge() flips", {
   v <- ggplot(dsub, aes(cut, carat, color = clarity)) +
     geom_point(position = position_jitterdodge())
   h <- ggplot(dsub, aes(carat, cut, color = clarity)) +
-    geom_point(position = position_jitterdodgev()) + coord_flip()
+    geom_point(position = position_jitterdodgev())
 
   check_horizontal(v, h, "position-jitterdodge")
 })

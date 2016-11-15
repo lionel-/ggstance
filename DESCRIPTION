@@ -1,15 +1,21 @@
 Package: ggstance
 Title: Horizontal ggplot components
 Version: 0.2.9000
-Authors@R: person("Lionel", "Henry", email = "lionel.hry@gmail.com", role = c("aut", "cre"))
+Authors@R: c(
+    person("Lionel", "Henry", , "lionel@rstudio.com", role = c("aut", "cre")),
+    person("Hadley", "Wickham", , "hadley@rstudio.com", "aut"),
+    person("Winston", "Chang", , "winston@rstudio.com", "aut"),
+    person("RStudio", role = "cph")
+    )
 Description: Horizontal layers for ggplot2.
-Depends: 
+Depends:
     R (>= 3.2.2)
-Imports: 
-    ggplot2 (>= 2.0),
+Imports:
+    ggplot2 (>= 2.2),
     purrr (>= 0.2),
-    lazyeval
-Suggests: 
+    lazyeval,
+    plyr
+Suggests:
     magrittr,
     import,
     svglite,
@@ -22,10 +28,8 @@ RoxygenNote: 5.0.1
 svgliteNote: 1.1.0
 ggplot2Note: 2.1.0
 vdiffrNote: 0.0.0.9001
-Collate: 
+Collate:
     'flip-aes.R'
-    'flip-ggproto.R'
-    'flip-method.R'
     'geom-barh.R'
     'legend-draw.R'
     'geom-boxploth.R'
@@ -36,10 +40,11 @@ Collate:
     'geom-pointrangeh.R'
     'geom-violinh.R'
     'ggstance.R'
-    'positionv.R'
-    'scales.R'
+    'position-dodgev.R'
+    'position-jitterdodgev.R'
+    'position-stackv.R'
+    'position.R'
     'stat-binh.R'
     'stat-boxploth.R'
     'stat-counth.R'
     'stat-xdensity.R'
-    'utils.R'

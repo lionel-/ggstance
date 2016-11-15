@@ -28,8 +28,8 @@ plot. You must supply \code{mapping} if there is no plot mapping.}
    the plot data. The return value must be a \code{data.frame.}, and
    will be used as the layer data.}
 
-\item{stat}{Use to override the default connection between
-\code{geom_violin} and \code{stat_ydensity}.}
+\item{stat}{The statistical transformation to use on the data for this
+layer, as a string.}
 
 \item{position}{Position adjustment, either as a string, or the result of
 a call to a position adjustment function.}
@@ -49,8 +49,8 @@ to the range of the data. If \code{FALSE}, don't trim the tails.}
 the tails). If "count", areas are scaled proportionally to the number of
 observations. If "width", all violins have the same maximum width.}
 
-\item{na.rm}{If \code{FALSE} (the default), removes missing values with
-a warning.  If \code{TRUE} silently removes missing values.}
+\item{na.rm}{If \code{FALSE}, the default, missing values are removed with
+a warning. If \code{TRUE}, missing values are silently removed.}
 
 \item{show.legend}{logical. Should this layer be included in the legends?
 \code{NA}, the default, includes if any aesthetics are mapped.

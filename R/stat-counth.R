@@ -9,7 +9,7 @@ stat_counth <- function(mapping = NULL, data = NULL,
                         na.rm = FALSE,
                         show.legend = NA,
                         inherit.aes = TRUE) {
-  ggplot2::layer(
+  layer(
     data = data,
     mapping = mapping,
     stat = StatCounth,
@@ -29,4 +29,30 @@ stat_counth <- function(mapping = NULL, data = NULL,
 #' @format NULL
 #' @usage NULL
 #' @export
-StatCounth <- flip_stat(ggplot2::StatCount)
+StatCounth <- ggproto("StatCounth", Stat,
+  required_aes = "y",
+  default_aes = aes(x = ..count.., weight = 1),
+
+  setup_params = function(data, params) {
+    if (!is.null(data$x)) {
+      stop("stat_counth() must not be used with a x aesthetic.", call. = FALSE)
+    }
+    params
+  },
+
+  compute_group = function(self, data, scales, width = NULL) {
+    y <- data$y
+    weight <- data$weight %||% rep(1, length(y))
+    width <- width %||% (resolution(y) * 0.9)
+
+    count <- as.numeric(tapply(weight, y, sum, na.rm = TRUE))
+    count[is.na(count)] <- 0
+
+    data.frame(
+      count = count,
+      prop = count / sum(abs(count)),
+      y = sort(unique(y)),
+      width = width
+    )
+  }
+)

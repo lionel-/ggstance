@@ -4,7 +4,7 @@
 \alias{geom_barh}
 \title{Bars, rectangles with bases on y-axis}
 \usage{
-geom_barh(mapping = NULL, data = NULL, stat = "counth",
+geom_barh(mapping = NULL, data = NULL, stat = "count",
   position = "stackv", ..., width = NULL, binwidth = NULL,
   na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
 }
@@ -28,8 +28,8 @@ plot. You must supply \code{mapping} if there is no plot mapping.}
    the plot data. The return value must be a \code{data.frame.}, and
    will be used as the layer data.}
 
-\item{stat}{Override the default connection between \code{geom_bar} and
-\code{stat_count}.}
+\item{stat}{The statistical transformation to use on the data for this
+layer, as a string.}
 
 \item{position}{Position adjustment, either as a string, or the result of
 a call to a position adjustment function.}
@@ -45,8 +45,8 @@ to the paired geom/stat.}
 you use it you'll get an warning telling to you use
 \code{\link{geom_histogram}} instead.}
 
-\item{na.rm}{If \code{FALSE} (the default), removes missing values with
-a warning.  If \code{TRUE} silently removes missing values.}
+\item{na.rm}{If \code{FALSE}, the default, missing values are removed with
+a warning. If \code{TRUE}, missing values are silently removed.}
 
 \item{show.legend}{logical. Should this layer be included in the legends?
 \code{NA}, the default, includes if any aesthetics are mapped.

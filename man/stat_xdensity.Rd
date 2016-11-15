@@ -40,14 +40,16 @@ often aesthetics, used to set an aesthetic to a fixed value, like
 \code{color = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
 
-\item{bw}{the smoothing bandwidth to be used, see
-\code{\link{density}} for details}
+\item{bw}{The smoothing bandwidth to be used.
+If numeric, the standard deviation of the smoothing kernel.
+If character, a rule to choose the bandwidth, as listed in
+\code{\link[stats]{bw.nrd}}.}
 
-\item{adjust}{adjustment of the bandwidth, see
-\code{\link{density}} for details}
+\item{adjust}{A multiplicate bandwidth adjustment. This makes it possible
+to adjust the bandwidth while still using the a bandwidth estimator.
+For exampe, \code{adjust = 1/2} means use half of the default bandwidth.}
 
-\item{kernel}{kernel used for density estimation, see
-\code{\link{density}} for details}
+\item{kernel}{Kernel. See list of available kernels in \code{\link{density}}.}
 
 \item{trim}{If \code{TRUE} (default), trim the tails of the violins
 to the range of the data. If \code{FALSE}, don't trim the tails.}
@@ -56,8 +58,8 @@ to the range of the data. If \code{FALSE}, don't trim the tails.}
 the tails). If "count", areas are scaled proportionally to the number of
 observations. If "width", all violins have the same maximum width.}
 
-\item{na.rm}{If \code{FALSE} (the default), removes missing values with
-a warning.  If \code{TRUE} silently removes missing values.}
+\item{na.rm}{If \code{FALSE}, the default, missing values are removed with
+a warning. If \code{TRUE}, missing values are silently removed.}
 
 \item{show.legend}{logical. Should this layer be included in the legends?
 \code{NA}, the default, includes if any aesthetics are mapped.
