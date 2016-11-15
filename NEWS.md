@@ -1,4 +1,9 @@
 
+# ggstance 0.3
+
+The package was rewritten to make it more robust to ggplot2 updates.
+
+
 # ggstance 0.2
 
 ## Major change

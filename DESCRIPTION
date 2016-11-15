@@ -1,13 +1,15 @@
 Package: ggstance
-Title: Horizontal ggplot components
-Version: 0.2.9000
+Title: Horizontal 'ggplot2' Components
+Version: 0.3
 Authors@R: c(
     person("Lionel", "Henry", , "lionel@rstudio.com", role = c("aut", "cre")),
     person("Hadley", "Wickham", , "hadley@rstudio.com", "aut"),
     person("Winston", "Chang", , "winston@rstudio.com", "aut"),
     person("RStudio", role = "cph")
     )
-Description: Horizontal layers for ggplot2.
+Description: A 'ggplot2' extension that provides flipped components:
+    horizontal versions of 'Stats' and 'Geoms', and vertical versions
+    of 'Positions'.
 Depends:
     R (>= 3.2.2)
 Imports:
@@ -17,17 +19,11 @@ Imports:
     plyr
 Suggests:
     magrittr,
-    import,
-    svglite,
     testthat,
     vdiffr
 License: GPL-3
 LazyData: true
-Remotes: lionel-/vdiffr
 RoxygenNote: 5.0.1
-svgliteNote: 1.1.0
-ggplot2Note: 2.1.0
-vdiffrNote: 0.0.0.9001
 Collate:
     'flip-aes.R'
     'geom-barh.R'
