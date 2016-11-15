@@ -18,5 +18,5 @@ check_horizontal <- function(original, horizontal, fig_name,
   if (skip_on_windows) {
     skip_on_os("windows")
   }
-  vdiffr::expect_doppelganger(fig_name, horizontal, "")
+  vdiffr::expect_doppelganger(fig_name, horizontal)
 }
