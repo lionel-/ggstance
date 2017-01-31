@@ -11,7 +11,7 @@ Description: A 'ggplot2' extension that provides flipped components:
     horizontal versions of 'Stats' and 'Geoms', and vertical versions
     of 'Positions'.
 Depends:
-    R (>= 3.2.2)
+    R (>= 3.1.0)
 Imports:
     ggplot2 (>= 2.2),
     purrr (>= 0.2),

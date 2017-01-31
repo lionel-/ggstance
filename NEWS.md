@@ -1,4 +1,9 @@
 
+# ggstance 0.3.9000
+
+* Change minimal R version to 3.1.0, to be consistent with ggplot2.
+
+
 # ggstance 0.3
 
 The package was rewritten to make it more robust to ggplot2 updates.
