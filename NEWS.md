@@ -1,5 +1,5 @@
 
-# ggstance 0.3.0.9000
+# ggstance 0.3.1
 
 * Fix horizontal boxplot issue when y scale is continuous.
 
