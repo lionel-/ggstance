@@ -55,7 +55,7 @@ StatBoxploth <- ggproto("StatBoxploth", Stat,
     } else {
       stats <- as.numeric(stats::quantile(data$x, qs))
     }
-    names(stats) <- c("xmin", "lower", "middle", "upper", "xmax")
+    names(stats) <- c("xmin", "xlower", "xmiddle", "xupper", "xmax")
     iqr <- diff(stats[c(2, 4)])
 
     outliers <- data$x < (stats[2] - coef * iqr) | data$x > (stats[4] + coef * iqr)
@@ -76,8 +76,8 @@ StatBoxploth <- ggproto("StatBoxploth", Stat,
       n <- sum(data$weight[!is.na(data$x) & !is.na(data$weight)])
     }
 
-    df$notchupper <- df$middle + 1.58 * iqr / sqrt(n)
-    df$notchlower <- df$middle - 1.58 * iqr / sqrt(n)
+    df$notchupper <- df$xmiddle + 1.58 * iqr / sqrt(n)
+    df$notchlower <- df$xmiddle - 1.58 * iqr / sqrt(n)
 
     df$y <- if (is.factor(data$y)) data$y[1] else mean(range(data$y))
     df$width <- width

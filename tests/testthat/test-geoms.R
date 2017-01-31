@@ -87,6 +87,11 @@ test_that("geom_boxploth() flips", {
   v_facet_fill <- ggplot(mpg, aes(class, hwy, fill = factor(cyl))) + facet_wrap(~model) + geom_boxplot()
   h_facet_fill <- ggplot(mpg, aes(hwy, class, fill = factor(cyl))) + facet_wrap(~model) + geom_boxploth()
   check_horizontal(v_facet_fill, h_facet_fill, "geom_boxploth() + facet_wrap() with fill")
+
+  df <- data.frame(x = 1:10, y = rep(1:2, 5))
+  h_continuous <- ggplot(df) + geom_boxploth(aes(x = x, y = y, group = 1))
+  v_continuous <- ggplot(df) + geom_boxplot(aes(x = y, y = x, group = 1))
+  check_horizontal(v_continuous, h_continuous, "geom_boxploth() and continuous y scale")
 })
 
 test_that("facet_grid() with free scales flips", {

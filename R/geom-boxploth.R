@@ -101,7 +101,7 @@ GeomBoxploth <- ggproto("GeomBoxploth", Geom,
     whiskers <- data.frame(
       y = data$y,
       yend = data$y,
-      x = c(data$upper, data$lower),
+      x = c(data$xupper, data$xlower),
       xend = c(data$xmax, data$xmin),
       alpha = NA,
       common,
@@ -111,9 +111,9 @@ GeomBoxploth <- ggproto("GeomBoxploth", Geom,
     box <- data.frame(
       ymin = data$ymin,
       ymax = data$ymax,
-      xmin = data$lower,
-      x = data$middle,
-      xmax = data$upper,
+      xmin = data$xlower,
+      x = data$xmiddle,
+      xmax = data$xupper,
       ynotchlower = ifelse(notch, data$notchlower, NA),
       ynotchupper = ifelse(notch, data$notchupper, NA),
       notchwidth = notchwidth,
@@ -152,6 +152,5 @@ GeomBoxploth <- ggproto("GeomBoxploth", Geom,
   default_aes = aes(weight = 1, colour = "grey20", fill = "white", size = 0.5,
     alpha = NA, shape = 19, linetype = "solid"),
 
-  required_aes = c("y", "lower", "upper", "middle", "xmin", "xmax")
+  required_aes = c("y", "xlower", "xupper", "xmiddle", "xmin", "xmax")
 )
-
