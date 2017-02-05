@@ -41,3 +41,11 @@ test_that("stat_summaryh() flips", {
   check_horizontal(v, h, "stat_summaryh() with fun.x*()")
 
 })
+
+test_that("stat_summaryh() flips, with median_hilow_h summary", {
+  v <- ggplot(mtcars, aes(x = factor(cyl), y = mpg)) +
+    stat_summary(fun.data = median_hilow)
+  h <- ggplot(mtcars, aes(x = mpg, y = factor(cyl))) +
+    stat_summaryh(fun.data = median_hilow_h)
+  check_horizontal(v, h, "stat_summaryh() with median_hilow_h()")
+})

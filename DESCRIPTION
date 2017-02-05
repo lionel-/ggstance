@@ -18,6 +18,7 @@ Imports:
     rlang,
     withr (>= 2.0.0)
 Suggests:
+    Hmisc,
     testthat,
     vdiffr
 Remotes:

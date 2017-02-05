@@ -94,7 +94,7 @@ make_summary_fun <- function(fun.data, fun.x, fun.xmax, fun.xmin, fun.args) {
 #'
 #' @description
 #' These are horizontal versions of the wrappers around functions from
-#' \pkg{Hmsic} designed to make them easier to use with
+#' \pkg{Hmisc} designed to make them easier to use with
 #' \code{\link{stat_summaryh}}. The corresponding vertical versions are
 #' \code{\link[ggplot2]{hmisc}()}. See the Hmisc documentation for more details:
 #'
@@ -107,7 +107,7 @@ make_summary_fun <- function(fun.data, fun.x, fun.xmax, fun.xmin, fun.args) {
 #' @param x a numeric vector
 #' @param ... other arguments passed on to the respective Hmisc function.
 #' @return A data frame with columns \code{x}, \code{xmin}, and \code{xmax}.
-#' @name hmisc
+#' @name hmisc_h
 #' @examples
 #' x <- rnorm(100)
 #' mean_cl_boot_h(x)
@@ -134,16 +134,16 @@ wrap_hmisc_h <- function(fun) {
 }
 
 #' @export
-#' @rdname hmisc
+#' @rdname hmisc_h
 mean_cl_boot_h <- wrap_hmisc_h("smean.cl.boot")
 #' @export
-#' @rdname hmisc
+#' @rdname hmisc_h
 mean_cl_normal_h <- wrap_hmisc_h("smean.cl.normal")
 #' @export
-#' @rdname hmisc
+#' @rdname hmisc_h
 mean_sdl_h <- wrap_hmisc_h("smean.sdl")
 #' @export
-#' @rdname hmisc
+#' @rdname hmisc_h
 median_hilow_h <- wrap_hmisc_h("smedian.hilow")
 
 
