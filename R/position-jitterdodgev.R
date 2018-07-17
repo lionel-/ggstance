@@ -43,7 +43,6 @@ PositionJitterdodgev <- ggproto("PositionJitterdodgev", Position,
     )
   },
 
-
   compute_panel = function(data, params, scales) {
     data <- collidev(data, params$dodge.height, "position_jitterdodgev", pos_dodgev,
       check.height = FALSE)

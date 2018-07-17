@@ -1,7 +1,10 @@
 #' @rdname position-vertical
 #' @export
-position_dodgev <- function(height = NULL) {
-  ggproto(NULL, PositionDodgev, height = height)
+position_dodgev <- function(height = NULL, preserve = c("total", "single")) {
+  ggproto(NULL, PositionDodgev,
+    height = height,
+    preserve = match.arg(preserve)
+  )
 }
 
 #' @rdname ggstance-ggproto
@@ -10,12 +13,23 @@ position_dodgev <- function(height = NULL) {
 #' @export
 PositionDodgev <- ggproto("PositionDodgev", Position,
   height = NULL,
+  preserve = "total",
   setup_params = function(self, data) {
     if (is.null(data$ymin) && is.null(data$ymax) && is.null(self$height)) {
       warning("Height not defined. Set with `position_dodge(height = ?)`",
         call. = FALSE)
     }
-    list(height = self$height)
+
+    if (identical(self$preserve, "total")) {
+      n <- NULL
+    } else {
+      n <- max(table(data$xmin))
+    }
+
+    list(
+      width = self$width,
+      n = n
+    )
   },
 
   setup_data = function(self, data, params) {
@@ -26,32 +40,42 @@ PositionDodgev <- ggproto("PositionDodgev", Position,
   },
 
   compute_panel = function(data, params, scales) {
-    collidev(data, params$height, "position_dodgev", pos_dodgev, check.height = FALSE)
+    collide(
+      data,
+      params$width,
+      name = "position_dodge",
+      strategy = pos_dodge,
+      n = params$n,
+      check.width = FALSE
+    )
   }
 )
 
-pos_dodgev <- function(df, height) {
-  n <- length(unique(df$group))
-  if (n == 1) return(df)
-
-  if (!all(c("ymin", "ymax") %in% names(df))) {
-    df$ymin <- df$y
-    df$ymax <- df$y
+# Dodge overlapping interval.
+# Assumes that each set has the same horizontal position.
+pos_dodge <- function(df, width, n = NULL) {
+  if (is.null(n)) {
+    n <- length(unique(df$group))
   }
 
-  d_height <- max(df$ymax - df$ymin)
+  if (n == 1)
+    return(df)
 
-  # df <- data.frame(n = c(2:5, 10, 26), div = c(4, 3, 2.666666,  2.5, 2.2, 2.1))
-  # ggplot(df, aes(n, div)) + geom_point()
+  if (!all(c("xmin", "xmax") %in% names(df))) {
+    df$xmin <- df$x
+    df$xmax <- df$x
+  }
+
+  d_width <- max(df$xmax - df$xmin)
 
   # Have a new group index from 1 to number of groups.
   # This might be needed if the group numbers in this set don't include all of 1:n
   groupidx <- match(df$group, sort(unique(df$group)))
 
-  # Find the center for each group, then use that to calculate ymin and lmax
-  df$y <- df$y + height * ((groupidx - 0.5) / n - .5)
-  df$ymin <- df$y - d_height / n / 2
-  df$ymax <- df$y + d_height / n / 2
+  # Find the center for each group, then use that to calculate xmin and xmax
+  df$x <- df$x + width * ((groupidx - 0.5) / n - .5)
+  df$xmin <- df$x - d_width / n / 2
+  df$xmax <- df$x + d_width / n / 2
 
   df
 }
