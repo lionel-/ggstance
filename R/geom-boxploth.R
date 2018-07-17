@@ -11,7 +11,7 @@
 #'   US spelling will take precedence.
 #' @export
 geom_boxploth <- function(mapping = NULL, data = NULL,
-                          stat = "boxploth", position = "dodge2",
+                          stat = "boxploth", position = "dodge2v",
                           ...,
                           outlier.colour = NULL,
                           outlier.color = NULL,
@@ -27,7 +27,7 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
 
   # varwidth = TRUE is not compatible with preserve = "total"
   if (is.character(position)) {
-    if (varwidth == TRUE) position <- position_dodge2(preserve = "single")
+    if (varwidth == TRUE) position <- position_dodge2v(preserve = "single")
   } else {
     if (identical(position$preserve, "total") & varwidth == TRUE) {
       warning("Can't preserve total widths when varwidth = TRUE.", call. = FALSE)

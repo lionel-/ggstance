@@ -2,10 +2,10 @@
 #' @rdname position-vertical
 #' @param padding Padding between elements at the same position. Elements are
 #'   shrunk by this proportion to allow space between them. Defaults to 0.1.
-position_dodge2 <- function(width = NULL, preserve = c("single", "total"),
-                            padding = 0.1) {
-  ggproto(NULL, PositionDodge2,
-    width = width,
+position_dodge2v <- function(height = NULL, preserve = c("single", "total"),
+                             padding = 0.1) {
+  ggproto(NULL, PositionDodge2v,
+    height = height,
     preserve = match.arg(preserve),
     padding = padding
   )
@@ -16,116 +16,116 @@ position_dodge2 <- function(width = NULL, preserve = c("single", "total"),
 #' @usage NULL
 #' @include position-dodgev.R
 #' @export
-PositionDodge2 <- ggproto("PositionDodge2", PositionDodge,
+PositionDodge2v <- ggproto("PositionDodge2v", PositionDodgev,
   preserve = "total",
   padding = 0.1,
   setup_params = function(self, data) {
-    if (is.null(data$xmin) && is.null(data$xmax) && is.null(self$width)) {
-      warning("Width not defined. Set with `position_dodge2(width = ?)`",
+    if (is.null(data$ymin) && is.null(data$ymax) && is.null(self$height)) {
+      warning("Height not defined. Set with `position_dodge2v(height = ?)`",
         call. = FALSE)
     }
 
     if (identical(self$preserve, "total")) {
       n <- NULL
-    } else if ("x" %in% names(data)){
-      n <- max(table(data$x))
+    } else if ("y" %in% names(data)){
+      n <- max(table(data$y))
     } else {
-      n <- max(table(find_x_overlaps(data)))
+      n <- max(table(find_y_overlaps(data)))
     }
 
     list(
-      width = self$width,
+      height = self$height,
       n = n,
       padding = self$padding
     )
   },
 
   compute_panel = function(data, params, scales) {
-    collide2(
+    collide2v(
       data,
-      params$width,
-      name = "position_dodge2",
-      strategy = pos_dodge2,
+      params$height,
+      name = "position_dodge2v",
+      strategy = pos_dodge2v,
       n = params$n,
       padding = params$padding,
-      check.width = FALSE
+      check.height = FALSE
     )
   }
 )
 
-pos_dodge2 <- function(df, width, n = NULL, padding = 0.1) {
+pos_dodge2v <- function(df, height, n = NULL, padding = 0.1) {
 
   if (length(unique(df$group)) == 1) {
     return(df)
   }
 
-  if (!all(c("xmin", "xmax") %in% names(df))) {
-    df$xmin <- df$x
-    df$xmax <- df$x
+  if (!all(c("ymin", "ymax") %in% names(df))) {
+    df$ymin <- df$y
+    df$ymax <- df$y
   }
 
-  # xid represents groups of boxes that share the same position
-  df$xid <- find_x_overlaps(df)
+  # yid represents groups of boxes that share the same position
+  df$yid <- find_y_overlaps(df)
 
-  # based on xid find newx, i.e. the center of each group of overlapping
-  # elements. for boxes, bars, etc. this should be the same as original x, but
+  # based on yid find newy, i.e. the center of each group of overlapping
+  # elements. for boxes, bars, etc. this should be the same as original y, but
   # for arbitrary rects it may not be
-  newx <- (tapply(df$xmin, df$xid, min) + tapply(df$xmax, df$xid, max)) / 2
-  df$newx <- newx[df$xid]
+  newy <- (tapply(df$ymin, df$yid, min) + tapply(df$ymax, df$yid, max)) / 2
+  df$newy <- newy[df$yid]
 
   if (is.null(n)) {
     # If n is null, preserve total widths of elements at each position by
     # dividing widths by the number of elements at that position
-    n <- table(df$xid)
-    df$new_width <- (df$xmax - df$xmin) / as.numeric(n[df$xid])
+    n <- table(df$yid)
+    df$new_height <- (df$ymax - df$ymin) / as.numeric(n[df$yid])
   } else {
-    df$new_width <- (df$xmax - df$xmin) / n
+    df$new_height <- (df$ymax - df$ymin) / n
   }
 
-  df$xmin <- df$x - (df$new_width / 2)
-  df$xmax <- df$x + (df$new_width / 2)
+  df$ymin <- df$y - (df$new_height / 2)
+  df$ymax <- df$y + (df$new_height / 2)
 
-  # Find the total width of each group of elements
+  # Find the total height of each group of elements
   group_sizes <- stats::aggregate(
-    list(size = df$new_width),
-    list(newx = df$newx),
+    list(size = df$new_height),
+    list(newy = df$newy),
     sum
   )
 
-  # Starting xmin for each group of elements
-  starts <- group_sizes$newx - (group_sizes$size / 2)
+  # Starting ymin for each group of elements
+  starts <- group_sizes$newy - (group_sizes$size / 2)
 
   # Set the elements in place
   for (i in seq_along(starts)) {
-    divisions <- cumsum(c(starts[i], df[df$xid == i, "new_width"]))
-    df[df$xid == i, "xmin"] <- divisions[-length(divisions)]
-    df[df$xid == i, "xmax"] <- divisions[-1]
+    divisions <- cumsum(c(starts[i], df[df$yid == i, "new_height"]))
+    df[df$yid == i, "ymin"] <- divisions[-length(divisions)]
+    df[df$yid == i, "ymax"] <- divisions[-1]
   }
 
-  # x values get moved to between xmin and xmax
-  df$x <- (df$xmin + df$xmax) / 2
+  # y values get moved to between ymin and ymax
+  df$y <- (df$ymin + df$ymax) / 2
 
   # If no elements occupy the same position, there is no need to add padding
-  if (!any(duplicated(df$xid))) {
+  if (!any(duplicated(df$yid))) {
     return(df)
   }
 
   # Shrink elements to add space between them
-  df$pad_width <- df$new_width * (1 - padding)
-  df$xmin <- df$x - (df$pad_width / 2)
-  df$xmax <- df$x + (df$pad_width / 2)
+  df$pad_height <- df$new_height * (1 - padding)
+  df$ymin <- df$y - (df$pad_height / 2)
+  df$ymax <- df$y + (df$pad_height / 2)
 
-  df[, c("xid", "newx", "new_width", "pad_width")] <- NULL
+  df[, c("yid", "newy", "new_height", "pad_height")] <- NULL
 
   df
 }
 
 # Find groups of overlapping elements that need to be dodged from one another
-find_x_overlaps <- function(df) {
+find_y_overlaps <- function(df) {
   overlaps <- vector(mode = "numeric", length = nrow(df))
   overlaps[1] <- counter <- 1
   for (i in 2:nrow(df)) {
-    if (df$xmin[i] >= df$xmax[i - 1]) {
+    if (df$ymin[i] >= df$ymax[i - 1]) {
       counter <- counter + 1
     }
     overlaps[i] <- counter

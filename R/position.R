@@ -45,9 +45,9 @@ collidev_setup <- function(data, height = NULL, name, strategy,
 
 collidev <- function(data, height = NULL, name, strategy,
                      ..., check.height = TRUE, reverse = FALSE) {
-  dlist <- collide_setup(data, width, name, strategy, check.width, reverse)
+  dlist <- collidev_setup(data, height, name, strategy, check.height, reverse)
   data <- dlist$data
-  width <- dlist$width
+  height <- dlist$height
 
   # Reorder by x position, then on group. The default stacking order reverses
   # the group in order to match the legend order.
@@ -80,22 +80,22 @@ collidev <- function(data, height = NULL, name, strategy,
   }
 }
 
-# Alternate version of collide() used by position_dodge2()
-collide2 <- function(data, width = NULL, name, strategy,
-                     ..., check.width = TRUE, reverse = FALSE) {
-  dlist <- collide_setup(data, width, name, strategy, check.width, reverse)
+# Alternate version of collidev() used by position_dodgev2()
+collide2v <- function(data, height = NULL, name, strategy,
+                      ..., check.height = TRUE, reverse = FALSE) {
+  dlist <- collidev_setup(data, height, name, strategy, check.height, reverse)
   data <- dlist$data
-  width <- dlist$width
+  height <- dlist$height
 
   # Reorder by x position, then on group. The default stacking order is
   # different than for collide() because of the order in which pos_dodge2 places
   # elements
   if (reverse) {
-    data <- data[order(data$x, -data$group), ]
+    data <- data[order(data$y, -data$group), ]
   } else {
-    data <- data[order(data$x, data$group), ]
+    data <- data[order(data$y, data$group), ]
   }
 
   pos <- match.fun(strategy)
-  pos(data, width, ...)
+  pos(data, height, ...)
 }

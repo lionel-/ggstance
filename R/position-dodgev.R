@@ -19,8 +19,8 @@ PositionDodgev <- ggproto("PositionDodgev", Position,
   },
 
   setup_data = function(self, data, params) {
-    if (!"x" %in% names(data) & all(c("xmin", "xmax") %in% names(data))) {
-      data$x <- (data$xmin + data$xmax) / 2
+    if (!"y" %in% names(data) && all(c("ymin", "ymax") %in% names(data))) {
+      data$y <- (data$ymin + data$ymax) / 2
     }
     data
   },
