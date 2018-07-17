@@ -1,5 +1,4 @@
-#' @importFrom purrr map map_if walk2 keep map_at splice invoke some
-#'   walk partial set_names %||%
+#' @importFrom rlang %||%
 #' @importFrom grid grobName grobTree gTree gList gpar rectGrob linesGrob
 #'   segmentsGrob
 #' @import ggplot2
