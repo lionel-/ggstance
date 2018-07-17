@@ -13,9 +13,10 @@ Description: A 'ggplot2' extension that provides flipped components:
 Depends:
     R (>= 3.1.0)
 Imports:
-    ggplot2 (>= 2.2),
+    ggplot2 (>= 3.0.0),
     plyr,
-    rlang
+    rlang,
+    withr (>= 2.0.0)
 Suggests:
     testthat,
     vdiffr
