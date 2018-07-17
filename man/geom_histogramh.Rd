@@ -9,59 +9,62 @@ geom_histogramh(mapping = NULL, data = NULL, stat = "binh",
   show.legend = NA, inherit.aes = TRUE)
 }
 \arguments{
-\item{mapping}{Set of aesthetic mappings created by \code{\link{aes}} or
-\code{\link{aes_}}. If specified and \code{inherit.aes = TRUE} (the
+\item{mapping}{Set of aesthetic mappings created by \code{\link[=aes]{aes()}} or
+\code{\link[=aes_]{aes_()}}. If specified and \code{inherit.aes = TRUE} (the
 default), it is combined with the default mapping at the top level of the
 plot. You must supply \code{mapping} if there is no plot mapping.}
 
 \item{data}{The data to be displayed in this layer. There are three
-   options:
+options:
 
-   If \code{NULL}, the default, the data is inherited from the plot
-   data as specified in the call to \code{\link{ggplot}}.
+If \code{NULL}, the default, the data is inherited from the plot
+data as specified in the call to \code{\link[=ggplot]{ggplot()}}.
 
-   A \code{data.frame}, or other object, will override the plot
-   data. All objects will be fortified to produce a data frame. See
-   \code{\link{fortify}} for which variables will be created.
+A \code{data.frame}, or other object, will override the plot
+data. All objects will be fortified to produce a data frame. See
+\code{\link[=fortify]{fortify()}} for which variables will be created.
 
-   A \code{function} will be called with a single argument,
-   the plot data. The return value must be a \code{data.frame.}, and
-   will be used as the layer data.}
+A \code{function} will be called with a single argument,
+the plot data. The return value must be a \code{data.frame.}, and
+will be used as the layer data.}
 
-\item{stat}{The statistical transformation to use on the data for this
-layer, as a string.}
+\item{stat}{Use to override the default connection between
+\code{geom_histogram}/\code{geom_freqpoly} and \code{stat_bin}.}
 
 \item{position}{Position adjustment, either as a string, or the result of
 a call to a position adjustment function.}
 
-\item{...}{other arguments passed on to \code{\link{layer}}. These are
+\item{...}{Other arguments passed on to \code{\link[=layer]{layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
 \code{color = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
 
-\item{binwidth}{The width of the bins. The default is to use \code{bins}
-  bins that cover the range of the data. You should always override
-  this value, exploring multiple widths to find the best to illustrate the
-  stories in your data.
+\item{binwidth}{The width of the bins. Can be specified as a numeric value,
+or a function that calculates width from x.
+The default is to use \code{bins}
+bins that cover the range of the data. You should always override
+this value, exploring multiple widths to find the best to illustrate the
+stories in your data.
 
-  The bin width of a date variable is the number of days in each time; the
-  bin width of a time variable is the number of seconds.}
+The bin width of a date variable is the number of days in each time; the
+bin width of a time variable is the number of seconds.}
 
-\item{bins}{Number of bins. Overridden by \code{binwidth}. Defaults to 30}
+\item{bins}{Number of bins. Overridden by \code{binwidth}. Defaults to 30.}
 
 \item{na.rm}{If \code{FALSE}, the default, missing values are removed with
 a warning. If \code{TRUE}, missing values are silently removed.}
 
 \item{show.legend}{logical. Should this layer be included in the legends?
 \code{NA}, the default, includes if any aesthetics are mapped.
-\code{FALSE} never includes, and \code{TRUE} always includes.}
+\code{FALSE} never includes, and \code{TRUE} always includes.
+It can also be a named logical vector to finely select the aesthetics to
+display.}
 
 \item{inherit.aes}{If \code{FALSE}, overrides the default aesthetics,
 rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. \code{\link{borders}}.}
+the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
 }
 \description{
 Horizontal version of \code{\link[ggplot2]{geom_histogram}()}.
 }
-
