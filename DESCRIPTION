@@ -15,10 +15,8 @@ Depends:
 Imports:
     ggplot2 (>= 2.2),
     purrr (>= 0.2),
-    lazyeval,
     plyr
 Suggests:
-    magrittr,
     testthat,
     vdiffr
 License: GPL-3
