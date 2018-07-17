@@ -46,7 +46,7 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
     params = list(
-      outlier.colour = outlier.colour,
+      outlier.colour = outlier.color %||% outlier.colour,
       outlier.fill = outlier.fill,
       outlier.shape = outlier.shape,
       outlier.size = outlier.size,
