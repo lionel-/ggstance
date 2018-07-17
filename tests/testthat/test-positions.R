@@ -12,11 +12,10 @@ test_that("position_dodge() flips", {
 
 test_that("position_jitterdodge() flips", {
   dsub <- diamonds[1:100, ]
-
   v <- ggplot(dsub, aes(cut, carat, color = clarity)) +
-    geom_point(position = position_jitterdodge())
+    geom_point(position = position_jitterdodge(seed = 100))
   h <- ggplot(dsub, aes(carat, cut, color = clarity)) +
-    geom_point(position = position_jitterdodgev())
+    geom_point(position = position_jitterdodgev(seed = 100))
 
   check_horizontal(v, h, "position-jitterdodge", TRUE)
 })
