@@ -23,11 +23,11 @@ PositionDodgev <- ggproto("PositionDodgev", Position,
     if (identical(self$preserve, "total")) {
       n <- NULL
     } else {
-      n <- max(table(data$xmin))
+      n <- max(table(data$ymin))
     }
 
     list(
-      width = self$width,
+      height = self$height,
       n = n
     )
   },
@@ -40,20 +40,20 @@ PositionDodgev <- ggproto("PositionDodgev", Position,
   },
 
   compute_panel = function(data, params, scales) {
-    collide(
+    collidev(
       data,
-      params$width,
-      name = "position_dodge",
-      strategy = pos_dodge,
+      params$height,
+      name = "position_dodgev",
+      strategy = pos_dodgev,
       n = params$n,
-      check.width = FALSE
+      check.height = FALSE
     )
   }
 )
 
 # Dodge overlapping interval.
 # Assumes that each set has the same horizontal position.
-pos_dodge <- function(df, width, n = NULL) {
+pos_dodgev <- function(df, height, n = NULL) {
   if (is.null(n)) {
     n <- length(unique(df$group))
   }
@@ -61,21 +61,21 @@ pos_dodge <- function(df, width, n = NULL) {
   if (n == 1)
     return(df)
 
-  if (!all(c("xmin", "xmax") %in% names(df))) {
-    df$xmin <- df$x
-    df$xmax <- df$x
+  if (!all(c("ymin", "ymax") %in% names(df))) {
+    df$ymin <- df$y
+    df$ymax <- df$y
   }
 
-  d_width <- max(df$xmax - df$xmin)
+  d_height <- max(df$ymax - df$ymin)
 
   # Have a new group index from 1 to number of groups.
   # This might be needed if the group numbers in this set don't include all of 1:n
-  groupidx <- match(df$group, sort(unique(df$group)))
+  groupidy <- match(df$group, sort(unique(df$group)))
 
-  # Find the center for each group, then use that to calculate xmin and xmax
-  df$x <- df$x + width * ((groupidx - 0.5) / n - .5)
-  df$xmin <- df$x - d_width / n / 2
-  df$xmax <- df$x + d_width / n / 2
+  # Find the center for each group, then use that to calculate ymin and ymax
+  df$y <- df$y + height * ((groupidy - 0.5) / n - .5)
+  df$ymin <- df$y - d_height / n / 2
+  df$ymax <- df$y + d_height / n / 2
 
   df
 }
