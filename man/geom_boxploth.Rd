@@ -5,7 +5,7 @@
 \title{Horizontal box and whiskers plot.}
 \usage{
 geom_boxploth(mapping = NULL, data = NULL, stat = "boxploth",
-  position = "dodgev", ..., outlier.colour = NULL, outlier.color = NULL,
+  position = "dodge2v", ..., outlier.colour = NULL, outlier.color = NULL,
   outlier.shape = 19, outlier.size = 1.5, outlier.stroke = 0.5,
   notch = FALSE, notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE,
   show.legend = NA, inherit.aes = TRUE)

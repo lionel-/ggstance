@@ -9,7 +9,6 @@ position_dodgev <- function(height = NULL) {
 #' @usage NULL
 #' @export
 PositionDodgev <- ggproto("PositionDodgev", Position,
-  required_aes = "y",
   height = NULL,
   setup_params = function(self, data) {
     if (is.null(data$ymin) && is.null(data$ymax) && is.null(self$height)) {
@@ -17,6 +16,13 @@ PositionDodgev <- ggproto("PositionDodgev", Position,
         call. = FALSE)
     }
     list(height = self$height)
+  },
+
+  setup_data = function(self, data, params) {
+    if (!"x" %in% names(data) & all(c("xmin", "xmax") %in% names(data))) {
+      data$x <- (data$xmin + data$xmax) / 2
+    }
+    data
   },
 
   compute_panel = function(data, params, scales) {

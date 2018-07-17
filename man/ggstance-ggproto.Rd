@@ -2,8 +2,8 @@
 % Please edit documentation in R/geom-barh.R, R/geom-boxploth.R,
 %   R/geom-crossbarh.R, R/geom-errorbarh.R, R/geom-linerangeh.R,
 %   R/geom-pointrangeh.R, R/geom-violinh.R, R/ggstance.R, R/position-dodgev.R,
-%   R/position-jitterdodgev.R, R/position-stackv.R, R/stat-binh.R,
-%   R/stat-boxploth.R, R/stat-counth.R, R/stat-xdensity.R
+%   R/position-dodge2v.R, R/position-jitterdodgev.R, R/position-stackv.R,
+%   R/stat-binh.R, R/stat-boxploth.R, R/stat-counth.R, R/stat-xdensity.R
 \docType{data}
 \name{GeomBarh}
 \alias{GeomBarh}
@@ -15,6 +15,7 @@
 \alias{GeomViolinh}
 \alias{ggstance-ggproto}
 \alias{PositionDodgev}
+\alias{PositionDodge2v}
 \alias{PositionJitterdodgev}
 \alias{PositionStackv}
 \alias{PositionFillv}

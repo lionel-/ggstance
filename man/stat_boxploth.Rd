@@ -5,8 +5,8 @@
 \title{Horizontal boxplot computation.}
 \usage{
 stat_boxploth(mapping = NULL, data = NULL, geom = "boxploth",
-  position = "dodgev", ..., coef = 1.5, na.rm = FALSE, show.legend = NA,
-  inherit.aes = TRUE)
+  position = "dodge2v", ..., coef = 1.5, na.rm = FALSE,
+  show.legend = NA, inherit.aes = TRUE)
 }
 \arguments{
 \item{mapping}{Set of aesthetic mappings created by \code{\link[=aes]{aes()}} or
