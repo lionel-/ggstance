@@ -1,6 +1,8 @@
 
 # ggstance 0.3.0.9000
 
+* Compatibility with ggplot2 3.0.0
+
 * Fix horizontal boxplot issue when y scale is continuous.
 
 * Change minimal R version to 3.1.0, to be consistent with ggplot2.
