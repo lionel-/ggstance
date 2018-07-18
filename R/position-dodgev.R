@@ -23,7 +23,9 @@ PositionDodgev <- ggproto("PositionDodgev", Position,
     if (identical(self$preserve, "total")) {
       n <- NULL
     } else {
-      n <- max(table(data$ymin))
+      panels <- unname(split(data, data$PANEL))
+      ns <- vapply(panels, function(panel) max(table(panel$ymin)), double(1))
+      n <- max(ns)
     }
 
     list(
