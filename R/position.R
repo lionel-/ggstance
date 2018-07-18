@@ -7,6 +7,7 @@
 #' @name position-vertical
 #' @inheritParams ggplot2::position_jitterdodge
 #' @inheritParams ggplot2::position_nudge
+#' @inheritParams ggplot2::position_dodge
 #' @param height Dodging height, when different to the height of the individual
 #'   elements. This is useful when you want to align narrow geoms with taller
 #'   geoms.

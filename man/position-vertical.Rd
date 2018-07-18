@@ -10,13 +10,13 @@
 \alias{position-vertical}
 \title{Vertical Positions}
 \usage{
-position_dodgev(height = NULL)
+position_dodgev(height = NULL, preserve = c("total", "single"))
 
 position_dodge2v(height = NULL, preserve = c("single", "total"),
-  padding = 0.1)
+  padding = 0.1, reverse = FALSE)
 
 position_jitterdodgev(jitter.height = NULL, jitter.width = 0,
-  dodge.height = 0.75)
+  dodge.height = 0.75, seed = NA)
 
 position_stackv()
 
@@ -27,8 +27,14 @@ position_fillv()
 elements. This is useful when you want to align narrow geoms with taller
 geoms.}
 
+\item{preserve}{Should dodging preserve the total width of all elements
+at a position, or the width of a single element?}
+
 \item{padding}{Padding between elements at the same position. Elements are
 shrunk by this proportion to allow space between them. Defaults to 0.1.}
+
+\item{reverse}{If \code{TRUE}, will reverse the default stacking order.
+This is useful if you're rotating both the plot and legend.}
 
 \item{jitter.height}{degree of jitter in y direction. Defaults to 0.}
 
@@ -37,6 +43,15 @@ resolution of the data.}
 
 \item{dodge.height}{the amount to dodge in the y direction. Defaults to 0.75,
 the default \code{position_dodgev()} height.}
+
+\item{seed}{A random seed to make the jitter reproducible.
+Useful if you need to apply the same jitter twice, e.g., for a point and
+a corresponding label.
+The random seed is reset after jittering.
+If \code{NA} (the default value), the seed is initialised with a random value;
+this makes sure that two subsequent calls start with a different seed.
+Use \code{NULL} to use the current random seed and also avoid resetting
+(the behavior of \pkg{ggplot} 2.2.1 and earlier).}
 }
 \description{
 Vertical versions of \code{\link[ggplot2]{position_dodge}()},

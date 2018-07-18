@@ -6,9 +6,10 @@
 \usage{
 geom_boxploth(mapping = NULL, data = NULL, stat = "boxploth",
   position = "dodge2v", ..., outlier.colour = NULL, outlier.color = NULL,
-  outlier.shape = 19, outlier.size = 1.5, outlier.stroke = 0.5,
-  notch = FALSE, notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE,
-  show.legend = NA, inherit.aes = TRUE)
+  outlier.fill = NULL, outlier.shape = 19, outlier.size = 1.5,
+  outlier.stroke = 0.5, outlier.alpha = NULL, notch = FALSE,
+  notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE, show.legend = NA,
+  inherit.aes = TRUE)
 }
 \arguments{
 \item{mapping}{Set of aesthetic mappings created by \code{\link[=aes]{aes()}} or
@@ -46,6 +47,30 @@ to the paired geom/stat.}
 
   In the unlikely event you specify both US and UK spellings of colour, the
   US spelling will take precedence.}
+
+\item{outlier.fill}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
+aesthetics used for the box.
+
+In the unlikely event you specify both US and UK spellings of colour, the
+US spelling will take precedence.
+
+Sometimes it can be useful to hide the outliers, for example when overlaying
+the raw data points on top of the boxplot. Hiding the outliers can be achieved
+by setting \code{outlier.shape = NA}. Importantly, this does not remove the outliers,
+it only hides them, so the range calculated for the y-axis will be the
+same with outliers shown and outliers hidden.}
+
+\item{outlier.alpha}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
+aesthetics used for the box.
+
+In the unlikely event you specify both US and UK spellings of colour, the
+US spelling will take precedence.
+
+Sometimes it can be useful to hide the outliers, for example when overlaying
+the raw data points on top of the boxplot. Hiding the outliers can be achieved
+by setting \code{outlier.shape = NA}. Importantly, this does not remove the outliers,
+it only hides them, so the range calculated for the y-axis will be the
+same with outliers shown and outliers hidden.}
 
 \item{notch}{If \code{FALSE} (default) make a standard box plot. If
 \code{TRUE}, make a notched box plot. Notches are used to compare groups;
