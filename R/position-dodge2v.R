@@ -3,11 +3,12 @@
 #' @param padding Padding between elements at the same position. Elements are
 #'   shrunk by this proportion to allow space between them. Defaults to 0.1.
 position_dodge2v <- function(height = NULL, preserve = c("single", "total"),
-                             padding = 0.1) {
+                             padding = 0.1, reverse = FALSE) {
   ggproto(NULL, PositionDodge2v,
     height = height,
     preserve = match.arg(preserve),
-    padding = padding
+    padding = padding,
+    reverse = reverse
   )
 }
 
@@ -19,24 +20,34 @@ position_dodge2v <- function(height = NULL, preserve = c("single", "total"),
 PositionDodge2v <- ggproto("PositionDodge2v", PositionDodgev,
   preserve = "total",
   padding = 0.1,
+  reverse = FALSE,
+
   setup_params = function(self, data) {
     if (is.null(data$ymin) && is.null(data$ymax) && is.null(self$height)) {
-      warning("Height not defined. Set with `position_dodge2v(height = ?)`",
+      warning("Height not defined. Set with `position_dodge2(height = ?)`",
         call. = FALSE)
     }
 
     if (identical(self$preserve, "total")) {
       n <- NULL
-    } else if ("y" %in% names(data)){
-      n <- max(table(data$y))
     } else {
-      n <- max(table(find_y_overlaps(data)))
+      panels <- unname(split(data, data$PANEL))
+      if ("y" %in% names(data)) {
+        # Point geom
+        groups <- lapply(panels, function(panel) table(panel$y))
+      } else {
+        # Interval geom
+        groups <- lapply(panels, find_y_overlaps)
+      }
+      n_groups <- vapply(groups, max, double(1))
+      n <- max(n_groups)
     }
 
     list(
       height = self$height,
       n = n,
-      padding = self$padding
+      padding = self$padding,
+      reverse = self$reverse
     )
   },
 
@@ -48,17 +59,13 @@ PositionDodge2v <- ggproto("PositionDodge2v", PositionDodgev,
       strategy = pos_dodge2v,
       n = params$n,
       padding = params$padding,
-      check.height = FALSE
+      check.height = FALSE,
+      reverse = params$reverse
     )
   }
 )
 
 pos_dodge2v <- function(df, height, n = NULL, padding = 0.1) {
-
-  if (length(unique(df$group)) == 1) {
-    return(df)
-  }
-
   if (!all(c("ymin", "ymax") %in% names(df))) {
     df$ymin <- df$y
     df$ymax <- df$y
@@ -81,9 +88,6 @@ pos_dodge2v <- function(df, height, n = NULL, padding = 0.1) {
   } else {
     df$new_height <- (df$ymax - df$ymin) / n
   }
-
-  df$ymin <- df$y - (df$new_height / 2)
-  df$ymax <- df$y + (df$new_height / 2)
 
   # Find the total height of each group of elements
   group_sizes <- stats::aggregate(
@@ -115,20 +119,32 @@ pos_dodge2v <- function(df, height, n = NULL, padding = 0.1) {
   df$ymin <- df$y - (df$pad_height / 2)
   df$ymax <- df$y + (df$pad_height / 2)
 
-  df[, c("yid", "newy", "new_height", "pad_height")] <- NULL
+  df$yid <- NULL
+  df$newy <- NULL
+  df$new_height <- NULL
+  df$pad_height <- NULL
 
   df
 }
 
 # Find groups of overlapping elements that need to be dodged from one another
 find_y_overlaps <- function(df) {
-  overlaps <- vector(mode = "numeric", length = nrow(df))
+  overlaps <- numeric(nrow(df))
   overlaps[1] <- counter <- 1
-  for (i in 2:nrow(df)) {
+
+  for (i in seq_asc(2, nrow(df))) {
     if (df$ymin[i] >= df$ymax[i - 1]) {
       counter <- counter + 1
     }
     overlaps[i] <- counter
   }
   overlaps
+}
+
+seq_asc <- function(to, from) {
+  if (to > from) {
+    integer()
+  } else {
+    to:from
+  }
 }
