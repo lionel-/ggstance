@@ -31,6 +31,7 @@ Collate:
     'geom-barh.R'
     'legend-draw.R'
     'geom-boxploth.R'
+    'geom-colh.R'
     'geom-crossbarh.R'
     'geom-errorbarh.R'
     'geom-histogramh.R'
