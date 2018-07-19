@@ -55,6 +55,13 @@ test_that("geom_barh() flips", {
   check_horizontal(v, h, "geom_barh() with count stat")
 })
 
+test_that("geom_colh() flips", {
+  df <- data.frame(trt = c("a", "b", "c"), outcome = c(2.3, 1.9, 3.2))
+  v <- ggplot(df, aes(trt, outcome)) + geom_col()
+  h <- ggplot(df, aes(outcome, trt)) + geom_colh()
+  check_horizontal(v, h, "geom_colh()")
+})
+
 test_that("geom_histogramh() flips", {
   v <- ggplot(mtcars, aes(drat)) + geom_histogram(bins = 10)
   h <- ggplot(mtcars, aes(y = drat)) + geom_histogramh(bins = 10)

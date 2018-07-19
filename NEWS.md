@@ -1,6 +1,8 @@
 
 # ggstance 0.3.0.9000
 
+* New horizontal `geom_colh()` function.
+
 * `geom_barh()` now uses the `counth` statistic by default instead of
   `count`, which fixes many bugs (#19, thanks to @erocoar).
 
