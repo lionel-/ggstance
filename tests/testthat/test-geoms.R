@@ -73,6 +73,14 @@ test_that("geom_violinh() flips", {
   v_facet <- ggplot(mtcars, aes(factor(cyl), mpg, fill = factor(am))) + facet_wrap(~vs) + geom_violin()
   h_facet <- ggplot(mtcars, aes(mpg, factor(cyl), fill = factor(am))) + facet_wrap(~vs) + geom_violinh()
   check_horizontal(v_facet, h_facet, "geom_violinh() + facet_wrap()")
+
+  set.seed(111)
+  dat <- data.frame(x = LETTERS[1:3], y = rnorm(90))
+  dat <- dat[dat$x != "C" | c(TRUE, FALSE), ] # Keep half the C's
+
+  v <- ggplot(dat, aes(x = x, y = y)) + geom_violin(draw_quantiles = c(0.25, 0.5, 0.75))
+  h <- ggplot(dat, aes(x = y, y = x)) + geom_violinh(draw_quantiles = c(0.25, 0.5, 0.75))
+  check_horizontal(v, h, "geom_violinh() + draw_quantiles")
 })
 
 test_that("geom_boxploth() flips", {
