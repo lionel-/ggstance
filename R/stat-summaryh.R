@@ -89,3 +89,79 @@ make_summary_fun <- function(fun.data, fun.x, fun.xmax, fun.xmin, fun.args) {
     }
   }
 }
+
+#' Horizontal versions of summary functions from Hmisc
+#'
+#' @description
+#' These are horizontal versions of the wrappers around functions from
+#' \pkg{Hmisc} designed to make them easier to use with
+#' \code{\link{stat_summaryh}}. The corresponding vertical versions are
+#' \code{\link[ggplot2]{hmisc}()}. See the Hmisc documentation for more details:
+#'
+#' \itemize{
+#'  \item \code{\link[Hmisc]{smean.cl.boot}}
+#'  \item \code{\link[Hmisc]{smean.cl.normal}}
+#'  \item \code{\link[Hmisc]{smean.sdl}}
+#'  \item \code{\link[Hmisc]{smedian.hilow}}
+#' }
+#' @param x a numeric vector
+#' @param ... other arguments passed on to the respective Hmisc function.
+#' @return A data frame with columns \code{x}, \code{xmin}, and \code{xmax}.
+#' @name hmisc_h
+#' @examples
+#' x <- rnorm(100)
+#' mean_cl_boot_h(x)
+#' mean_cl_normal_h(x)
+#' mean_sdl_h(x)
+#' median_hilow_h(x)
+NULL
+
+wrap_hmisc_h <- function(fun) {
+
+  function(x, ...) {
+    if (!requireNamespace("Hmisc", quietly = TRUE))
+      stop("Hmisc package required for this function", call. = FALSE)
+
+    fun <- getExportedValue("Hmisc", fun)
+    result <- do.call(fun, list(x = quote(x), ...))
+
+    plyr::rename(
+      data.frame(t(result)),
+      c(Median = "x", Mean = "x", Lower = "xmin", Upper = "xmax"),
+      warn_missing = FALSE
+    )
+  }
+}
+
+#' @export
+#' @rdname hmisc_h
+mean_cl_boot_h <- wrap_hmisc_h("smean.cl.boot")
+#' @export
+#' @rdname hmisc_h
+mean_cl_normal_h <- wrap_hmisc_h("smean.cl.normal")
+#' @export
+#' @rdname hmisc_h
+mean_sdl_h <- wrap_hmisc_h("smean.sdl")
+#' @export
+#' @rdname hmisc_h
+median_hilow_h <- wrap_hmisc_h("smedian.hilow")
+
+
+#' Calculate mean and standard error
+#'
+#' For use with \code{\link{stat_summaryh}}. Corresponding function for
+#' vertical geoms is \code{\link[ggplot2]{mean_se}()}
+#'
+#' @param x numeric vector
+#' @param mult number of multiples of standard error
+#' @return A data frame with columns \code{x}, \code{xmin}, and \code{xmax}.
+#' @export
+#' @examples
+#' x <- rnorm(100)
+#' mean_se_h(x)
+mean_se_h <- function(x, mult = 1) {
+  x <- stats::na.omit(x)
+  se <- mult * sqrt(stats::var(x) / length(x))
+  mean <- mean(x)
+  data.frame(x = mean, xmin = mean - se, xmax = mean + se)
+}

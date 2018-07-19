@@ -1,6 +1,10 @@
 
 # ggstance 0.3.0.9000
 
+* New horizontal summary functions `mean_se_h()`, `mean_cl_boot_h()`,
+  `mean_cl_normal_h()`, `mean_sdl_h()` and `median_hilow_h()` (thanks
+  to @rjbgoudie).
+
 * Compatibility with ggplot2 3.0.0
 
 * Fix horizontal boxplot issue when y scale is continuous.
