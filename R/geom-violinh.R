@@ -96,3 +96,50 @@ GeomViolinh <- ggproto("GeomViolinh", Geom,
 
   required_aes = c("x", "y")
 )
+
+
+# Returns a data.frame with info needed to draw quantile segments.
+create_quantile_segment_frame <- function(data, draw_quantiles) {
+
+  dens <- cumsum(data$density) / sum(data$density)
+  ecdf <- stats::approxfun(dens, data$x)
+  xs <- ecdf(draw_quantiles) # these are all the x-values for quantiles
+
+  # Get the violin bounds for the requested quantiles.
+  violin.yminvs <- (stats::approxfun(data$x, data$yminv))(xs)
+  violin.ymaxvs <- (stats::approxfun(data$x, data$ymaxv))(xs)
+
+  # We have two rows per segment drawn. Each segment gets its own group.
+  data.frame(
+    x = rep(xs, each = 2),
+    y = interleave(violin.yminvs, violin.ymaxvs),
+    group = rep(xs, each = 2)
+  )
+}
+
+
+# Interleave (or zip) multiple units into one vector
+interleave <- function(...) UseMethod("interleave")
+#' @export
+interleave.unit <- function(...) {
+  do.call("unit.c", do.call("interleave.default", plyr::llply(list(...), as.list)))
+}
+#' @export
+interleave.default <- function(...) {
+  vectors <- list(...)
+
+  # Check lengths
+  lengths <- unique(setdiff(plyr::laply(vectors, length), 1))
+  if (length(lengths) == 0) lengths <- 1
+  stopifnot(length(lengths) <= 1)
+
+  # Replicate elements of length one up to correct length
+  singletons <- plyr::laply(vectors, length) == 1
+  vectors[singletons] <- plyr::llply(vectors[singletons], rep, lengths)
+
+  # Interleave vectors
+  n <- lengths
+  p <- length(vectors)
+  interleave <- rep(1:n, each = p) + seq(0, p - 1) * n
+  unlist(vectors, recursive = FALSE)[interleave]
+}
