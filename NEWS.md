@@ -1,9 +1,11 @@
 
 # ggstance 0.3.0.9000
 
-* `position_stackv()` gains `hjust` and `reverse` arguments.
+* `stat_counth()` is now exported (#22).
 
-* New horizontal `geom_colh()` function.
+* `position_stackv()` gains `hjust` and `reverse` arguments (#17).
+
+* New horizontal `geom_colh()` layer.
 
 * `geom_barh()` now uses the `counth` statistic by default instead of
   `count`, which fixes many bugs (#19, thanks to @erocoar).
