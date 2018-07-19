@@ -10,20 +10,57 @@
 #'   In the unlikely event you specify both US and UK spellings of colour, the
 #'   US spelling will take precedence.
 #' @export
+#' @examples
+#' library("ggplot2")
+#'
+#' # With ggplot2 we need coord_flip():
+#' ggplot(mpg, aes(class, hwy, fill = factor(cyl))) +
+#'   geom_boxplot() +
+#'   coord_flip()
+#'
+#' # With ggstance we use the h-suffixed version:
+#' ggplot(mpg, aes(hwy, class, fill = factor(cyl))) +
+#'   geom_boxploth()
+#'
+#' # With facets ggstance horizontal layers are often the only way of
+#' # having all ggplot features working correctly, for instance free
+#' # scales:
+#' df <- data.frame(
+#'   Group = factor(rep(1:3, each = 4), labels = c("Drug A", "Drug B", "Control")),
+#'   Subject = factor(rep(1:6, each = 2), labels = c("A", "B", "C", "D", "E", "F")),
+#'   Result = rnorm(12)
+#' )
+#'
+#' ggplot(df, aes(Result, Subject))+
+#'   geom_boxploth(aes(fill = Group))+
+#'   facet_grid(Group ~ ., scales = "free_y")
 geom_boxploth <- function(mapping = NULL, data = NULL,
-                          stat = "boxploth", position = "dodgev",
+                          stat = "boxploth", position = "dodge2v",
                           ...,
                           outlier.colour = NULL,
                           outlier.color = NULL,
+                          outlier.fill = NULL,
                           outlier.shape = 19,
                           outlier.size = 1.5,
                           outlier.stroke = 0.5,
+                          outlier.alpha = NULL,
                           notch = FALSE,
                           notchwidth = 0.5,
                           varwidth = FALSE,
                           na.rm = FALSE,
                           show.legend = NA,
                           inherit.aes = TRUE) {
+
+  # varwidth = TRUE is not compatible with preserve = "total"
+  if (is.character(position)) {
+    if (varwidth == TRUE) position <- position_dodge2v(preserve = "single")
+  } else {
+    if (identical(position$preserve, "total") & varwidth == TRUE) {
+      warning("Can't preserve total widths when varwidth = TRUE.", call. = FALSE)
+      position$preserve <- "single"
+    }
+  }
+
   layer(
     data = data,
     mapping = mapping,
@@ -33,10 +70,12 @@ geom_boxploth <- function(mapping = NULL, data = NULL,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
     params = list(
-      outlier.colour = outlier.colour,
+      outlier.colour = outlier.color %||% outlier.colour,
+      outlier.fill = outlier.fill,
       outlier.shape = outlier.shape,
       outlier.size = outlier.size,
       outlier.stroke = outlier.stroke,
+      outlier.alpha = outlier.alpha,
       notch = notch,
       notchwidth = notchwidth,
       varwidth = varwidth,
@@ -82,7 +121,7 @@ GeomBoxploth <- ggproto("GeomBoxploth", Geom,
     data
   },
 
-  draw_group = function(data, panel_scales, coord, fatten = 2,
+  draw_group = function(data, panel_params, coord, fatten = 2,
                         outlier.colour = NULL, outlier.fill = NULL,
                         outlier.shape = 19,
                         outlier.size = 1.5, outlier.stroke = 0.5,
@@ -135,15 +174,15 @@ GeomBoxploth <- ggproto("GeomBoxploth", Geom,
         alpha = outlier.alpha %||% data$alpha[1],
         stringsAsFactors = FALSE
       )
-      outliers_grob <- GeomPoint$draw_panel(outliers, panel_scales, coord)
+      outliers_grob <- GeomPoint$draw_panel(outliers, panel_params, coord)
     } else {
       outliers_grob <- NULL
     }
 
     ggname("geom_boxploth", grobTree(
       outliers_grob,
-      GeomSegment$draw_panel(whiskers, panel_scales, coord),
-      GeomCrossbarh$draw_panel(box, fatten = fatten, panel_scales, coord)
+      GeomSegment$draw_panel(whiskers, panel_params, coord),
+      GeomCrossbarh$draw_panel(box, fatten = fatten, panel_params, coord)
     ))
   },
 

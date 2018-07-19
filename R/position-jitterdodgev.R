@@ -1,11 +1,16 @@
 #' @rdname position-vertical
 #' @export
 position_jitterdodgev <- function(jitter.height = NULL, jitter.width = 0,
-                                  dodge.height = 0.75) {
+                                  dodge.height = 0.75, seed = NA) {
+  if (!is.null(seed) && is.na(seed)) {
+    seed <- sample.int(.Machine$integer.max, 1L)
+  }
+
   ggproto(NULL, PositionJitterdodgev,
     jitter.width = jitter.width,
     jitter.height = jitter.height,
-    dodge.height = dodge.height
+    dodge.height = dodge.height,
+    seed = seed
   )
 }
 
@@ -33,19 +38,26 @@ PositionJitterdodgev <- ggproto("PositionJitterdodgev", Position,
     list(
       dodge.height = self$dodge.height,
       jitter.width = self$jitter.width,
-      jitter.height = height / (ndodge + 2)
+      jitter.height = height / (ndodge + 2),
+      seed = self$seed
     )
   },
-
 
   compute_panel = function(data, params, scales) {
     data <- collidev(data, params$dodge.height, "position_jitterdodgev", pos_dodgev,
       check.height = FALSE)
 
-    # then jitter
-    transform_position(data,
-      if (params$jitter.width > 0) function(x) jitter(x, amount = params$jitter.width),
-      if (params$jitter.height > 0) function(x) jitter(x, amount = params$jitter.height)
-    )
+    trans_x <- if (params$jitter.width > 0) function(x) jitter(x, amount = params$jitter.width)
+    trans_y <- if (params$jitter.height > 0) function(x) jitter(x, amount = params$jitter.height)
+
+    with_seed_null(params$seed, ggplot2::transform_position(data, trans_x, trans_y))
   }
 )
+
+with_seed_null <- function(seed, code) {
+  if (is.null(seed)) {
+    code
+  } else {
+    withr::with_seed(seed, code)
+  }
+}

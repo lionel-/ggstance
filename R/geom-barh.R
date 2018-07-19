@@ -53,8 +53,8 @@ GeomBarh <- ggproto("GeomBarh", GeomRect,
     )
   },
 
-  draw_panel = function(self, data, panel_scales, coord, width = NULL) {
+  draw_panel = function(self, data, panel_params, coord, width = NULL) {
     # Hack to ensure that width is detected as a parameter
-    ggproto_parent(GeomRect, self)$draw_panel(data, panel_scales, coord)
+    ggproto_parent(GeomRect, self)$draw_panel(data, panel_params, coord)
   }
 )

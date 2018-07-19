@@ -8,7 +8,9 @@ flip_lookup <- c(
   x_scales = "y_scales", y_scales = "x_scales",
   SCALE_X = "SCALE_Y", SCALE_Y = "SCALE_X",
   lower = "xlower", middle = "xmiddle", upper = "xupper",
-  xlower = "lower", xmiddle = "middle", xupper = "upper"
+  xlower = "lower", xmiddle = "middle", xupper = "upper",
+  xid = "yid", new_width = "new_height", newx = "newy",
+  xmin_final = "ymin_final"
 )
 
 

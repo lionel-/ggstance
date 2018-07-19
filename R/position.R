@@ -7,14 +7,15 @@
 #' @name position-vertical
 #' @inheritParams ggplot2::position_jitterdodge
 #' @inheritParams ggplot2::position_nudge
+#' @inheritParams ggplot2::position_dodge
 #' @param height Dodging height, when different to the height of the individual
 #'   elements. This is useful when you want to align narrow geoms with taller
 #'   geoms.
 #' @param dodge.height the amount to dodge in the y direction. Defaults to 0.75,
 #'   the default \code{position_dodgev()} height.
 NULL
-
-collidev <- function(data, height = NULL, name, strategy, ..., check.height = TRUE, reverse = FALSE) {
+collidev_setup <- function(data, height = NULL, name, strategy,
+                           check.height = TRUE, reverse = FALSE) {
   # Determine height
   if (!is.null(height)) {
     # Width set manually
@@ -39,6 +40,15 @@ collidev <- function(data, height = NULL, name, strategy, ..., check.height = TR
 #     }
     height <- heights[1]
   }
+
+  list(data = data, height = height)
+}
+
+collidev <- function(data, height = NULL, name, strategy,
+                     ..., check.height = TRUE, reverse = FALSE) {
+  dlist <- collidev_setup(data, height, name, strategy, check.height, reverse)
+  data <- dlist$data
+  height <- dlist$height
 
   # Reorder by x position, then on group. The default stacking order reverses
   # the group in order to match the legend order.
@@ -69,4 +79,24 @@ collidev <- function(data, height = NULL, name, strategy, ..., check.height = TR
   } else {
     stop("Neither x nor xmax defined")
   }
+}
+
+# Alternate version of collidev() used by position_dodgev2()
+collide2v <- function(data, height = NULL, name, strategy,
+                      ..., check.height = TRUE, reverse = FALSE) {
+  dlist <- collidev_setup(data, height, name, strategy, check.height, reverse)
+  data <- dlist$data
+  height <- dlist$height
+
+  # Reorder by x position, then on group. The default stacking order is
+  # different than for collide() because of the order in which pos_dodge2 places
+  # elements
+  if (reverse) {
+    data <- data[order(data$y, -data$group), ]
+  } else {
+    data <- data[order(data$y, data$group), ]
+  }
+
+  pos <- match.fun(strategy)
+  pos(data, height, ...)
 }

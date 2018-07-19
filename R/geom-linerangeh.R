@@ -40,8 +40,8 @@ GeomLinerangeh <- ggproto("GeomLinerangeh", Geom,
 
   required_aes = c("y", "xmin", "xmax"),
 
-  draw_panel = function(data, panel_scales, coord) {
+  draw_panel = function(data, panel_params, coord) {
     data <- transform(data, yend = y, x = xmin, xend = xmax)
-    ggname("geom_linerangeh", GeomSegment$draw_panel(data, panel_scales, coord))
+    ggname("geom_linerangeh", GeomSegment$draw_panel(data, panel_params, coord))
   }
 )

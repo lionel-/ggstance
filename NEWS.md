@@ -1,12 +1,14 @@
 
-# ggstance 0.3.1
+# ggstance 0.3.0.9000
+
+* Compatibility with ggplot2 3.0.0
 
 * Fix horizontal boxplot issue when y scale is continuous.
 
 * Change minimal R version to 3.1.0, to be consistent with ggplot2.
 
 
-# ggstance 0.3
+# ggstance 0.3.0
 
 The package was rewritten to make it more robust to ggplot2 updates.
 In addition, this version features:
@@ -14,7 +16,7 @@ In addition, this version features:
 * New stat_summaryh() (#7)
 
 
-# ggstance 0.2
+# ggstance 0.2.0
 
 ## Major change
 
@@ -30,6 +32,6 @@ in particular can be useful.
 * Fix error messages when required aesthetics are not provided (#5)
 
 
-# ggstance 0.1
+# ggstance 0.1.0
 
 Initial release

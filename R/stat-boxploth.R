@@ -4,7 +4,7 @@
 #' @inheritParams ggplot2::stat_boxplot
 #' @export
 stat_boxploth <- function(mapping = NULL, data = NULL,
-                          geom = "boxploth", position = "dodgev",
+                          geom = "boxploth", position = "dodge2v",
                           ...,
                           coef = 1.5,
                           na.rm = FALSE,
