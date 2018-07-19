@@ -4,7 +4,7 @@
 \alias{geom_barh}
 \title{Bars, rectangles with bases on y-axis}
 \usage{
-geom_barh(mapping = NULL, data = NULL, stat = "count",
+geom_barh(mapping = NULL, data = NULL, stat = "counth",
   position = "stackv", ..., width = NULL, binwidth = NULL,
   na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
 }

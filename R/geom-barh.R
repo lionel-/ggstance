@@ -5,7 +5,7 @@
 #' @inheritParams ggplot2::geom_point
 #' @export
 geom_barh <- function(mapping = NULL, data = NULL,
-                      stat = "count", position = "stackv",
+                      stat = "counth", position = "stackv",
                       ...,
                       width = NULL,
                       binwidth = NULL,

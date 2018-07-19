@@ -49,6 +49,10 @@ test_that("geom_barh() flips", {
   h_facet <- ggplot(range_df, aes(resp, trt)) + facet_wrap(~group) +
     geom_barh(position = "dodgev", stat = "identity")
   check_horizontal(v_facet, h_facet, "geom_barh() + facet_wrap()")
+
+  v <- ggplot(mpg, aes(x = class)) + geom_bar()
+  h <- ggplot(mpg, aes(y = class)) + geom_barh()
+  check_horizontal(v, h, "geom_barh() with count stat")
 })
 
 test_that("geom_histogramh() flips", {

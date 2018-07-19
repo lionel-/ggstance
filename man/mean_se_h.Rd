@@ -22,4 +22,3 @@ vertical geoms is \code{\link[ggplot2]{mean_se}()}
 x <- rnorm(100)
 mean_se_h(x)
 }
-

@@ -1,6 +1,9 @@
 
 # ggstance 0.3.0.9000
 
+* `geom_barh()` now uses the `counth` statistic by default instead of
+  `count`, which fixes many bugs (#19, thanks to @erocoar).
+
 * `geom_violinh()` can now be passed `draw_quantiles` argument (#16,
   thanks to @iamamutt).
 
