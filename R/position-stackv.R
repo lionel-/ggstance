@@ -1,7 +1,11 @@
 #' @rdname position-vertical
+#' @param hjust Horizontal adjustment for geoms that have a position
+#'   (like points or lines), not a dimension (like bars or areas). Set to
+#'   `0` to align with the left side, `0.5` for the middle,
+#'   and `1` (the default) for the right side.
 #' @export
-position_stackv <- function() {
-  PositionStackv
+position_stackv <- function(hjust = 1, reverse = FALSE) {
+  ggproto(NULL, PositionStackv, hjust = hjust, reverse = reverse)
 }
 
 #' @rdname ggstance-ggproto

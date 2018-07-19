@@ -19,3 +19,20 @@ test_that("position_jitterdodge() flips", {
 
   check_horizontal(v, h, "position-jitterdodge", TRUE)
 })
+
+test_that("position_stackv() supports `hjust` argument", {
+  df <- data.frame(
+    x = c("a", "a", "b", "b", "b"),
+    y = c(1, 2, 1, 3, -1),
+    grp = c("x", "y", "x", "y", "y")
+  )
+
+  v <- ggplot(data = df, aes(x, y, group = grp)) +
+    geom_col(aes(fill = grp)) +
+    geom_text(aes(label = grp), position = position_stack(vjust = 0.5))
+  h <- ggplot(data = df, aes(y, x, group = grp)) +
+    geom_colh(aes(fill = grp)) +
+    geom_text(aes(label = grp), position = position_stackv(hjust = 0.5))
+
+  check_horizontal(v, h, "position-stackv() with `hjust` argument")
+})
