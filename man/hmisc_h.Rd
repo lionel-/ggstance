@@ -44,4 +44,3 @@ mean_cl_normal_h(x)
 mean_sdl_h(x)
 median_hilow_h(x)
 }
-
