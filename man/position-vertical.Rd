@@ -18,7 +18,7 @@ position_dodge2v(height = NULL, preserve = c("single", "total"),
 position_jitterdodgev(jitter.height = NULL, jitter.width = 0,
   dodge.height = 0.75, seed = NA)
 
-position_stackv()
+position_stackv(hjust = 1, reverse = FALSE)
 
 position_fillv()
 }
@@ -52,6 +52,11 @@ If \code{NA} (the default value), the seed is initialised with a random value;
 this makes sure that two subsequent calls start with a different seed.
 Use \code{NULL} to use the current random seed and also avoid resetting
 (the behavior of \pkg{ggplot} 2.2.1 and earlier).}
+
+\item{hjust}{Horizontal adjustment for geoms that have a position
+(like points or lines), not a dimension (like bars or areas). Set to
+`0` to align with the left side, `0.5` for the middle,
+and `1` (the default) for the right side.}
 }
 \description{
 Vertical versions of \code{\link[ggplot2]{position_dodge}()},

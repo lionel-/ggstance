@@ -1,6 +1,8 @@
 
 # ggstance 0.3.0.9000
 
+* `position_stackv()` gains `hjust` and `reverse` arguments.
+
 * New horizontal `geom_colh()` function.
 
 * `geom_barh()` now uses the `counth` statistic by default instead of
