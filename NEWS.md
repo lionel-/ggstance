@@ -1,9 +1,12 @@
 
 # ggstance 0.3.0.9000
 
+* `geom_violinh()` can now be passed `draw_quantiles` argument (#16,
+  thanks to @iamamutt).
+
 * New horizontal summary functions `mean_se_h()`, `mean_cl_boot_h()`,
-  `mean_cl_normal_h()`, `mean_sdl_h()` and `median_hilow_h()` (thanks
-  to @rjbgoudie).
+  `mean_cl_normal_h()`, `mean_sdl_h()` and `median_hilow_h()` (#13,
+  thanks to @rjbgoudie).
 
 * Compatibility with ggplot2 3.0.0
 
