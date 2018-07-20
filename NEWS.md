@@ -1,5 +1,5 @@
 
-# ggstance 0.3.0.9000
+# ggstance 0.3.1
 
 * `stat_counth()` is now exported (#22).
 

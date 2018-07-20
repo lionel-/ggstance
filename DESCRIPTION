@@ -1,6 +1,6 @@
 Package: ggstance
 Title: Horizontal 'ggplot2' Components
-Version: 0.3.0.9000
+Version: 0.3.1
 Authors@R: c(
     person("Lionel", "Henry", , "lionel@rstudio.com", role = c("aut", "cre")),
     person("Hadley", "Wickham", , "hadley@rstudio.com", "aut"),
@@ -21,8 +21,6 @@ Suggests:
     Hmisc,
     testthat,
     vdiffr
-Remotes:
-    lionel-/vdiffr
 License: GPL-3
 LazyData: true
 RoxygenNote: 6.0.1

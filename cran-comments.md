@@ -1,6 +1,11 @@
+
+This should fix the CRAN failures following the last ggplot2 update.
+
+
 ## Test environments
-* local OS X install, R 3.3.2 and 3.1.3
-* ubuntu 12.04 (on travis-ci), R 3.3.2
+
+* local OS X install, R 3.5.1
+* ubuntu 12.04 (on travis-ci), R 3.5.1
 * win-builder (devel and release)
 
 
@@ -11,4 +16,5 @@
 
 ## Reverse dependencies
 
-No reverse dependencies on CRAN yet.
+I have checked the 4 reverse dependencies and found no issues.
+Summary at <https://github.com/lionel-/ggstance/tree/master/revdep>.
