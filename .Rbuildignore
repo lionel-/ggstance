@@ -2,3 +2,4 @@
 ^cran-comments\.md$
 ^appveyor\.yml$
 ^revdep$
+^CRAN-RELEASE$
