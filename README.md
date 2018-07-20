@@ -26,6 +26,7 @@ legend keys to keep the appearance of your plots consistent.
 Horizontal Geoms:
 
 - `geom_barh()`
+- `geom_colh()`
 - `geom_histogramh()`
 - `geom_linerangeh()`
 - `geom_pointrangeh()`
@@ -44,11 +45,12 @@ Horizontal Stats:
 
 Vertical Positions:
 
-- `position_dodgev`
-- `position_nudgev`
-- `position_fillv`
-- `position_stackv`
-- `position_jitterdodgev`
+- `position_dodgev()`
+- `position_dodge2v()`
+- `position_nudgev()`
+- `position_fillv()`
+- `position_stackv()`
+- `position_jitterdodgev()`
 
 
 ## Examples
