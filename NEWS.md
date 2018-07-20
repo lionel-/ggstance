@@ -1,27 +1,32 @@
 
 # ggstance 0.3.1
 
-* `stat_counth()` is now exported (#22).
-
-* `position_stackv()` gains `hjust` and `reverse` arguments (#17).
+This version updates all ggstance layers to feature parity with
+ggplot2 3.0.0.
 
 * New horizontal `geom_colh()` layer.
 
-* `geom_barh()` now uses the `counth` statistic by default instead of
-  `count`, which fixes many bugs (#19, thanks to @erocoar).
+* `stat_counth()` is now exported (#22).
 
-* `geom_violinh()` can now be passed `draw_quantiles` argument (#16,
-  thanks to @iamamutt).
+* `position_stackv()` gains `hjust` and `reverse` arguments (#17).
 
 * New horizontal summary functions `mean_se_h()`, `mean_cl_boot_h()`,
   `mean_cl_normal_h()`, `mean_sdl_h()` and `median_hilow_h()` (#13,
   thanks to @rjbgoudie).
 
-* Compatibility with ggplot2 3.0.0
+* Change minimal R version to 3.1.0, to be consistent with ggplot2.
+
+
+In addition a few bugs have been fixed:
+
+* `geom_barh()` now uses the `counth` statistic by default instead of
+  `count`. This fixes many issues with this layer (#19, thanks to
+  @erocoar).
+
+* `geom_violinh()` can now be passed `draw_quantiles` argument (#16,
+  thanks to @iamamutt).
 
 * Fix horizontal boxplot issue when y scale is continuous.
-
-* Change minimal R version to 3.1.0, to be consistent with ggplot2.
 
 
 # ggstance 0.3.0
