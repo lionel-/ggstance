@@ -10,7 +10,8 @@ geom_barh(mapping = NULL, data = NULL, stat = "counth",
   na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
 
 geom_colh(mapping = NULL, data = NULL, position = "stackv", ...,
-  width = NULL, na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
+  width = NULL, na.rm = FALSE, show.legend = NA,
+  inherit.aes = TRUE)
 }
 \arguments{
 \item{mapping}{Set of aesthetic mappings created by \code{\link[=aes]{aes()}} or
@@ -29,23 +30,23 @@ data. All objects will be fortified to produce a data frame. See
 \code{\link[=fortify]{fortify()}} for which variables will be created.
 
 A \code{function} will be called with a single argument,
-the plot data. The return value must be a \code{data.frame.}, and
+the plot data. The return value must be a \code{data.frame}, and
 will be used as the layer data.}
 
-\item{stat}{Override the default connection between \code{geom_bar} and
-\code{stat_count}.}
+\item{stat}{Override the default connection between \code{geom_bar()} and
+\code{stat_count()}.}
 
 \item{position}{Position adjustment, either as a string, or the result of
 a call to a position adjustment function.}
 
 \item{...}{Other arguments passed on to \code{\link[=layer]{layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
-\code{color = "red"} or \code{size = 3}. They may also be parameters
+\code{colour = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
 
 \item{width}{Bar width. By default, set to 90\% of the resolution of the data.}
 
-\item{binwidth}{\code{geom_bar} no longer has a binwidth argument - if
+\item{binwidth}{\code{geom_bar()} no longer has a binwidth argument - if
 you use it you'll get an warning telling to you use
 \code{\link[=geom_histogram]{geom_histogram()}} instead.}
 

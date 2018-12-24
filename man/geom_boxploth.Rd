@@ -5,11 +5,11 @@
 \title{Horizontal box and whiskers plot.}
 \usage{
 geom_boxploth(mapping = NULL, data = NULL, stat = "boxploth",
-  position = "dodge2v", ..., outlier.colour = NULL, outlier.color = NULL,
-  outlier.fill = NULL, outlier.shape = 19, outlier.size = 1.5,
-  outlier.stroke = 0.5, outlier.alpha = NULL, notch = FALSE,
-  notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE, show.legend = NA,
-  inherit.aes = TRUE)
+  position = "dodge2v", ..., outlier.colour = NULL,
+  outlier.color = NULL, outlier.fill = NULL, outlier.shape = 19,
+  outlier.size = 1.5, outlier.stroke = 0.5, outlier.alpha = NULL,
+  notch = FALSE, notchwidth = 0.5, varwidth = FALSE, na.rm = FALSE,
+  show.legend = NA, inherit.aes = TRUE)
 }
 \arguments{
 \item{mapping}{Set of aesthetic mappings created by \code{\link[=aes]{aes()}} or
@@ -28,7 +28,7 @@ data. All objects will be fortified to produce a data frame. See
 \code{\link[=fortify]{fortify()}} for which variables will be created.
 
 A \code{function} will be called with a single argument,
-the plot data. The return value must be a \code{data.frame.}, and
+the plot data. The return value must be a \code{data.frame}, and
 will be used as the layer data.}
 
 \item{stat}{Use to override the default connection between
@@ -39,7 +39,7 @@ a call to a position adjustment function.}
 
 \item{...}{Other arguments passed on to \code{\link[=layer]{layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
-\code{color = "red"} or \code{size = 3}. They may also be parameters
+\code{colour = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
 
 \item{outlier.colour, outlier.color, outlier.shape, outlier.size, outlier.stroke}{Default aesthetics for outliers. Set to \code{NULL} to inherit from the
@@ -78,7 +78,7 @@ if the notches of two boxes do not overlap, this suggests that the medians
 are significantly different.}
 
 \item{notchwidth}{For a notched box plot, width of the notch relative to
-the body (default 0.5)}
+the body (defaults to \code{notchwidth = 0.5}).}
 
 \item{varwidth}{If \code{FALSE} (default) make a standard box plot. If
 \code{TRUE}, boxes are drawn with widths proportional to the
