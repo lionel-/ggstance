@@ -20,7 +20,7 @@ Imports:
 Suggests:
     Hmisc,
     testthat,
-    vdiffr
+    vdiffr (>= 0.3.0)
 License: GPL-3
 LazyData: true
 RoxygenNote: 6.1.1
