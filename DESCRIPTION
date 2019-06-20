@@ -23,12 +23,13 @@ Suggests:
     vdiffr (>= 0.3.0)
 License: GPL-3
 LazyData: true
+Encoding: UTF-8
 RoxygenNote: 6.1.1
 Collate:
-    'flip-aes.R'
+    'flip-aes.r'
     'geom-barh.R'
     'legend-draw.R'
-    'geom-boxploth.R'
+    'geom-boxploth.r'
     'geom-colh.R'
     'geom-crossbarh.R'
     'geom-errorbarh.R'
