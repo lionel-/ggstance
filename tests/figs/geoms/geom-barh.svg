@@ -19,10 +19,10 @@
   </clipPath>
 </defs>
 <rect x='27.89' y='22.77' width='647.52' height='522.36' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
-<rect x='57.32' y='295.82' width='588.65' height='106.85' style='stroke-width: 1.07; stroke: #00BFC4; stroke-linecap: butt; fill: #00BFC4;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
-<rect x='57.32' y='402.67' width='117.73' height='106.85' style='stroke-width: 1.07; stroke: #F8766D; stroke-linecap: butt; fill: #F8766D;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
-<rect x='57.32' y='58.39' width='470.92' height='106.85' style='stroke-width: 1.07; stroke: #00BFC4; stroke-linecap: butt; fill: #00BFC4;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
-<rect x='57.32' y='165.23' width='353.19' height='106.85' style='stroke-width: 1.07; stroke: #F8766D; stroke-linecap: butt; fill: #F8766D;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
+<rect x='57.32' y='295.82' width='588.65' height='106.85' style='stroke-width: 1.07; stroke: #00BFC4; stroke-linecap: square; stroke-linejoin: miter; fill: #00BFC4;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
+<rect x='57.32' y='402.67' width='117.73' height='106.85' style='stroke-width: 1.07; stroke: #F8766D; stroke-linecap: square; stroke-linejoin: miter; fill: #F8766D;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
+<rect x='57.32' y='58.39' width='470.92' height='106.85' style='stroke-width: 1.07; stroke: #00BFC4; stroke-linecap: square; stroke-linejoin: miter; fill: #00BFC4;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
+<rect x='57.32' y='165.23' width='353.19' height='106.85' style='stroke-width: 1.07; stroke: #F8766D; stroke-linecap: square; stroke-linejoin: miter; fill: #F8766D;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
 <rect x='27.89' y='22.77' width='647.52' height='522.36' style='stroke-width: 1.07; stroke: #333333;' clip-path='url(#cpMjcuODl8Njc1LjQxfDU0NS4xM3wyMi43Nw==)' />
 <defs>
   <clipPath id='cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA='>
@@ -50,9 +50,9 @@
 <rect x='686.36' y='259.01' width='28.16' height='49.88' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)' />
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)'><text x='686.36' y='267.71' style='font-size: 11.00px; font-family: Liberation Sans;' textLength='28.16px' lengthAdjust='spacingAndGlyphs'>group</text></g>
 <rect x='686.36' y='274.33' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)' />
-<rect x='687.07' y='275.04' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: #F8766D; stroke-linejoin: miter; fill: #F8766D;' clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)' />
+<rect x='687.07' y='275.04' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: #F8766D; stroke-linecap: square; stroke-linejoin: miter; fill: #F8766D;' clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)' />
 <rect x='686.36' y='291.61' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)' />
-<rect x='687.07' y='292.32' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: #00BFC4; stroke-linejoin: miter; fill: #00BFC4;' clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)' />
+<rect x='687.07' y='292.32' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: #00BFC4; stroke-linecap: square; stroke-linejoin: miter; fill: #00BFC4;' clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)' />
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)'><text x='709.12' y='286.00' style='font-size: 8.80px; font-family: Liberation Sans;' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>1</text></g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)'><text x='709.12' y='303.28' style='font-size: 8.80px; font-family: Liberation Sans;' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>2</text></g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)'><text x='27.89' y='14.56' style='font-size: 13.20px; font-family: Liberation Sans;' textLength='75.45px' lengthAdjust='spacingAndGlyphs'>geom_barh()</text></g>
