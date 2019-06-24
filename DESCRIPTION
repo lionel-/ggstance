@@ -26,10 +26,10 @@ LazyData: true
 Encoding: UTF-8
 RoxygenNote: 6.1.1
 Collate:
-    'flip-aes.r'
+    'flip-aes.R'
     'geom-barh.R'
     'legend-draw.R'
-    'geom-boxploth.r'
+    'geom-boxploth.R'
     'geom-colh.R'
     'geom-crossbarh.R'
     'geom-errorbarh.R'
