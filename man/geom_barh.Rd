@@ -68,3 +68,33 @@ the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
 \description{
 Horizontal version of \code{\link[ggplot2]{geom_bar}()}.
 }
+\section{Aesthetics}{
+
+\code{geom_barh()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{x}}
+  \item \strong{\code{y}}
+  \item \code{alpha}
+  \item \code{colour}
+  \item \code{fill}
+  \item \code{group}
+  \item \code{linetype}
+  \item \code{size}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+
+
+\code{geom_colh()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{y}}
+  \item \strong{\code{x}}
+  \item \code{alpha}
+  \item \code{colour}
+  \item \code{fill}
+  \item \code{group}
+  \item \code{linetype}
+  \item \code{size}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+}
+

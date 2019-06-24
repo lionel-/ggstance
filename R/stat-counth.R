@@ -2,6 +2,7 @@
 #'
 #' Horizontal version of \code{\link[ggplot2]{stat_count}}().
 #' @inheritParams ggplot2::stat_count
+#' @eval rd_aesthetics("stat", "counth")
 #' @export
 stat_counth <- function(mapping = NULL, data = NULL,
                         geom = "barh", position = "stackv",

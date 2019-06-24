@@ -1,4 +1,5 @@
 #' @rdname geom_linerangeh
+#' @eval rd_aesthetics("geom", "errorbarh")
 #' @export
 geom_errorbarh <- function(mapping = NULL, data = NULL,
                            stat = "identity", position = "identity",

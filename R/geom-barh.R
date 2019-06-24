@@ -3,6 +3,7 @@
 #' Horizontal version of \code{\link[ggplot2]{geom_bar}()}.
 #' @inheritParams ggplot2::geom_bar
 #' @inheritParams ggplot2::geom_point
+#' @eval rd_aesthetics("geom", "barh")
 #' @export
 geom_barh <- function(mapping = NULL, data = NULL,
                       stat = "counth", position = "stackv",

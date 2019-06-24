@@ -2,6 +2,7 @@
 #'
 #' Horizontal version of \code{\link[ggplot2]{stat_ydensity}}().
 #' @inheritParams ggplot2::stat_ydensity
+#' @eval rd_aesthetics("stat", "xdensity")
 #' @export
 stat_xdensity <- function(mapping = NULL, data = NULL,
                           geom = "violinh", position = "dodgev",

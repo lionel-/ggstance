@@ -1,5 +1,6 @@
 
 #' @rdname geom_linerangeh
+#' @eval rd_aesthetics("geom", "crossbarh")
 #' @export
 geom_crossbarh <- function(mapping = NULL, data = NULL,
                            stat = "identity", position = "identity",

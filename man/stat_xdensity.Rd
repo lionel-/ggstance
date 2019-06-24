@@ -76,3 +76,14 @@ the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
 \description{
 Horizontal version of \code{\link[ggplot2]{stat_ydensity}}().
 }
+\section{Aesthetics}{
+
+\code{stat_xdensity()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{x}}
+  \item \strong{\code{y}}
+  \item \code{group}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+}
+

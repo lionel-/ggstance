@@ -9,6 +9,7 @@
 #'
 #'   In the unlikely event you specify both US and UK spellings of colour, the
 #'   US spelling will take precedence.
+#' @eval rd_aesthetics("geom", "boxploth")
 #' @export
 #' @examples
 #' library("ggplot2")

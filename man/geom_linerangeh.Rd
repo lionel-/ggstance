@@ -80,3 +80,68 @@ Horizontal versions of \code{\link[ggplot2]{geom_linerange}()},
 \code{\link[ggplot2]{geom_errorbar}()} and
 \code{\link[ggplot2]{geom_crossbar}()}.
 }
+\section{Aesthetics}{
+
+\code{geom_crossbarh()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{x}}
+  \item \strong{\code{y}}
+  \item \strong{\code{xmin}}
+  \item \strong{\code{xmax}}
+  \item \code{alpha}
+  \item \code{colour}
+  \item \code{fill}
+  \item \code{group}
+  \item \code{linetype}
+  \item \code{size}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+
+
+\code{geom_errorbarh()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{y}}
+  \item \strong{\code{xmin}}
+  \item \strong{\code{xmax}}
+  \item \code{alpha}
+  \item \code{colour}
+  \item \code{group}
+  \item \code{linetype}
+  \item \code{size}
+  \item \code{width}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+
+
+\code{geom_linerangeh()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{y}}
+  \item \strong{\code{xmin}}
+  \item \strong{\code{xmax}}
+  \item \code{alpha}
+  \item \code{colour}
+  \item \code{group}
+  \item \code{linetype}
+  \item \code{size}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+
+
+\code{geom_pointrangeh()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{x}}
+  \item \strong{\code{y}}
+  \item \strong{\code{xmin}}
+  \item \strong{\code{xmax}}
+  \item \code{alpha}
+  \item \code{colour}
+  \item \code{fill}
+  \item \code{group}
+  \item \code{linetype}
+  \item \code{shape}
+  \item \code{size}
+  \item \code{stroke}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+}
+

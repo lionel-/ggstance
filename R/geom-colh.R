@@ -1,4 +1,5 @@
 #' @rdname geom_barh
+#' @eval rd_aesthetics("geom", "colh")
 #' @export
 geom_colh <- function(mapping = NULL, data = NULL,
                       position = "stackv",

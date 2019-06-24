@@ -6,6 +6,7 @@
 #' \code{\link[ggplot2]{geom_crossbar}()}.
 #' @inheritParams ggplot2::geom_linerange
 #' @inheritParams ggplot2::geom_point
+#' @eval rd_aesthetics("geom", "linerangeh")
 #' @export
 geom_linerangeh <- function(mapping = NULL, data = NULL,
                             stat = "identity", position = "identity",

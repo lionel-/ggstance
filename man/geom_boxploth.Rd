@@ -103,6 +103,28 @@ the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
 \description{
 Horizontal version of \code{\link[ggplot2]{geom_boxplot}()}.
 }
+\section{Aesthetics}{
+
+\code{geom_boxploth()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{y}}
+  \item \strong{\code{xlower}}
+  \item \strong{\code{xupper}}
+  \item \strong{\code{xmiddle}}
+  \item \strong{\code{xmin}}
+  \item \strong{\code{xmax}}
+  \item \code{alpha}
+  \item \code{colour}
+  \item \code{fill}
+  \item \code{group}
+  \item \code{linetype}
+  \item \code{shape}
+  \item \code{size}
+  \item \code{weight}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+}
+
 \examples{
 library("ggplot2")
 

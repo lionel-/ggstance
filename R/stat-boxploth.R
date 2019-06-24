@@ -2,6 +2,7 @@
 #'
 #' Horizontal version of \code{\link[ggplot2]{stat_boxplot}}().
 #' @inheritParams ggplot2::stat_boxplot
+#' @eval rd_aesthetics("stat", "boxploth")
 #' @export
 stat_boxploth <- function(mapping = NULL, data = NULL,
                           geom = "boxploth", position = "dodge2v",

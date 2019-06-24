@@ -59,3 +59,15 @@ the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
 \description{
 Horizontal version of \code{\link[ggplot2]{stat_count}}().
 }
+\section{Aesthetics}{
+
+\code{stat_counth()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+  \item \strong{\code{y}}
+  \item \code{group}
+  \item \code{weight}
+  \item \code{x}
+}
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
+}
+

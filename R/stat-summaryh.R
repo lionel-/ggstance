@@ -8,6 +8,7 @@
 #' @param fun.xmin,fun.x,fun.xmax Alternatively, supply three individual
 #'   functions that are each passed a vector of x's and should return a
 #'   single number.
+#' @eval rd_aesthetics("stat", "summaryh")
 #' @export
 stat_summaryh <- function(mapping = NULL, data = NULL,
                           geom = "pointrangeh", position = "identity",

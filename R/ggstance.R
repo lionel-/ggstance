@@ -17,3 +17,12 @@ ggname <- function(prefix, grob) {
 #' @keywords internal
 #' @name ggstance-ggproto
 NULL
+
+
+rd_aesthetics <- function(type, name) {
+  # Initialised at load time
+}
+
+.onLoad <- function(lib, pkg) {
+  rd_aesthetics <<- rlang::ns_env("ggplot2")$rd_aesthetics
+}

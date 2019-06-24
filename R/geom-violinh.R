@@ -3,6 +3,7 @@
 #' Horizontal version of \code{\link[ggplot2]{geom_violin}()}.
 #' @inheritParams ggplot2::geom_violin
 #' @inheritParams ggplot2::geom_point
+#' @eval rd_aesthetics("geom", "violinh")
 #' @export
 geom_violinh <- function(mapping = NULL, data = NULL,
                          stat = "xdensity", position = "dodgev",

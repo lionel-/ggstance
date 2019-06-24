@@ -1,6 +1,8 @@
 #' Horizontal binning.
 #'
 #' Horizontal version of \code{\link[ggplot2]{stat_bin}}().
+#'
+#' @eval rd_aesthetics("stat", "binh")
 #' @inheritParams ggplot2::stat_bin
 #' @export
 stat_binh <- function(mapping = NULL, data = NULL,

@@ -1,6 +1,8 @@
 
 # ggstance 0.3.1.9000
 
+* Aesthetics are now documented in the manual pages (#28).
+
 
 # ggstance 0.3.1
 

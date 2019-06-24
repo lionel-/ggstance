@@ -1,5 +1,6 @@
 
 #' @rdname geom_linerangeh
+#' @eval rd_aesthetics("geom", "pointrangeh")
 #' @export
 geom_pointrangeh <- function(mapping = NULL, data = NULL,
                              stat = "identity", position = "identity",
