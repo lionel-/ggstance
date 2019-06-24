@@ -145,3 +145,12 @@ Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
 Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
 }
 
+\section{Different between ggplot2 and ggstance}{
+
+
+`ggplot2::geom_errorbarh()` uses the `height` aesthetic. The
+ggstance version uses the `width` aesthetic. This is for
+consistency with the direction of the geom and other ggstance
+functions.
+}
+

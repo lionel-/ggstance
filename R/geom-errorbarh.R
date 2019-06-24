@@ -1,4 +1,10 @@
 #' @rdname geom_linerangeh
+#' @section Different between ggplot2 and ggstance:
+#'
+#' `ggplot2::geom_errorbarh()` uses the `height` aesthetic. The
+#' ggstance version uses the `width` aesthetic. This is for
+#' consistency with the direction of the geom and other ggstance
+#' functions.
 #' @eval rd_aesthetics("geom", "errorbarh")
 #' @export
 geom_errorbarh <- function(mapping = NULL, data = NULL,
