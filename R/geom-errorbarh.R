@@ -4,7 +4,7 @@
 #' `ggplot2::geom_errorbarh()` uses the `height` aesthetic. The
 #' ggstance version uses the `width` aesthetic. This is for
 #' consistency with the direction of the geom and other ggstance
-#' functions.
+#' functions. You can still supply `height` for compatibility.
 #' @eval rd_aesthetics("geom", "errorbarh")
 #' @export
 geom_errorbarh <- function(mapping = NULL, data = NULL,
@@ -13,6 +13,10 @@ geom_errorbarh <- function(mapping = NULL, data = NULL,
                            na.rm = FALSE,
                            show.legend = NA,
                            inherit.aes = TRUE) {
+  params <- list(na.rm = na.rm, ...)
+  params$width <- params$width %||% params$height
+  params$height <- NULL
+
   layer(
     data = data,
     mapping = mapping,
@@ -21,10 +25,7 @@ geom_errorbarh <- function(mapping = NULL, data = NULL,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
-    params = list(
-      na.rm = na.rm,
-      ...
-    )
+    params = params
   )
 }
 

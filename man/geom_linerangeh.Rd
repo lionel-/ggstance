@@ -151,6 +151,6 @@ Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
 `ggplot2::geom_errorbarh()` uses the `height` aesthetic. The
 ggstance version uses the `width` aesthetic. This is for
 consistency with the direction of the geom and other ggstance
-functions.
+functions. You can still supply `height` for compatibility.
 }
 
