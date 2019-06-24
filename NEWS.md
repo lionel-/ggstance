@@ -1,5 +1,7 @@
 
-# ggstance 0.3.1.9000
+# ggstance 0.3.2
+
+* Compatibility with ggplot2 3.2.0.
 
 * Aesthetics are now documented in the manual pages (#28).
 
