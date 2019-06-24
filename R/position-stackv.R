@@ -89,7 +89,7 @@ pos_stackv <- function(df, height, hjust = 1, fill = FALSE) {
 
 stack_varv <- function(data) {
   if (!is.null(data$xmax)) {
-    if (any(data$xmin != 0 && data$xmax != 0, na.rm = TRUE)) {
+    if (any(data$xmin != 0 & data$xmax != 0, na.rm = TRUE)) {
       warning("Stacking not well defined when not anchored on the axis", call. = FALSE)
     }
     "xmax"
