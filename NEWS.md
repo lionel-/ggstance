@@ -1,6 +1,6 @@
 
 # ggstance 0.3.2.9000
-
+* order of bars within groups is aligned with legend order (#21) (@sowla, @friep)
 
 # ggstance 0.3.2
 
