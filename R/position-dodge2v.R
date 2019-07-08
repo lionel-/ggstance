@@ -20,7 +20,7 @@ position_dodge2v <- function(height = NULL, preserve = c("single", "total"),
 PositionDodge2v <- ggproto("PositionDodge2v", PositionDodgev,
   preserve = "total",
   padding = 0.1,
-  reverse = FALSE,
+  reverse = TRUE,
 
   setup_params = function(self, data) {
     if (is.null(data$ymin) && is.null(data$ymax) && is.null(self$height)) {
