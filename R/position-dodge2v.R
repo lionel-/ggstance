@@ -3,7 +3,7 @@
 #' @param padding Padding between elements at the same position. Elements are
 #'   shrunk by this proportion to allow space between them. Defaults to 0.1.
 position_dodge2v <- function(height = NULL, preserve = c("single", "total"),
-                             padding = 0.1, reverse = FALSE) {
+                             padding = 0.1, reverse = TRUE) {
   ggproto(NULL, PositionDodge2v,
     height = height,
     preserve = match.arg(preserve),
@@ -20,7 +20,7 @@ position_dodge2v <- function(height = NULL, preserve = c("single", "total"),
 PositionDodge2v <- ggproto("PositionDodge2v", PositionDodgev,
   preserve = "total",
   padding = 0.1,
-  reverse = FALSE,
+  reverse = TRUE,
 
   setup_params = function(self, data) {
     if (is.null(data$ymin) && is.null(data$ymax) && is.null(self$height)) {
