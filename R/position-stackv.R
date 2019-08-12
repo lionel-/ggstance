@@ -68,7 +68,7 @@ PositionStackv <- ggproto("PositionStackv", Position,
       )
     }
 
-    rbind(neg, pos)
+    rbind(neg, pos)[match(seq_len(nrow(data)), c(which(negative), which(!negative))),]
   }
 )
 
