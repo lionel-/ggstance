@@ -1,7 +1,4 @@
 
-I can't reproduce the failure on Solaris.
-
-
 ## Test environments
 
 * local OS X install, R-release

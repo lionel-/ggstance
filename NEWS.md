@@ -1,6 +1,11 @@
 
-# ggstance 0.3.2.9000
-* order of bars within groups is aligned with legend order (#21) (@sowla, @friep)
+# ggstance 0.3.3
+
+* Order of bars within groups is aligned with legend order (#21,
+  contributed by @sowla and @friep).
+
+* Compatibility with ggplot2 3.2.1.
+
 
 # ggstance 0.3.2
 
