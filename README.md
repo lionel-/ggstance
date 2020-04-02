@@ -1,8 +1,10 @@
 
+[![Lifecycle:
+superseded](https://img.shields.io/badge/lifecycle-superseded-orange.svg)](https://www.tidyverse.org/lifecycle/#superseded)
+
 # ggstance
 
-ggstance implements horizontal versions of common ggplot2 Geoms,
-Stats, and Positions.
+**Important**: This package has been superseded by [ggplot2 3.3.0](https://www.tidyverse.org/blog/2020/03/ggplot2-3-3-0/), which now has full native support for horizontality. The ggstance package will continue to be maintained for some time, but please consider switching to ggplot2.
 
 
 ## Installation
