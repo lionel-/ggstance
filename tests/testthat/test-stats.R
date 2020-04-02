@@ -26,9 +26,9 @@ test_that("stat_summaryh() flips", {
 
   v <- ggplot(mtcars, aes(x = factor(cyl), y = mpg)) +
     stat_summary(
-      fun.y = fn_x,
-      fun.ymin = fn_xmin,
-      fun.ymax = fn_xmax,
+      fun = fn_x,
+      fun.min = fn_xmin,
+      fun.max = fn_xmax,
       geom = "pointrange"
     )
   h <- ggplot(mtcars, aes(x = mpg, y = factor(cyl))) +
