@@ -24,7 +24,7 @@ PositionDodge2v <- ggproto("PositionDodge2v", PositionDodgev,
 
   setup_params = function(self, data) {
     if (is.null(data$ymin) && is.null(data$ymax) && is.null(self$height)) {
-      warning("Height not defined. Set with `position_dodge2(height = ?)`",
+      warning("Height not defined. Set with `position_dodge2v(height = ?)`",
         call. = FALSE)
     }
 
