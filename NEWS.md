@@ -1,4 +1,9 @@
 
+# ggstance 0.3.4
+
+* Compatibility with ggplot2 3.3.0.
+
+
 # ggstance 0.3.3
 
 * Order of bars within groups is aligned with legend order (#21,

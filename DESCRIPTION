@@ -1,6 +1,6 @@
 Package: ggstance
 Title: Horizontal 'ggplot2' Components
-Version: 0.3.3
+Version: 0.3.4
 Authors@R: c(
     person("Lionel", "Henry", , "lionel@rstudio.com", role = c("aut", "cre")),
     person("Hadley", "Wickham", , "hadley@rstudio.com", "aut"),
