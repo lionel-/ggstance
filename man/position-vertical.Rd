@@ -12,11 +12,19 @@
 \usage{
 position_dodgev(height = NULL, preserve = c("total", "single"))
 
-position_dodge2v(height = NULL, preserve = c("single", "total"),
-  padding = 0.1, reverse = TRUE)
+position_dodge2v(
+  height = NULL,
+  preserve = c("single", "total"),
+  padding = 0.1,
+  reverse = TRUE
+)
 
-position_jitterdodgev(jitter.height = NULL, jitter.width = 0,
-  dodge.height = 0.75, seed = NA)
+position_jitterdodgev(
+  jitter.height = NULL,
+  jitter.width = 0,
+  dodge.height = 0.75,
+  seed = NA
+)
 
 position_stackv(hjust = 1, reverse = FALSE)
 

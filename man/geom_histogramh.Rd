@@ -4,13 +4,22 @@
 \alias{geom_histogramh}
 \title{Horizontal histograms and frequency polygons.}
 \usage{
-geom_histogramh(mapping = NULL, data = NULL, stat = "binh",
-  position = "stackv", ..., binwidth = NULL, bins = NULL,
-  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
+geom_histogramh(
+  mapping = NULL,
+  data = NULL,
+  stat = "binh",
+  position = "stackv",
+  ...,
+  binwidth = NULL,
+  bins = NULL,
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE
+)
 }
 \arguments{
-\item{mapping}{Set of aesthetic mappings created by \code{\link[=aes]{aes()}} or
-\code{\link[=aes_]{aes_()}}. If specified and \code{inherit.aes = TRUE} (the
+\item{mapping}{Set of aesthetic mappings created by \code{\link[ggplot2:aes]{aes()}} or
+\code{\link[ggplot2:aes_]{aes_()}}. If specified and \code{inherit.aes = TRUE} (the
 default), it is combined with the default mapping at the top level of the
 plot. You must supply \code{mapping} if there is no plot mapping.}
 
@@ -18,11 +27,11 @@ plot. You must supply \code{mapping} if there is no plot mapping.}
 options:
 
 If \code{NULL}, the default, the data is inherited from the plot
-data as specified in the call to \code{\link[=ggplot]{ggplot()}}.
+data as specified in the call to \code{\link[ggplot2:ggplot]{ggplot()}}.
 
 A \code{data.frame}, or other object, will override the plot
 data. All objects will be fortified to produce a data frame. See
-\code{\link[=fortify]{fortify()}} for which variables will be created.
+\code{\link[ggplot2:fortify]{fortify()}} for which variables will be created.
 
 A \code{function} will be called with a single argument,
 the plot data. The return value must be a \code{data.frame}, and
@@ -35,7 +44,7 @@ from a \code{formula} (e.g. \code{~ head(.x, 10)}).}
 \item{position}{Position adjustment, either as a string, or the result of
 a call to a position adjustment function.}
 
-\item{...}{Other arguments passed on to \code{\link[=layer]{layer()}}. These are
+\item{...}{Other arguments passed on to \code{\link[ggplot2:layer]{layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
 \code{colour = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
@@ -45,8 +54,8 @@ or as a function that calculates width from unscaled x. Here, "unscaled x"
 refers to the original x values in the data, before application of any
 scale transformation. When specifying a function along with a grouping
 structure, the function will be called once per group.
-The default is to use \code{bins}
-bins that cover the range of the data. You should always override
+The default is to use the number of bins in \code{bins},
+covering the range of the data. You should always override
 this value, exploring multiple widths to find the best to illustrate the
 stories in your data.
 
@@ -67,7 +76,7 @@ display.}
 \item{inherit.aes}{If \code{FALSE}, overrides the default aesthetics,
 rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
+the default plot specification, e.g. \code{\link[ggplot2:borders]{borders()}}.}
 }
 \description{
 Horizontal version of \code{\link[ggplot2]{geom_histogram}()}.
