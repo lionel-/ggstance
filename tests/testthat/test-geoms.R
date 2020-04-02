@@ -95,7 +95,6 @@ test_that("geom_violinh() flips", {
 })
 
 test_that("geom_boxploth() flips", {
-  skip("FIXME: internal data check (helper-utils.R) fails after fixing #21")
   v <- ggplot(mpg, aes(class, hwy)) + geom_boxplot()
   h <- ggplot(mpg, aes(hwy, class)) + geom_boxploth()
   check_horizontal(v, h, "geom_boxploth()")
