@@ -38,9 +38,11 @@ These are horizontal versions of the wrappers around functions from
 }
 }
 \examples{
-x <- rnorm(100)
-mean_cl_boot_h(x)
-mean_cl_normal_h(x)
-mean_sdl_h(x)
-median_hilow_h(x)
+if (requireNamespace("Hmisc")) {
+  x <- rnorm(100)
+  mean_cl_boot_h(x)
+  mean_cl_normal_h(x)
+  mean_sdl_h(x)
+  median_hilow_h(x)
+}
 }

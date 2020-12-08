@@ -110,11 +110,13 @@ make_summary_fun <- function(fun.data, fun.x, fun.xmax, fun.xmin, fun.args) {
 #' @return A data frame with columns \code{x}, \code{xmin}, and \code{xmax}.
 #' @name hmisc_h
 #' @examples
-#' x <- rnorm(100)
-#' mean_cl_boot_h(x)
-#' mean_cl_normal_h(x)
-#' mean_sdl_h(x)
-#' median_hilow_h(x)
+#' if (requireNamespace("Hmisc")) {
+#'   x <- rnorm(100)
+#'   mean_cl_boot_h(x)
+#'   mean_cl_normal_h(x)
+#'   mean_sdl_h(x)
+#'   median_hilow_h(x)
+#' }
 NULL
 
 wrap_hmisc_h <- function(fun) {

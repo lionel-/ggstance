@@ -24,7 +24,7 @@ Suggests:
 License: GPL-3
 LazyData: true
 Encoding: UTF-8
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Collate:
     'flip-aes.R'
     'geom-barh.R'
