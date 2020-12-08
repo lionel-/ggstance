@@ -43,5 +43,5 @@ test_that("position_dodge2v() reverses the order within each bar group", {
     ggplot(aes(x = cty, y = class, fill = drv)) +
     geom_boxploth()
   
-  vdiffr::expect_doppelganger("Boxplot with legend order aligned to bar order", g)
+  expect_doppelganger("Boxplot with legend order aligned to bar order", g)
 })

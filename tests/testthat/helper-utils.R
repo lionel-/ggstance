@@ -18,5 +18,10 @@ check_horizontal <- function(original, horizontal, fig_name,
   if (skip_on_windows) {
     skip_on_os("windows")
   }
-  vdiffr::expect_doppelganger(fig_name, horizontal)
+  expect_doppelganger(fig_name, horizontal)
+}
+
+expect_doppelganger <- function(title, fig, path = NULL, ...) {
+  testthat::skip_if_not_installed("vdiffr")
+  vdiffr::expect_doppelganger(title, fig, path = path, ...)
 }
