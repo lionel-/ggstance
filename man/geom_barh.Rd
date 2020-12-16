@@ -12,7 +12,6 @@ geom_barh(
   position = "stackv",
   ...,
   width = NULL,
-  binwidth = NULL,
   na.rm = FALSE,
   show.legend = NA,
   inherit.aes = TRUE
@@ -62,10 +61,6 @@ often aesthetics, used to set an aesthetic to a fixed value, like
 to the paired geom/stat.}
 
 \item{width}{Bar width. By default, set to 90\% of the resolution of the data.}
-
-\item{binwidth}{\code{geom_bar()} no longer has a binwidth argument - if
-you use it you'll get an warning telling to you use
-\code{\link[ggplot2:geom_histogram]{geom_histogram()}} instead.}
 
 \item{na.rm}{If \code{FALSE}, the default, missing values are removed with
 a warning. If \code{TRUE}, missing values are silently removed.}

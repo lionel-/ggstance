@@ -9,19 +9,9 @@ geom_barh <- function(mapping = NULL, data = NULL,
                       stat = "counth", position = "stackv",
                       ...,
                       width = NULL,
-                      binwidth = NULL,
                       na.rm = FALSE,
                       show.legend = NA,
                       inherit.aes = TRUE) {
-
-  if (!is.null(binwidth)) {
-    warning("`geom_barh()` no longer has a `binwidth` parameter. ",
-      "Please use `geom_histogramh()` instead.", call. = "FALSE")
-    return(geom_histogramh(mapping = mapping, data = data,
-      position = position, width = width, binwidth = binwidth, ...,
-      na.rm = na.rm, show.legend = show.legend, inherit.aes = inherit.aes))
-  }
-
   layer(
     data = data,
     mapping = mapping,
