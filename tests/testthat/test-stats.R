@@ -1,5 +1,7 @@
 context("Stats")
 
+skip_if_not_installed("Hmisc")
+
 test_that("stat_summaryh() flips", {
 
   fn_data_v <- function(x) {
