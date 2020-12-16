@@ -3,3 +3,5 @@
 ^appveyor\.yml$
 ^revdep$
 ^CRAN-RELEASE$
+^codecov\.yml$
+^\.github$
