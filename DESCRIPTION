@@ -9,7 +9,9 @@ Authors@R: c(
     )
 Description: A 'ggplot2' extension that provides flipped components:
     horizontal versions of 'Stats' and 'Geoms', and vertical versions
-    of 'Positions'.
+    of 'Positions'. This package is now superseded by 'ggplot2' itself
+    which now has full native support for horizontal layouts. It
+    remains available for backward compatibility.
 Depends:
     R (>= 3.1.0)
 Imports:
