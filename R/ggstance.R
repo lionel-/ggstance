@@ -3,7 +3,9 @@
 #'   segmentsGrob
 #' @import ggplot2
 generate <- function(fn) {
-  get(fn, -1, environment(ggplot_build))
+  function(...) {
+    get(fn, -1, environment(ggplot_build))(...)
+  }
 }
 
 ggname <- function(prefix, grob) {
