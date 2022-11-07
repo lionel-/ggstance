@@ -15,7 +15,8 @@ Description: A 'ggplot2' extension that provides flipped components:
 Depends:
     R (>= 3.1.0)
 Imports:
-    ggplot2 (>= 3.2.0),
+    cli (>= 3.4.1),
+    ggplot2 (>= 3.4.0),
     plyr,
     rlang,
     withr (>= 2.0.0)
