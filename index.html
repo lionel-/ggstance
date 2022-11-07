@@ -23,6 +23,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -35,18 +37,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ggstance</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.5.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -56,7 +52,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/lionel-/ggstance/">
+  <a href="https://github.com/lionel-/ggstance/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -75,31 +71,31 @@
   <div class="contents col-md-9">
 
 
-<div id="ggstance" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#ggstance" class="anchor"></a>ggstance</h1></div>
-<p><strong>Important</strong>: This package has been superseded by <a href="https://www.tidyverse.org/blog/2020/03/ggplot2-3-3-0/">ggplot2 3.3.0</a>, which now has full native support for horizontality. The ggstance package will continue to be maintained for some time, but please consider switching to ggplot2.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level1">
+<div class="page-header"><h1 id="ggstance">ggstance<a class="anchor" aria-label="anchor" href="#ggstance"></a>
+</h1></div>
+<p><strong>Important</strong>: This package has been superseded by <a href="https://www.tidyverse.org/blog/2020/03/ggplot2-3-3-0/" class="external-link">ggplot2 3.3.0</a>, which now has full native support for horizontality. The ggstance package will continue to be maintained for some time, but please consider switching to ggplot2.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>Get the development version from Github with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"lionel-/ggstance"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"lionel-/ggstance"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="horizontal-geoms" class="section level2">
-<h2 class="hasAnchor">
-<a href="#horizontal-geoms" class="anchor"></a>Horizontal geoms</h2>
-<p>While <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip()</a></code> can only flip a plot as a whole, ggstance provides flipped versions of Geoms, Stats and Positions. This makes it easier to build horizontal layer or use vertical positioning (e.g. vertical dodging). Also, horizontal Geoms draw horizontal legend keys to keep the appearance of your plots consistent.</p>
+<div class="section level2">
+<h2 id="horizontal-geoms">Horizontal geoms<a class="anchor" aria-label="anchor" href="#horizontal-geoms"></a>
+</h2>
+<p>While <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html" class="external-link">coord_flip()</a></code> can only flip a plot as a whole, ggstance provides flipped versions of Geoms, Stats and Positions. This makes it easier to build horizontal layer or use vertical positioning (e.g. vertical dodging). Also, horizontal Geoms draw horizontal legend keys to keep the appearance of your plots consistent.</p>
 <p>Horizontal Geoms:</p>
 <ul>
 <li><code><a href="reference/geom_barh.html">geom_barh()</a></code></li>
 <li><code><a href="reference/geom_barh.html">geom_colh()</a></code></li>
 <li><code><a href="reference/geom_histogramh.html">geom_histogramh()</a></code></li>
-<li><code><a href="reference/geom_crossbarh.html">geom_linerangeh()</a></code></li>
-<li><code><a href="reference/geom_crossbarh.html">geom_pointrangeh()</a></code></li>
-<li><code><a href="reference/geom_crossbarh.html">geom_errorbarh()</a></code></li>
-<li><code><a href="reference/geom_crossbarh.html">geom_crossbarh()</a></code></li>
+<li><code><a href="reference/geom_linerangeh.html">geom_linerangeh()</a></code></li>
+<li><code><a href="reference/geom_linerangeh.html">geom_pointrangeh()</a></code></li>
+<li><code><a href="reference/geom_linerangeh.html">geom_errorbarh()</a></code></li>
+<li><code><a href="reference/geom_linerangeh.html">geom_crossbarh()</a></code></li>
 <li><code><a href="reference/geom_boxploth.html">geom_boxploth()</a></code></li>
 <li><code><a href="reference/geom_violinh.html">geom_violinh()</a></code></li>
 </ul>
@@ -113,85 +109,91 @@
 </ul>
 <p>Vertical Positions:</p>
 <ul>
-<li><code><a href="reference/position_dodgev.html">position_dodgev()</a></code></li>
-<li><code><a href="reference/position_dodgev.html">position_dodge2v()</a></code></li>
+<li><code><a href="reference/position-vertical.html">position_dodgev()</a></code></li>
+<li><code><a href="reference/position-vertical.html">position_dodge2v()</a></code></li>
 <li><code>position_nudgev()</code></li>
-<li><code><a href="reference/position_dodgev.html">position_fillv()</a></code></li>
-<li><code><a href="reference/position_dodgev.html">position_stackv()</a></code></li>
-<li><code><a href="reference/position_dodgev.html">position_jitterdodgev()</a></code></li>
+<li><code><a href="reference/position-vertical.html">position_fillv()</a></code></li>
+<li><code><a href="reference/position-vertical.html">position_stackv()</a></code></li>
+<li><code><a href="reference/position-vertical.html">position_jitterdodgev()</a></code></li>
 </ul>
 </div>
-<div id="examples" class="section level2">
-<h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
-<div id="basics" class="section level3">
-<h3 class="hasAnchor">
-<a href="#basics" class="anchor"></a>Basics</h3>
-<p>To create a horizontal layer in ggplot2 with <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip()</a></code>, you have to supply aesthetics as if they were to be drawn vertically:</p>
+<div class="section level2">
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h2>
+<div class="section level3">
+<h3 id="basics">Basics<a class="anchor" aria-label="anchor" href="#basics"></a>
+</h3>
+<p>To create a horizontal layer in ggplot2 with <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html" class="external-link">coord_flip()</a></code>, you have to supply aesthetics as if they were to be drawn vertically:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://ggplot2.tidyverse.org">"ggplot2"</a></span><span class="op">)</span>
-
-<span class="co"># Vertical</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">class</span>, <span class="va">hwy</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="co"># Horizontal with coord_flip()</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">class</span>, <span class="va">hwy</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://ggplot2.tidyverse.org" class="external-link">"ggplot2"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Vertical</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">class</span>, <span class="va">hwy</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Horizontal with coord_flip()</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">class</span>, <span class="va">hwy</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html" class="external-link">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>In ggstance, you supply aesthetics in their natural order:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/lionel-/ggstance">"ggstance"</a></span><span class="op">)</span>
-
-<span class="co"># Horizontal with ggstance</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">hwy</span>, <span class="va">class</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="reference/geom_boxploth.html">geom_boxploth</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><img src="https://raw.githubusercontent.com/lionel-/ggstance/readme/boxplot.png" alt="Horizontal boxplot"></p>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/lionel-/ggstance" class="external-link">"ggstance"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Horizontal with ggstance</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">hwy</span>, <span class="va">class</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/geom_boxploth.html">geom_boxploth</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/lionel-/ggstance/readme/boxplot.png" alt=""><p class="caption">Horizontal boxplot</p>
 </div>
-<div id="facetting-with-free-scales" class="section level3">
-<h3 class="hasAnchor">
-<a href="#facetting-with-free-scales" class="anchor"></a>Facetting with Free Scales</h3>
-<p>Some plots are hard to produce with <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip()</a></code>. One case is facetting with free scales. Here is an example from @smouksassi:</p>
+</div>
+<div class="section level3">
+<h3 id="facetting-with-free-scales">Facetting with Free Scales<a class="anchor" aria-label="anchor" href="#facetting-with-free-scales"></a>
+</h3>
+<p>Some plots are hard to produce with <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html" class="external-link">coord_flip()</a></code>. One case is facetting with free scales. Here is an example from @smouksassi:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://ggplot2.tidyverse.org">"ggplot2"</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/lionel-/ggstance">"ggstance"</a></span><span class="op">)</span>
-
-<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
-  Group <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, each <span class="op">=</span> <span class="fl">4</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Drug A"</span>, <span class="st">"Drug B"</span>, <span class="st">"Control"</span><span class="op">)</span><span class="op">)</span>,
-  Subject <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span><span class="op">)</span><span class="op">)</span>,
-  Result <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">12</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="va">vertical</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Subject</span>, <span class="va">Result</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Group</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">.</span> <span class="op">~</span> <span class="va">Group</span>, scales <span class="op">=</span> <span class="st">"free_x"</span><span class="op">)</span>
-<span class="va">vertical</span></code></pre></div>
-<p>How do we flip this plot? With <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip()</a></code>, the free scales are not flipped correctly:</p>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://ggplot2.tidyverse.org" class="external-link">"ggplot2"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/lionel-/ggstance" class="external-link">"ggstance"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  Group <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, each <span class="op">=</span> <span class="fl">4</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Drug A"</span>, <span class="st">"Drug B"</span>, <span class="st">"Control"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  Subject <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  Result <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">12</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">vertical</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Subject</span>, <span class="va">Result</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Group</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html" class="external-link">facet_grid</a></span><span class="op">(</span><span class="va">.</span> <span class="op">~</span> <span class="va">Group</span>, scales <span class="op">=</span> <span class="st">"free_x"</span><span class="op">)</span></span>
+<span><span class="va">vertical</span></span></code></pre></div>
+<p>How do we flip this plot? With <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html" class="external-link">coord_flip()</a></code>, the free scales are not flipped correctly:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">vertical</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">vertical</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">Group</span> <span class="op">~</span> <span class="va">.</span>, scales <span class="op">=</span> <span class="st">"free_x"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">vertical</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html" class="external-link">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">vertical</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html" class="external-link">facet_grid</a></span><span class="op">(</span><span class="va">Group</span> <span class="op">~</span> <span class="va">.</span>, scales <span class="op">=</span> <span class="st">"free_x"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html" class="external-link">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>On the other hand a ggstance horizontal layer will work properly:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">horizontal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Result</span>, <span class="va">Subject</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="reference/geom_boxploth.html">geom_boxploth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Group</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">Group</span> <span class="op">~</span> <span class="va">.</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span>
-<span class="va">horizontal</span></code></pre></div>
-<p><img src="https://raw.githubusercontent.com/lionel-/ggstance/readme/facet-free-scales.png" alt="Horizontal free-scales facetting"></p>
+<code class="sourceCode R"><span><span class="va">horizontal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Result</span>, <span class="va">Subject</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/geom_boxploth.html">geom_boxploth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Group</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html" class="external-link">facet_grid</a></span><span class="op">(</span><span class="va">Group</span> <span class="op">~</span> <span class="va">.</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></span>
+<span><span class="va">horizontal</span></span></code></pre></div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/lionel-/ggstance/readme/facet-free-scales.png" alt=""><p class="caption">Horizontal free-scales facetting</p>
 </div>
-<div id="using-vertical-positions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#using-vertical-positions" class="anchor"></a>Using vertical positions</h3>
+</div>
+<div class="section level3">
+<h3 id="using-vertical-positions">Using vertical positions<a class="anchor" aria-label="anchor" href="#using-vertical-positions"></a>
+</h3>
 <p>In this example we use vertical dodging to align measurements within subgroups.</p>
-<pre class="{r}"><code>data &lt;- expand.grid(
-  Group = c("A", "B"),
-  Subgroup = c("a", "b", "c"),
-  y = 1:10
-)
-data$y &lt;- sample(1:4, replace = TRUE, size = nrow(data))
-
-ggplot(data, aes(y, Group, colour = Subgroup)) +
-  stat_sum(position = position_dodgev(height = 0.5))</code></pre>
-<p><img src="https://raw.githubusercontent.com/lionel-/ggstance/readme/position.png" alt="Vertical positions"></p>
+<pre class="{r}"><code><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html" class="external-link">expand.grid</a></span><span class="op">(</span></span>
+<span>  Group <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span><span class="op">)</span>,</span>
+<span>  Subgroup <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>,</span>
+<span>  y <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">data</span><span class="op">$</span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, replace <span class="op">=</span> <span class="cn">TRUE</span>, size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">Group</span>, colour <span class="op">=</span> <span class="va">Subgroup</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_count.html" class="external-link">stat_sum</a></span><span class="op">(</span>position <span class="op">=</span> <span class="fu"><a href="reference/position-vertical.html">position_dodgev</a></span><span class="op">(</span>height <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/lionel-/ggstance/readme/position.png" alt=""><p class="caption">Vertical positions</p>
+</div>
 </div>
 </div>
 </div>
@@ -200,50 +202,59 @@ ggplot(data, aes(y, Group, colour = Subgroup)) +
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=ggstance">https://​cloud.r-project.org/​package=ggstance</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/lionel-/ggstance/">https://​github.com/​lionel-/​ggstance/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/lionel-/ggstance/issues">https://​github.com/​lionel-/​ggstance/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Lionel Henry <br><small class="roles"> Author, maintainer </small>  </li>
-<li>
-<a href="http://hadley.nz">Hadley Wickham</a> <br><small class="roles"> Author </small>  </li>
-<li>Winston Chang <br><small class="roles"> Author </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="https://cloud.r-project.org/package=ggstance" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/lionel-/ggstance/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/lionel-/ggstance/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/lionel-/ggstance/actions"><img src="https://github.com/lionel-/ggstance/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#superseded"><img src="https://img.shields.io/badge/lifecycle-superseded-blue.svg" alt="Lifecycle: superseded"></a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing ggstance</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Lionel Henry <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Hadley Wickham <br><small class="roles"> Author </small>  </li>
+<li>Winston Chang <br><small class="roles"> Author </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/lionel-/ggstance/actions" class="external-link"><img src="https://github.com/lionel-/ggstance/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#superseded" class="external-link"><img src="https://img.shields.io/badge/lifecycle-superseded-blue.svg" alt="Lifecycle: superseded"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Lionel Henry, <a href="http://hadley.nz">Hadley Wickham</a>, Winston Chang.</p>
+  <p></p>
+<p>Developed by Lionel Henry, Hadley Wickham, Winston Chang.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -251,6 +262,8 @@ ggplot(data, aes(y, Group, colour = Subgroup)) +
 
   
 
+
+  
 
   </body>
 </html>
