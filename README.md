@@ -1,7 +1,7 @@
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/lionel-/ggstance/workflows/R-CMD-check/badge.svg)](https://github.com/lionel-/ggstance/actions)
 [![Lifecycle: superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://www.tidyverse.org/lifecycle/#superseded)
+[![R-CMD-check](https://github.com/lionel-/ggstance/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lionel-/ggstance/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # ggstance
