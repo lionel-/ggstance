@@ -24,7 +24,7 @@ Suggests:
     covr,
     Hmisc,
     testthat,
-    vdiffr (>= 0.3.0)
+    vdiffr (>= 1.0.4)
 URL: https://github.com/lionel-/ggstance
 BugReports: https://github.com/lionel-/ggstance/issues
 License: GPL-3
