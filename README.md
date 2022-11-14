@@ -1,6 +1,6 @@
 
 <!-- badges: start -->
-[![Lifecycle: superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://www.tidyverse.org/lifecycle/#superseded)
+[![Lifecycle: superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![R-CMD-check](https://github.com/lionel-/ggstance/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lionel-/ggstance/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
