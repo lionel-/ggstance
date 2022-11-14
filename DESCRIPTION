@@ -28,7 +28,6 @@ Suggests:
 URL: https://github.com/lionel-/ggstance
 BugReports: https://github.com/lionel-/ggstance/issues
 License: GPL-3
-LazyData: true
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 Collate:
