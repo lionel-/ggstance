@@ -1,5 +1,8 @@
 # ggstance (development version)
 
+* Maintenance release for CRAN checks.
+
+
 # ggstance 0.3.5
 
 * Maintenance release for CRAN checks.
