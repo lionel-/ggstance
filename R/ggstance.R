@@ -26,3 +26,7 @@ rd_aesthetics <- function(type, name) {
 .onLoad <- function(lib, pkg) {
   rd_aesthetics <<- rlang::ns_env("ggplot2")$rd_aesthetics
 }
+
+imports <- function() {
+  cli::cli_abort
+}
