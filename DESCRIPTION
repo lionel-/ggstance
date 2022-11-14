@@ -13,7 +13,7 @@ Description: A 'ggplot2' extension that provides flipped components:
     which now has full native support for horizontal layouts. It
     remains available for backward compatibility.
 Depends:
-    R (>= 3.1.0)
+    R (>= 3.6.0)
 Imports:
     cli (>= 3.4.1),
     ggplot2 (>= 3.4.0),
