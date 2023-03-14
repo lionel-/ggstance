@@ -23,6 +23,7 @@ Imports:
 Suggests:
     covr,
     Hmisc,
+    quantreg,
     testthat,
     vdiffr (>= 1.0.4)
 URL: https://github.com/lionel-/ggstance

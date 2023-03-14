@@ -51,6 +51,9 @@ StatBoxploth <- ggproto("StatBoxploth", Stat,
     qs <- c(0, 0.25, 0.5, 0.75, 1)
 
     if (!is.null(data$weight)) {
+      if (!requireNamespace("quantreg", quietly = TRUE)) {
+        stop("'quantreg' is required for compute_group() with weights")
+      }
       mod <- quantreg::rq(x ~ 1, weights = weight, data = data, tau = qs)
       stats <- as.numeric(stats::coef(mod))
     } else {
