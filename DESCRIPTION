@@ -24,6 +24,7 @@ Suggests:
     covr,
     Hmisc,
     quantreg,
+    scales,
     testthat,
     vdiffr (>= 1.0.4)
 URL: https://github.com/lionel-/ggstance
